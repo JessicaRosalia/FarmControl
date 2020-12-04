@@ -73,6 +73,36 @@ public class AnimalDAO {
             return animais;
         }
         
+        public static Animal read(int id){
+            Connection con = ConnectionFactory.getConnection();
+            String sql = "SELECT * FROM animal WHERE idanimal=?";
+            PreparedStatement stmt = null;
+            ResultSet rs = null;
+            Animal a = new Mamifero();
+
+            try {
+                stmt = con.prepareStatement(sql);
+                stmt.setInt(1, id);
+                rs = stmt.executeQuery();
+                if(!rs.next()){
+                    //JOptionPane.showMessageDialog(null, "Nenhum item com esse ID!");
+                    throw new NullPointerException("Item inexistente!");
+                };
+                a.setId_animal(id);
+                a.setRaca(rs.getString("raca"));
+                a.setData_nasc_aquisicao(rs.getDate("data_nasc_aqui"));
+                a.setData_venda(rs.getDate("dat_venda"));
+                a.setValor_venda(rs.getFloat("valor_venda"));
+
+            } catch (SQLException ex) {
+                Logger.getLogger(OvoDao.class.getName()).log(Level.SEVERE, null, ex);
+            } finally{
+                ConnectionFactory.closeConnection(con, stmt, rs);
+            }
+
+            return a;
+        }
+        
         public static void update(Animal a){
         Connection con = ConnectionFactory.getConnection();
         String sql = "UPDATE animal "

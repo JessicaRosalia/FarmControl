@@ -28,6 +28,11 @@ public class AnimalDAODemo {
             System.out.println(a);
         }*/
         
+        /*READ POR ID*/
+        
+        System.out.println(AnimalDAO.read(2));
+        
+        
         /*UPDATE
         Animal ani = new Mamifero();
         ani.setId_animal(2);
@@ -41,7 +46,7 @@ public class AnimalDAODemo {
         Animal a = new Mamifero();
         a.setId_animal(3);
         AnimalDAO.delete(a);*/
-        
+          
     }
     
 }
