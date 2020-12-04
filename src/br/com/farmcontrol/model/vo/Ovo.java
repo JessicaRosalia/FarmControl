@@ -58,5 +58,10 @@ public class Ovo {
     public void setLote(LoteAves lote) {
         this.lote = lote;
     }
+
+    @Override
+    public String toString() {
+        return "Ovo{" + "id_ovo=" + id_ovo + ", valor_unidade=" + valor_unidade + ", qtd_ovos=" + qtd_ovos + ", data_producao=" + data_producao + ", lote=" + lote.getId_animal() + '}';
+    }
     
 }
