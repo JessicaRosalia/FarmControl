@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
@@ -11,63 +18,92 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<HBox fx:id="idHbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="780.0" style="-fx-background-color: #F5F8FB;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.farmcontrol.controller.CrudAnimalController">
+<HBox fx:id="idHbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="690.0" style="-fx-background-color: #F5F8FB;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.farmcontrol.controller.CrudAnimalController">
    <children>
-      <AnchorPane fx:id="IdPane" prefHeight="500.0" prefWidth="759.0">
+      <AnchorPane fx:id="IdPane" prefHeight="500.0" prefWidth="613.0">
          <HBox.margin>
-            <Insets left="200.0" />
+            <Insets />
          </HBox.margin>
          <children>
-            <Text fx:id="idTituloCadastro" fill="#7f7ffb" layoutX="54.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastro de Animal/Lote" wrappingWidth="419.515625">
+            <Text fx:id="idTituloCadastro" fill="#7f7ffb" layoutX="91.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastro de Animal/Lote" wrappingWidth="419.515625" AnchorPane.leftAnchor="91.0" AnchorPane.rightAnchor="138.484375" AnchorPane.topAnchor="19.0">
                <font>
-                  <Font name="Roboto Bold" size="22.0" />
+                  <Font name="Arial Rounded MT Bold" size="22.0" />
                </font>
             </Text>
-            <TabPane fx:id="idTabPane" layoutX="11.0" layoutY="62.0" prefHeight="344.0" prefWidth="506.0" style="-fx-border-color: 3764A6; -fx-border-radius: 11px;" tabClosingPolicy="UNAVAILABLE">
+            <TabPane fx:id="idTabPane" layoutX="29.0" layoutY="59.0" prefHeight="373.0" prefWidth="561.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="60.0">
               <tabs>
                 <Tab text=" Dados Animal">
                   <content>
-                    <AnchorPane fx:id="idTabDadosAnimal" minHeight="0.0" minWidth="0.0" prefHeight="305.0" prefWidth="449.0" style="-fx-background-color: FFFFFF;">
+                    <AnchorPane fx:id="idTabDadosAnimal" minHeight="0.0" minWidth="0.0" prefHeight="324.0" prefWidth="559.0" style="-fx-background-color: FFFFFF;">
                            <children>
                               <Text fx:id="idRacaAnimal" layoutX="28.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Raça do Animal:" />
-                              <Text fx:id="IdAnimal" layoutX="28.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID do Animal:" />
-                              <Text fx:id="idDNA" layoutX="23.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data de Nascimento/Aquisição" />
-                              <Text fx:id="idDIE" layoutX="24.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data de Início da engorda" />
-                              <TextField fx:id="IDtextR" layoutX="28.0" layoutY="56.0" prefHeight="37.0" prefWidth="256.0" style="-fx-background-color: F2F2F2;" />
-                              <TextField fx:id="idTextID" layoutX="27.0" layoutY="118.0" prefHeight="37.0" prefWidth="258.0" style="-fx-background-color: F2F2F2;" />
-                              <DatePicker fx:id="idCalDNA" layoutX="24.0" layoutY="179.0" style="-fx-background-color: F2F2F2;" />
-                              <DatePicker fx:id="idCalDIE" layoutX="24.0" layoutY="247.0" style="-fx-background-color: F2F2F2;" />
+                              <Text fx:id="idDNA" layoutX="28.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data de Nascimento/Aquisição" />
+                              <Text fx:id="idDIE" layoutX="28.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data de Início da engorda" />
+                              <TextField fx:id="IDtextR" layoutX="28.0" layoutY="56.0" prefHeight="37.0" prefWidth="256.0" style="-fx-background-color: #F4F4F4;" />
+                              <DatePicker fx:id="idCalDNA" layoutX="28.0" layoutY="144.0" prefHeight="37.0" prefWidth="173.0" style="-fx-background-color: F2F2F2;" />
+                              <DatePicker fx:id="idCalDIE" layoutX="28.0" layoutY="236.0" prefWidth="173.0" style="-fx-background-color: F2F2F2;" />
                            </children>
                         </AnchorPane>
                   </content>
                 </Tab>
                 <Tab text="Histórico de Reprodução">
                   <content>
-                    <AnchorPane fx:id="idHP" minHeight="0.0" minWidth="0.0" prefHeight="311.0" prefWidth="507.0" style="-fx-background-color: FFFFFF;" />
+                    <AnchorPane fx:id="idHP" minHeight="0.0" minWidth="0.0" prefHeight="311.0" prefWidth="507.0" style="-fx-background-color: FFFFFF;">
+                           <children>
+                              <Text fx:id="idQuantRep" layoutX="25.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantidade" />
+                              <Text fx:id="idDescRep" layoutX="24.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descriçao " />
+                              <Text fx:id="idDatNascRep" layoutX="24.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data de Nascimento" />
+                              <TextField fx:id="textQuantRep" layoutX="25.0" layoutY="130.0" />
+                              <DatePicker fx:id="calDastRepr" layoutX="24.0" layoutY="51.0" prefWidth="173.0" />
+                              <TextArea fx:id="textDescRep" layoutX="25.0" layoutY="210.0" prefHeight="88.0" prefWidth="178.0" />
+                           </children></AnchorPane>
                   </content>
                 </Tab>
                   <Tab text="Ração">
                     <content>
-                      <AnchorPane fx:id="idRa" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: FFFFFF;" />
+                      <AnchorPane fx:id="idRa" minHeight="0.0" minWidth="0.0" prefHeight="307.0" prefWidth="530.0" style="-fx-background-color: FFFFFF;">
+                           <children>
+                              <Text fx:id="idQuantRa" layoutX="23.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantidade (Kg):" />
+                              <Text fx:id="idCustRa" layoutX="23.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Custo:" />
+                              <Text fx:id="idDescRa" layoutX="341.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descriçao da Raçao:" />
+                              <TextArea fx:id="textDescRa" layoutX="341.0" layoutY="59.0" prefHeight="88.0" prefWidth="178.0" style="-fx-background-color: #F4F4F4;" />
+                              <TextField fx:id="textQuantRa" layoutX="23.0" layoutY="162.0" prefHeight="37.0" prefWidth="77.0" style="-fx-background-color: #F4F4F4;" />
+                              <TextField fx:id="textCustRa" layoutX="23.0" layoutY="242.0" prefHeight="37.0" prefWidth="77.0" style="-fx-background-color: #F4F4F4;" />
+                              <DatePicker fx:id="calDatComR" layoutX="25.0" layoutY="59.0" prefHeight="37.0" prefWidth="173.0" style="-fx-background-color: F4F4F4;" />
+                              <Text fx:id="idDatCompRa" layoutX="25.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data da Compra" />
+                           </children></AnchorPane>
                     </content>
                   </Tab>
                   <Tab text="Vacina">
                     <content>
-                      <AnchorPane fx:id="idVa" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: FFFFFF;" />
+                      <AnchorPane fx:id="idVa" minHeight="0.0" minWidth="0.0" prefHeight="244.0" prefWidth="594.0" style="-fx-background-color: FFFFFF;">
+                           <children>
+                              <Text fx:id="textCustVa" layoutX="33.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Custo:" />
+                              <Text fx:id="idDescVa" layoutX="30.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descriçao da Vacina:" />
+                              <Text fx:id="idDatVac" layoutX="30.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data da Vacina" />
+                              <TextArea fx:id="textDescVa" layoutX="31.0" layoutY="204.0" prefHeight="88.0" prefWidth="178.0" style="-fx-background-color: F4F4F4;" />
+                              <TextField fx:id="textCustVa" layoutX="30.0" layoutY="130.0" prefHeight="37.0" prefWidth="77.0" style="-fx-background-color: F4F4F4;" />
+                              <DatePicker fx:id="calDatVa" layoutX="30.0" layoutY="56.0" prefHeight="37.0" prefWidth="173.0" style="-fx-background-color: F4F4F4;" />
+                           </children></AnchorPane>
                     </content>
                   </Tab>
               </tabs>
             </TabPane>
-            <Button fx:id="idCadastra" layoutX="233.0" layoutY="419.0" mnemonicParsing="false" onAction="#cadastrarAnimal" prefHeight="37.0" prefWidth="114.0" style="-fx-background-color: #7F7FFB;" text="Cadastrar" textFill="WHITE">
+            <Button fx:id="idCadastra" layoutX="320.0" layoutY="442.0" mnemonicParsing="false" onAction="#cadastrarAnimal" prefHeight="37.0" prefWidth="123.0" style="-fx-background-color: #7F7FFB;" text="Salvar" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Button>
-            <Button fx:id="idDescarta" layoutX="381.0" layoutY="419.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="114.0" style="-fx-background-color: #B2C0C2;" text="Descartar" textFill="WHITE">
+            <Button fx:id="idDescarta" layoutX="475.0" layoutY="442.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="114.0" style="-fx-background-color: #B2C0C2;" text="Descartar" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Button>
+            <ImageView fitHeight="25.0" fitWidth="32.0" layoutX="50.0" layoutY="19.0">
+               <image>
+                  <Image url="@../../../../../../../bin/br/com/farmcontrol/view/resources/images/cadastrar-animal.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>
