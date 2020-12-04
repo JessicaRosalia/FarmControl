@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="564.0" style="-fx-background-color: #F5F8FB;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.farmcontrol.controller.animal.CrudAnimalController">
+         <children>
+            <Button id="btn-cadastrar" fx:id="cadastrar_animal" layoutX="53.0" layoutY="125.0" mnemonicParsing="false" onAction="#cadastrarAnimal" prefHeight="60.0" prefWidth="209.0" text="Cadastrar Animal ou Lote" textFill="#7f7ffb" AnchorPane.leftAnchor="53.0" AnchorPane.topAnchor="125.0">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0">
+                     <image>
+                        <Image url="@../images/cadastrar-animal.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button id="btn-editar" fx:id="editar_animal" layoutX="287.0" layoutY="125.0" mnemonicParsing="false" onAction="#editarAnimal" prefHeight="60.0" prefWidth="209.0" text="Editar Animal ou Lote" textFill="#7f7ffb" AnchorPane.rightAnchor="53.0">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0">
+                     <image>
+                        <Image url="@../images/editar-animal.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button id="btn-buscar" fx:id="buscar_animal" layoutX="287.0" layoutY="235.0" mnemonicParsing="false" onAction="#buscarAnimal" prefHeight="60.0" prefWidth="209.0" text="Buscar Animal ou Lote" textFill="#7f7ffb" AnchorPane.rightAnchor="53.0">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0">
+                     <image>
+                        <Image url="@../images/buscar-animal.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button id="btn-excluir" fx:id="excluir_animal" layoutX="53.0" layoutY="235.0" mnemonicParsing="false" onAction="#excluirAnimal" prefHeight="60.0" prefWidth="209.0" text="Excluir Animal ou Lote" textFill="#7f7ffb">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0">
+                     <image>
+                        <Image url="@../images/excluir-animal.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button id="btn-listar" fx:id="listar_animal" layoutX="53.0" layoutY="343.0" mnemonicParsing="false" onAction="#buscarAnimal" prefHeight="60.0" prefWidth="209.0" text="Listar Animais e Lotes" textFill="#7f7ffb">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0">
+                     <image>
+                        <Image url="@../images/buscar-animal.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+         <effect>
+            <DropShadow color="#0000003d" />
+         </effect>
+      </AnchorPane>
