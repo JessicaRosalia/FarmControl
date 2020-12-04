@@ -12,7 +12,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/CrudAnimal.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/Layout.fxml"));
 			Scene scene = new Scene(root);
   
 			scene.getStylesheets().add(getClass().getResource("/br/com/farmcontrol/view/resources/styles/style.css").toExternalForm());
