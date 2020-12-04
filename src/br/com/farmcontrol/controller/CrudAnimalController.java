@@ -1,8 +1,11 @@
 package br.com.farmcontrol.controller;
 
 import java.io.IOException;
+
+
 import java.net.URL;
 import java.util.ResourceBundle;
+
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,15 +16,10 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
+
 
 public class CrudAnimalController implements Initializable {
 
@@ -97,58 +95,19 @@ public class CrudAnimalController implements Initializable {
 	    @FXML
 	    private Button excluir_animal;
             
-            @FXML
-             private Text Titulo1;
+	    @FXML
+        private Text Titulo1;
 
-            @FXML
-            private TextField idText1;
+        @FXML
+        private TextField idText1;
 
-             @FXML
-             private Text Titulo2;
+        @FXML
+        private Text Titulo2;
 
-             @FXML
-             private TextField idText12;
-             
-             
-            @FXML
-            private HBox idHbox;
-            @FXML
-            private AnchorPane IdPane;
-            @FXML
-            private Text idTituloCadastro;
-            @FXML
-            private TabPane idTabPane;
-            @FXML
-            private AnchorPane idTabDadosAnimal;
-            @FXML
-            private Text idRacaAnimal;
-             @FXML
-             private Text IdAnimal;
-             @FXML
-             private Text idDNA;
-             @FXML
-             private Text idDIE;
-             @FXML
-             private TextField IDtextR;
-             @FXML
-             private TextField idTextID;
-             @FXML
-             private DatePicker idCalDNA;
-             @FXML
-    private DatePicker idCalDIE;
-    @FXML
-    private AnchorPane idHP;
-    @FXML
-    private AnchorPane idRa;
-    @FXML
-    private AnchorPane idVa;
-    @FXML
-    private Button idCadastra;
-    @FXML
-    private Button idDescarta;
-         
-             
-         
+        @FXML
+        private TextField idText12;
+        
+      
              @FXML
 	    void mudarCor(MouseEvent event) {
                   
@@ -156,17 +115,13 @@ public class CrudAnimalController implements Initializable {
 	    }
             
              @FXML
-	    private void cadastrarAnimal(ActionEvent event) throws IOException{
-                
-                Parent cadastro = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/FXMLcadastro.fxml"));
-                Scene cadastroCena = new Scene(cadastro); 
-                Stage cadastroTela = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                
-                cadastroTela.setScene(cadastroCena);
-                cadastroTela.show();
-                
+	    private void cadastrarAnimal(ActionEvent event) throws IOException{    
+                 Parent cadastro = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/FXMLcadastro.fxml"));
+                 miolo.getChildren().clear();
+                 miolo.getChildren().add(cadastro);
+                             
 	    }
-
+       
 	    @FXML
 	    void buscarAnimal(ActionEvent event) {
 
@@ -185,6 +140,8 @@ public class CrudAnimalController implements Initializable {
 
 	    @FXML
 	    void exibirPaginaAnimais(ActionEvent event) {
+	    	miolo.getChildren().clear();
+ 	    	miolo.getChildren().addAll(cadastrar_animal, editar_animal,buscar_animal,excluir_animal);
 
 	    }
 

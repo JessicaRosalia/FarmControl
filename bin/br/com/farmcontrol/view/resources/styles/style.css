@@ -16,9 +16,17 @@
  	-fx-background-radius: 15px;
 	-fx-text-fill: #7F7FFB;
 	-fx-background-color: #E5E8FD;
+        
 }
 
 #btn-cadastrar:hover, #btn-editar:hover, #btn-excluir:hover, #btn-buscar:hover{
 	-fx-text-fill: #E5E8FD;
 	-fx-background-color: #7F7FFB;
+}
+
+
+#id-cadastroL {
+    -fx-text-fill: #003A90;
+    -fx-background-size: 15; 
+    -fx-size: 15; 
 }
