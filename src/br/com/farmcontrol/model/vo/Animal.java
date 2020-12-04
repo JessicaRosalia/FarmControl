@@ -58,5 +58,10 @@ abstract public class Animal {
     public void setValor_venda(float valor_venda) {
         this.valor_venda = valor_venda;
     }
+
+    @Override
+    public String toString() {
+        return "Animal{" + "id_animal=" + id_animal + ", raca=" + raca + ", data_nasc_aquisicao=" + data_nasc_aquisicao + ", data_venda=" + data_venda + ", valor_venda=" + valor_venda + '}';
+    }
         
 }
