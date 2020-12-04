@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="tdo" prefHeight="500.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.farmcontrol.controller.CrudAnimalController">
+   <children>
+      <AnchorPane fx:id="menu" prefHeight="500.0" prefWidth="208.0" style="-fx-background-color: #F1F5FE;">
+         <children>
+            <Button id="btn-menu" fx:id="pagina_inicial" alignment="BASELINE_LEFT" graphicTextGap="20.0" layoutY="109.0" mnemonicParsing="false" onAction="#exibirPaginaInicial" prefHeight="48.0" prefWidth="220.0" text="Página Inicial" textFill="#030303cd">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fx:id="img_paginainicial" fitHeight="30.0" fitWidth="30.0">
+                     <image>
+                        <Image url="@../images/icone-paginaInicial.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button id="btn-menu" fx:id="animal" alignment="BASELINE_LEFT" graphicTextGap="20.0" layoutY="158.0" mnemonicParsing="false" onAction="#exibirPaginaAnimais" prefHeight="48.0" prefWidth="220.0" text="Animais e Lotes" textFill="#030303cd">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fx:id="img_animal" fitHeight="30.0" fitWidth="30.0">
+                     <image>
+                        <Image url="@../images/icone-animal.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button id="btn-menu" fx:id="vacina" alignment="BASELINE_LEFT" graphicTextGap="20.0" layoutY="206.0" mnemonicParsing="false" onAction="#exibirPaginaVacina" prefHeight="48.0" prefWidth="220.0" text="Vacinas" textFill="#030303cd">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fx:id="img_vacina" fitHeight="30.0" fitWidth="30.0">
+                     <image>
+                        <Image url="@../images/icone-vacina.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button id="btn-menu" fx:id="leite" alignment="BASELINE_LEFT" graphicTextGap="20.0" layoutY="254.0" mnemonicParsing="false" onAction="#exibirPaginaLeite" prefHeight="48.0" prefWidth="220.0" text="Leite" textFill="#030303cd">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fx:id="img_leite" fitHeight="30.0" fitWidth="30.0">
+                     <image>
+                        <Image url="@../images/icone-leite.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button id="btn-menu" fx:id="ovos" alignment="BASELINE_LEFT" graphicTextGap="20.0" layoutY="302.0" mnemonicParsing="false" onAction="#exibirPaginaOvos" prefHeight="48.0" prefWidth="220.0" text="Ovos" textFill="#030303cd">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fx:id="img_ovo" fitHeight="30.0" fitWidth="30.0">
+                     <image>
+                        <Image url="@../images/icone-ovos.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button id="btn-menu" fx:id="racao" alignment="BASELINE_LEFT" graphicTextGap="20.0" layoutY="350.0" mnemonicParsing="false" onAction="#exibirPaginaRacao" prefHeight="48.0" prefWidth="220.0" text="Ração" textFill="#030303cd">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fx:id="img_racao" fitHeight="30.0" fitWidth="30.0">
+                     <image>
+                        <Image url="@../images/icone-racao.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button id="btn-menu" fx:id="reproducao" alignment="BASELINE_LEFT" graphicTextGap="20.0" layoutY="397.0" mnemonicParsing="false" onAction="#exibirPaginaReproducao" prefHeight="48.0" prefWidth="220.0" text="Reprodução" textFill="#030303cd">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fx:id="img_reproducao" fitHeight="30.0" fitWidth="30.0">
+                     <image>
+                        <Image url="@../images/icone-reproducao.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button id="btn-menu" fx:id="relatorio" alignment="BASELINE_LEFT" graphicTextGap="20.0" layoutY="445.0" mnemonicParsing="false" onAction="#exibirPaginaRelatorios" prefHeight="48.0" prefWidth="220.0" text="Relatórios" textFill="#030303cd">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fx:id="img_relatorio" fitHeight="30.0" fitWidth="30.0">
+                     <image>
+                        <Image url="@../images/icone-relatorio.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <ImageView fx:id="logo" fitHeight="66.0" fitWidth="200.0" layoutX="14.0" layoutY="6.0">
+               <image>
+                  <Image url="@../images/logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="miolo" layoutX="220.0" prefHeight="500.0" prefWidth="564.0" style="-fx-background-color: #F5F8FB;">
+         <children>
+            <Button id="btn-cadastrar" fx:id="cadastrar_animal" layoutX="53.0" layoutY="125.0" mnemonicParsing="false" onAction="#cadastrarAnimal" onMouseClicked="#mudarCor" prefHeight="60.0" prefWidth="209.0" text="Cadastrar Animal ou Lote" textFill="#7f7ffb">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0">
+                     <image>
+                        <Image url="@../images/cadastrar-animal.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button id="btn-editar" fx:id="editar_animal" layoutX="287.0" layoutY="125.0" mnemonicParsing="false" onAction="#editarAnimal" onMouseClicked="#mudarCor" prefHeight="60.0" prefWidth="209.0" text="Editar Animal ou Lote" textFill="#7f7ffb">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0">
+                     <image>
+                        <Image url="@../images/editar-animal.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button id="btn-editar" fx:id="buscar_animal" layoutX="287.0" layoutY="235.0" mnemonicParsing="false" onAction="#buscarAnimal" onMouseClicked="#mudarCor" prefHeight="60.0" prefWidth="209.0" text="Buscar Animal ou Lote" textFill="#7f7ffb">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0">
+                     <image>
+                        <Image url="@../images/buscar-animal.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button id="btn-cadastrar" fx:id="excluir_animal" layoutX="53.0" layoutY="235.0" mnemonicParsing="false" onAction="#excluirAnimal" onMouseClicked="#mudarCor" prefHeight="60.0" prefWidth="209.0" text="Excluir Animal ou Lote" textFill="#7f7ffb">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0">
+                     <image>
+                        <Image url="@../images/excluir-animal.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+         <effect>
+            <DropShadow color="#0000003d" />
+         </effect>
+      </AnchorPane>
+   </children>
+</AnchorPane>

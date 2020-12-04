@@ -1,0 +1,24 @@
+#btn-menu {
+	 -fx-text-fill: #7F7FFB;
+	 -fx-background-color: #F1F5FE; 
+	
+}
+
+#btn-menu:hover{
+	-fx-font-weight: bold; 
+	-fx-background-color: #E5E8FD;
+}
+
+
+
+#btn-cadastrar, #btn-editar, #btn-excluir, #btn-buscar{
+	-fx-border-radius:15px;
+ 	-fx-background-radius: 15px;
+	-fx-text-fill: #7F7FFB;
+	-fx-background-color: #E5E8FD;
+}
+
+#btn-cadastrar:hover, #btn-editar:hover, #btn-excluir:hover, #btn-buscar:hover{
+	-fx-text-fill: #E5E8FD;
+	-fx-background-color: #7F7FFB;
+}
