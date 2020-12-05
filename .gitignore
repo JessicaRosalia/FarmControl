@@ -1,3 +1,15 @@
 /nbproject/private/
 /build/
 /dist/
+
+/bin
+/null
+/.settings
+
+*.class
+*.jar
+*.war
+*.classpath
+/.settings/org.eclipse.jdt.core.prefs
+.project
+/config.properties
