@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="wrapper" prefHeight="500.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.farmcontrol.controller.LayoutController">
+<AnchorPane fx:id="wrapper" prefHeight="500.0" prefWidth="651.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.farmcontrol.controller.LayoutController">
    <children>
       <AnchorPane fx:id="menu" prefHeight="500.0" prefWidth="208.0" style="-fx-background-color: #F1F5FE;">
          <children>
@@ -139,7 +139,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="crud" layoutX="220.0" prefHeight="500.0" prefWidth="564.0" style="-fx-background-color: #F5F8FB;">
+      <AnchorPane fx:id="crud" layoutX="220.0" prefHeight="500.0" prefWidth="650.0" style="-fx-background-color: #F5F8FB;">
          <effect>
             <DropShadow color="#0000003d" />
          </effect>
