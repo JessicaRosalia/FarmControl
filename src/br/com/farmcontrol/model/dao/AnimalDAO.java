@@ -119,7 +119,7 @@ public class AnimalDAO {
             stmt.setFloat(4,a.getValor_venda());
             stmt.setInt(5, a.getId_animal());
             stmt.executeUpdate();
-            JOptionPane.showConfirmDialog(null, "Atualizado com sucesso!");
+            //JOptionPane.showConfirmDialog(null, "Atualizado com sucesso!");
             
         } catch (SQLException ex) {
             JOptionPane.showConfirmDialog(null, " Erro ao atualizar: "+ex);
@@ -138,7 +138,7 @@ public class AnimalDAO {
             stmt = con.prepareStatement(sql);
             stmt.setInt(1, a.getId_animal());
             stmt.executeUpdate();
-            JOptionPane.showConfirmDialog(null, "Deletado com sucesso!");
+            //JOptionPane.showConfirmDialog(null, "Deletado com sucesso!");
         } catch (SQLException ex) {
             JOptionPane.showConfirmDialog(null, " Erro ao deletar: "+ex);
         } finally{
