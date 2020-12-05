@@ -37,11 +37,11 @@
       <TableView fx:id="idTableExcluirAni" layoutX="152.0" layoutY="84.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: FFFFFF;" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="60.0">
         <columns>
           <TableColumn prefWidth="49.0" text="ID" />
-          <TableColumn prefWidth="99.0" text="Raça" />
-            <TableColumn prefWidth="114.0" text="Data de Nascimento" />
-            <TableColumn prefWidth="98.0" text="Data da Venda" />
-            <TableColumn prefWidth="90.0" text="Quantidade da Venda" />
-            <TableColumn prefWidth="85.0" text="Valor da Venda" />
+          <TableColumn prefWidth="89.0" text="Raça" />
+            <TableColumn prefWidth="124.0" text="Data de &#10;Nascimento" />
+            <TableColumn prefWidth="88.0" text="Data da&#10;Venda" />
+            <TableColumn prefWidth="95.0" text="Quantidade da &#10;Venda" />
+            <TableColumn prefWidth="90.0" text="Valor da &#10;Venda" />
         </columns>
       </TableView>
          </children>
