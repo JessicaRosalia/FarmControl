@@ -19,10 +19,15 @@ import java.util.logging.Logger;
  */
 public class ConnectionFactory {
     
-    private static final String DRIVER = "org.postgresql.Driver";
+    /*private static final String DRIVER = "org.postgresql.Driver";
     private static final String URL = "jdbc:postgresql://localhost:49680/farm_control";
     private static final String USER = "postgres";
-    private static final String PASS = "francisca456";
+    private static final String PASS = "francisca456";*/
+    
+    private static final String DRIVER = "org.postgresql.Driver";
+    private static final String URL = "jdbc:postgresql://localhost:5432/farm_control";
+    private static final String USER = "postgres";
+    private static final String PASS = "vinicius@123";
     
     public static Connection getConnection(){
    
