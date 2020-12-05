@@ -1,10 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.farmcontrol.controller.animal.CrudAnimalController">
-   <children>
-      <Button fx:id="teste" layoutX="214.0" layoutY="218.0" mnemonicParsing="false" text="Button" />
-   </children>
-</AnchorPane>
+<AnchorPane fx:id="idPaneExcluirAnimal" prefHeight="500.0" prefWidth="613.0" style="-fx-background-color: #F5F8FB;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.farmcontrol.controller.animal.CrudAnimalController">
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+         <children>
+            <Text fx:id="idTituloExcluirAnimal" fill="#7f7ffb" layoutX="91.0" layoutY="43.740234375" strokeType="OUTSIDE" strokeWidth="0.0" text="Excluir Animal/Lote" wrappingWidth="419.515625" AnchorPane.leftAnchor="91.0" AnchorPane.rightAnchor="138.484375" AnchorPane.topAnchor="20.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="22.0" />
+               </font>
+            </Text>
+            <Button fx:id="idExcluir" layoutX="320.0" layoutY="442.0" mnemonicParsing="false" onAction="#cadastrarAnimal" prefHeight="37.0" prefWidth="123.0" style="-fx-background-color: #7F7FFB;" text="Excluir" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="idDescartaAnimal" layoutX="475.0" layoutY="442.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="114.0" style="-fx-background-color: #B2C0C2;" text="Descartar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="30.0" fitWidth="35.0" layoutX="50.0" layoutY="19.0">
+               <image>
+                  <Image url="@../../images/cadastrar-animal.png" />
+               </image>
+            </ImageView>
+      <TableView fx:id="idTableExcluirAni" layoutX="152.0" layoutY="84.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: FFFFFF;" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="60.0">
+        <columns>
+          <TableColumn prefWidth="49.0" text="ID" />
+          <TableColumn prefWidth="99.0" text="Raça" />
+            <TableColumn prefWidth="114.0" text="Data de Nascimento" />
+            <TableColumn prefWidth="98.0" text="Data da Venda" />
+            <TableColumn prefWidth="90.0" text="Quantidade da Venda" />
+            <TableColumn prefWidth="85.0" text="Valor da Venda" />
+        </columns>
+      </TableView>
+         </children>
+      </AnchorPane>
