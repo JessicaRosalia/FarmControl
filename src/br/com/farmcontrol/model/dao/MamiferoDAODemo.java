@@ -39,6 +39,7 @@ public class MamiferoDAODemo {
             System.out.println(m);
         }*/
         
+        /*UPDATE
         Mamifero m = new Mamifero();
         m.setId_animal(9);
         m.setRaca("Porco do Sul");
@@ -51,7 +52,13 @@ public class MamiferoDAODemo {
         m.setValor_venda((float) 5000);
         m.setData_venda(new Date(2020-1900, 12-1, 10));
         
-        MamiferoDAO.update(m);
+        MamiferoDAO.update(m);*/
+        
+        /*DELETE
+        Mamifero m = new Mamifero();
+        m.setId_animal(9);
+        MamiferoDAO.delete(m);*/
+        
     }
     
 }

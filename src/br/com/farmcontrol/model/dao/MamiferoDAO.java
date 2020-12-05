@@ -187,6 +187,26 @@ public class MamiferoDAO {
         }
     }
     
+    public static void delete(Mamifero a){
+        
+        Connection con = ConnectionFactory.getConnection();
+        String sql = "DELETE FROM mamifero_abate WHERE idanimal=?";
+        PreparedStatement stmt = null;
+
+        try {
+            stmt = con.prepareStatement(sql);
+            stmt.setInt(1, a.getId_animal());
+            stmt.executeUpdate();
+            AnimalDAO.delete(a);
+            JOptionPane.showConfirmDialog(null, "Deletado com sucesso!");
+        } catch (SQLException ex) {
+            JOptionPane.showConfirmDialog(null, " Erro ao deletar: "+ex);
+        } finally{
+            ConnectionFactory.closeConnection(con, stmt);
+        }
+        
+    }
+    
     public static int ultimoID(){
         
         Connection con = ConnectionFactory.getConnection();
