@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
 
 public class AnimalDAO {
 
-        public static void create(Animal a){
+    public static void create(Animal a){
         
         Connection con = ConnectionFactory.getConnection();
         String sql = "INSERT INTO animal(raca,data_nasc_aqui,dat_venda,valor_venda) "
@@ -32,7 +32,7 @@ public class AnimalDAO {
             stmt.setDate(3, (Date) a.getData_venda());
             stmt.setFloat(4, a.getValor_venda());
             stmt.executeUpdate();
-            JOptionPane.showConfirmDialog(null, "Salvo com sucesso!");
+            //JOptionPane.showConfirmDialog(null, "Salvo com sucesso!");
             
         } catch (SQLException ex) {
             JOptionPane.showConfirmDialog(null, " Erro ao salvar: "+ex);
@@ -42,68 +42,68 @@ public class AnimalDAO {
         
     }
         
-        public static List<Animal> read(){
-            Connection con = ConnectionFactory.getConnection();
-            String sql = "SELECT * FROM animal";
-            PreparedStatement stmt = null;
-            ResultSet rs = null;
+    public static List<Animal> read(){
+        Connection con = ConnectionFactory.getConnection();
+        String sql = "SELECT * FROM animal";
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
 
-            List<Animal> animais = new ArrayList<>();
+        List<Animal> animais = new ArrayList<>();
 
-            try {
-                stmt = con.prepareStatement(sql);
-                rs = stmt.executeQuery();
+        try {
+            stmt = con.prepareStatement(sql);
+            rs = stmt.executeQuery();
 
-                while(rs.next()){
-                    Animal a = new Mamifero();
-                    a.setId_animal(rs.getInt("idanimal"));
-                    a.setRaca(rs.getString("raca"));
-                    a.setData_nasc_aquisicao(rs.getDate("data_nasc_aqui"));
-                    a.setData_venda(rs.getDate("dat_venda"));
-                    a.setValor_venda(rs.getFloat("valor_venda"));
-                    animais.add(a);
-                }
-
-            } catch (SQLException ex) {
-                Logger.getLogger(OvoDao.class.getName()).log(Level.SEVERE, null, ex);
-            } finally{
-                ConnectionFactory.closeConnection(con, stmt, rs);
-            }
-
-            return animais;
-        }
-        
-        public static Animal read(int id){
-            Connection con = ConnectionFactory.getConnection();
-            String sql = "SELECT * FROM animal WHERE idanimal=?";
-            PreparedStatement stmt = null;
-            ResultSet rs = null;
-            Animal a = new Mamifero();
-
-            try {
-                stmt = con.prepareStatement(sql);
-                stmt.setInt(1, id);
-                rs = stmt.executeQuery();
-                if(!rs.next()){
-                    //JOptionPane.showMessageDialog(null, "Nenhum item com esse ID!");
-                    throw new NullPointerException("Item inexistente!");
-                };
-                a.setId_animal(id);
+            while(rs.next()){
+                Animal a = new Mamifero();
+                a.setId_animal(rs.getInt("idanimal"));
                 a.setRaca(rs.getString("raca"));
                 a.setData_nasc_aquisicao(rs.getDate("data_nasc_aqui"));
                 a.setData_venda(rs.getDate("dat_venda"));
                 a.setValor_venda(rs.getFloat("valor_venda"));
-
-            } catch (SQLException ex) {
-                Logger.getLogger(OvoDao.class.getName()).log(Level.SEVERE, null, ex);
-            } finally{
-                ConnectionFactory.closeConnection(con, stmt, rs);
+                animais.add(a);
             }
 
-            return a;
+        } catch (SQLException ex) {
+            Logger.getLogger(AnimalDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally{
+            ConnectionFactory.closeConnection(con, stmt, rs);
         }
+
+        return animais;
+    }
         
-        public static void update(Animal a){
+    public static Animal read(int id){
+        Connection con = ConnectionFactory.getConnection();
+        String sql = "SELECT * FROM animal WHERE idanimal=?";
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        Animal a = new Mamifero();
+
+        try {
+            stmt = con.prepareStatement(sql);
+            stmt.setInt(1, id);
+            rs = stmt.executeQuery();
+            if(!rs.next()){
+                //JOptionPane.showMessageDialog(null, "Nenhum item com esse ID!");
+                throw new NullPointerException("Item inexistente!");
+            };
+            a.setId_animal(id);
+            a.setRaca(rs.getString("raca"));
+            a.setData_nasc_aquisicao(rs.getDate("data_nasc_aqui"));
+            a.setData_venda(rs.getDate("dat_venda"));
+            a.setValor_venda(rs.getFloat("valor_venda"));
+
+        } catch (SQLException ex) {
+            Logger.getLogger(AnimalDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally{
+            ConnectionFactory.closeConnection(con, stmt, rs);
+        }
+
+        return a;
+    }
+        
+    public static void update(Animal a){
         Connection con = ConnectionFactory.getConnection();
         String sql = "UPDATE animal "
                    + "SET raca=?,data_nasc_aqui=?,dat_venda=?,valor_venda=?"
@@ -119,7 +119,7 @@ public class AnimalDAO {
             stmt.setFloat(4,a.getValor_venda());
             stmt.setInt(5, a.getId_animal());
             stmt.executeUpdate();
-            JOptionPane.showConfirmDialog(null, "Atualizado com sucesso!");
+            //JOptionPane.showConfirmDialog(null, "Atualizado com sucesso!");
             
         } catch (SQLException ex) {
             JOptionPane.showConfirmDialog(null, " Erro ao atualizar: "+ex);
@@ -128,22 +128,22 @@ public class AnimalDAO {
         }
     }
         
-        public static void delete(Animal a){
-        
-            Connection con = ConnectionFactory.getConnection();
-            String sql = "DELETE FROM animal WHERE idanimal=?";
-            PreparedStatement stmt = null;
+    public static void delete(Animal a){
 
-            try {
-                stmt = con.prepareStatement(sql);
-                stmt.setInt(1, a.getId_animal());
-                stmt.executeUpdate();
-                JOptionPane.showConfirmDialog(null, "Deletado com sucesso!");
-            } catch (SQLException ex) {
-                JOptionPane.showConfirmDialog(null, " Erro ao deletar: "+ex);
-            } finally{
-                ConnectionFactory.closeConnection(con, stmt);
-            }
-            
+        Connection con = ConnectionFactory.getConnection();
+        String sql = "DELETE FROM animal WHERE idanimal=?";
+        PreparedStatement stmt = null;
+
+        try {
+            stmt = con.prepareStatement(sql);
+            stmt.setInt(1, a.getId_animal());
+            stmt.executeUpdate();
+            //JOptionPane.showConfirmDialog(null, "Deletado com sucesso!");
+        } catch (SQLException ex) {
+            JOptionPane.showConfirmDialog(null, " Erro ao deletar: "+ex);
+        } finally{
+            ConnectionFactory.closeConnection(con, stmt);
         }
+
+    }
 }
