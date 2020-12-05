@@ -65,7 +65,7 @@ public class AnimalDAO {
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(OvoDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AnimalDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally{
             ConnectionFactory.closeConnection(con, stmt, rs);
         }
@@ -95,7 +95,7 @@ public class AnimalDAO {
             a.setValor_venda(rs.getFloat("valor_venda"));
 
         } catch (SQLException ex) {
-            Logger.getLogger(OvoDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AnimalDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally{
             ConnectionFactory.closeConnection(con, stmt, rs);
         }

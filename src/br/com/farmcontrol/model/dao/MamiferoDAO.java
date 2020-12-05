@@ -75,7 +75,7 @@ public class MamiferoDAO {
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(OvoDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MamiferoDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally{
             ConnectionFactory.closeConnection(con, stmt, rs);
         }
@@ -114,7 +114,7 @@ public class MamiferoDAO {
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(OvoDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MamiferoDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally{
             ConnectionFactory.closeConnection(con, stmt, rs);
         }
@@ -151,7 +151,7 @@ public class MamiferoDAO {
             a.setData_abate(rs.getDate("dataabate"));
 
         } catch (SQLException ex) {
-            Logger.getLogger(OvoDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MamiferoDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally{
             ConnectionFactory.closeConnection(con, stmt, rs);
         }
@@ -225,7 +225,7 @@ public class MamiferoDAO {
             id=rs.getInt("max");
 
         } catch (SQLException ex) {
-            Logger.getLogger(OvoDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MamiferoDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally{
             ConnectionFactory.closeConnection(con, stmt, rs);
         }
