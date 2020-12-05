@@ -12,12 +12,21 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/Layout.fxml"));
+			Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("br/com/farmcontrol/view/resources/fxml/Layout.fxml"));
 			Scene scene = new Scene(root);
   
-			scene.getStylesheets().add(getClass().getResource("/br/com/farmcontrol/view/resources/styles/style.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getClassLoader().getResource("br/com/farmcontrol/view/resources/styles/style.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
+			
+
+			primaryStage.setMinHeight(500.0);
+			primaryStage.setMaxHeight(540.0);
+			
+			primaryStage.setMinWidth(820.0);
+			primaryStage.setMaxWidth(880.0);
+			
+			
                         
                       
 		} catch(Exception e) {
