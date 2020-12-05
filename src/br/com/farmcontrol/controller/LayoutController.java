@@ -68,7 +68,7 @@ public class LayoutController {
     private ImageView logo;
 
     @FXML
-    private AnchorPane crud;
+    public AnchorPane crud;
 
     @FXML
     void exibirPaginaAnimais(ActionEvent event) throws IOException {

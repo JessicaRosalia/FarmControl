@@ -2,6 +2,7 @@ package br.com.farmcontrol.controller.animal;
 
 import java.io.IOException;
 
+import br.com.farmcontrol.controller.LayoutController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,9 +18,7 @@ public class CrudAnimalController {
 
     @FXML
     private AnchorPane crudAnimal;
-    
-    @FXML
-    private AnchorPane t;
+   
 
     @FXML
 	public static Button cadastrar_animal;
@@ -161,15 +160,16 @@ public class CrudAnimalController {
 
     @FXML
     void cadastrarAnimal(ActionEvent event) throws IOException {
-			//crudAnimal.getChildren().clear();
-    	crudAnimal.getChildren().clear();
-			AnchorPane a = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/animal/ExclusaoAnimal.fxml"));
-			//IdPane.getChildren().add(a);
-			crudAnimal.getChildren().add(a);
-			// TODO Auto-generated catch block
-		
 			
-       // l.crud.getChildren().add(cadastro);
+    	crudAnimal.getChildren().clear();
+		AnchorPane a = null;
+
+		try {
+			a = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/animal/CadastroAnimal.fxml"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		crudAnimal.getChildren().add(a);
     }
 
     @FXML
@@ -181,6 +181,12 @@ public class CrudAnimalController {
     void excluirAnimal(ActionEvent event) {
 
     }
+    
+    
+    
+    
+    @FXML
+    private Button teste;
     
     
     

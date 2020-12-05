@@ -18,6 +18,15 @@ public class Main extends Application {
 			scene.getStylesheets().add(getClass().getResource("/br/com/farmcontrol/view/resources/styles/style.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
+			
+
+			primaryStage.setMinHeight(500.0);
+			primaryStage.setMaxHeight(540.0);
+			
+			primaryStage.setMinWidth(820.0);
+			primaryStage.setMaxWidth(880.0);
+			
+			
                         
                       
 		} catch(Exception e) {
