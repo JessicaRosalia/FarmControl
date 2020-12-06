@@ -97,12 +97,12 @@
             </Tab>
 	      </tabs>
 	  	</TabPane>
-        <Button fx:id="idCadastra" layoutX="334.0" layoutY="442.0" mnemonicParsing="false" onAction="#salvar" prefHeight="37.0" prefWidth="123.0" style="-fx-background-color: #7F7FFB;" text="Cadastrar" textFill="WHITE">
+        <Button fx:id="idCadastra" layoutX="334.0" layoutY="442.0" mnemonicParsing="false" onAction="#salvarCadastro" prefHeight="37.0" prefWidth="123.0" style="-fx-background-color: #7F7FFB;" text="Cadastrar" textFill="WHITE">
            <font>
               <Font name="System Bold" size="16.0" />
            </font>
         </Button>
-        <Button fx:id="idDescarta" layoutX="489.0" layoutY="442.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="114.0" style="-fx-background-color: #B2C0C2;" text="Descartar" textFill="WHITE">
+        <Button fx:id="idDescarta" layoutX="489.0" layoutY="442.0" mnemonicParsing="false" onAction="#descartarCadastro" prefHeight="37.0" prefWidth="114.0" style="-fx-background-color: #B2C0C2;" text="Descartar" textFill="WHITE">
            <font>
               <Font name="System Bold" size="16.0" />
            </font>

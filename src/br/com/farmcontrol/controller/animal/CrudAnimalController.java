@@ -1,8 +1,11 @@
 package br.com.farmcontrol.controller.animal;
 
 import java.io.IOException;
+import java.text.Format;
 
 import br.com.farmcontrol.controller.LayoutController;
+import br.com.farmcontrol.model.dao.MamiferoDAO;
+import br.com.farmcontrol.model.vo.Mamifero;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -143,14 +146,6 @@ public class CrudAnimalController {
     @FXML
     private AnchorPane PaneCadastroAnimal;
 
- 
-
-    @FXML
-    void salvar(ActionEvent event) {
-
-    }
-    
-
 
 
 	@FXML
@@ -183,13 +178,25 @@ public class CrudAnimalController {
     }
     
     
-    
-    
     @FXML
-    private Button teste;
-    
-    
-    
+    void descartarCadastro(ActionEvent event) {
+
+    }
+
+    @FXML
+    void salvarCadastro(ActionEvent event) {
+    	Mamifero m = new Mamifero();
+    	//MamiferoDAO dao = new MamiferoDAO();
+    	
+    	m.setRaca(IDtextR.getText());
+    	//m.setData_nasc_aquisicao();
+    	
+    	MamiferoDAO.create(m);
+    	
+    	IDtextR.setText("");
+    	
+    	
+    }
     
     
     
