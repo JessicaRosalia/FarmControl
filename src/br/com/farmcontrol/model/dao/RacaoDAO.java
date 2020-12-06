@@ -21,12 +21,12 @@ public class RacaoDAO {
 		
 		try {
 			
-			stmt = con.prepareStatement("INSERT INTO RACAO(quantidade,descricao, custo, data_racao) VALUES(?,?,?,?)");
-		//	stmt.setInt(1, racao.getAnimal().getId_animal());
-			stmt.setInt(1, racao.getQtd_racao() );
-			stmt.setString(2, racao.getDescricao() );
-			stmt.setFloat(3, racao.getCusto() );
-			stmt.setDate(4, (Date) racao.getData() );
+			stmt = con.prepareStatement("INSERT INTO RACAO(idanimal,quantidade,descricao, custo, data_racao) VALUES(?,?,?,?,?)");
+			stmt.setInt(1, racao.getAnimal().getId_animal());
+			stmt.setInt(2, racao.getQtd_racao() );
+			stmt.setString(3, racao.getDescricao() );
+			stmt.setFloat(4, racao.getCusto() );
+			stmt.setDate(5, (Date) racao.getData() );
 			
 			stmt.executeUpdate();
 			

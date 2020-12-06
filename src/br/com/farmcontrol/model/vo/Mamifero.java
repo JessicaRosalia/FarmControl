@@ -5,6 +5,7 @@
  */
 package br.com.farmcontrol.model.vo;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
