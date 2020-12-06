@@ -35,7 +35,7 @@ public class MamiferoDAODemo {
         */
         
         /*READ por tipo
-        for(Animal m: MamiferoDAO.read("porco")){
+        for(Animal m: MamiferoDAO.read("boi")){
             System.out.println(m);
         }*/
         
