@@ -45,6 +45,7 @@
                   <Label layoutX="28.0" layoutY="55.0" text="Quantidade:" />
                </children>
             </Pane>
+            <Button fx:id="deletar" layoutX="337.0" layoutY="434.0" mnemonicParsing="false" onAction="#deletarAnimal" text="Deletar" />
          </children>
       </Pane>
    </children>
