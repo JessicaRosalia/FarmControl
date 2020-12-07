@@ -195,6 +195,9 @@ public class CrudAnimalController {
     @FXML
     void salvarCadastro(ActionEvent event) {
     	Mamifero mamifero = new Mamifero();
+    	mamifero.setId_animal(1);
+    
+    	
     	Reproducao reprod = new Reproducao();
     	Racao racao = new Racao();
     	Vacina vacina = new Vacina();
