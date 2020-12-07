@@ -13,7 +13,6 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 import br.com.farmcontrol.connection.ConnectionFactory;
-import br.com.farmcontrol.model.vo.Leite;
 import br.com.farmcontrol.model.vo.Mamifero;
 import br.com.farmcontrol.model.vo.Reproducao;
 
@@ -197,7 +196,7 @@ public class ReproducaoDAO {
             stmt.setDate(3, (Date) rep.getData_reproducao());
             stmt.setInt(4,rep.getId_repoducao());
             stmt.executeUpdate();
-            JOptionPane.showConfirmDialog(null, "Atualizado com sucesso!");
+            JOptionPane.showMessageDialog(null, "Atualizado com sucesso!");
             
         } catch (SQLException ex) {
             JOptionPane.showConfirmDialog(null, " Erro ao atualizar: "+ex);
@@ -207,4 +206,21 @@ public class ReproducaoDAO {
     }
 
 
+	public static void delete(Reproducao reprod){
+        Connection con = ConnectionFactory.getConnection();
+        String sql = "DELETE FROM reproducao WHERE idreprod=?";
+        PreparedStatement stmt = null;
+        
+        try {
+            stmt = con.prepareStatement(sql);
+            stmt.setInt(1, reprod.getId_repoducao());
+            stmt.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Deletado com sucesso!");
+        } catch (SQLException ex) {
+            JOptionPane.showConfirmDialog(null, " Erro ao deletar: "+ex);
+        } finally{
+            ConnectionFactory.closeConnection(con, stmt);
+        }
+        
+    }
 }

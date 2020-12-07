@@ -161,12 +161,32 @@ public class LeiteDAO {
             stmt.setDate(3, (Date) l.getData_producao());
             stmt.setInt(4,l.getId_leite());
             stmt.executeUpdate();
-            JOptionPane.showConfirmDialog(null, "Atualizado com sucesso!");
+            JOptionPane.showMessageDialog(null, "Atualizado com sucesso!");
             
         } catch (SQLException ex) {
             JOptionPane.showConfirmDialog(null, " Erro ao atualizar: "+ex);
         }finally{
             ConnectionFactory.closeConnection(con, stmt);
         }
+    }
+	
+	
+	public static void delete(Leite r){
+        
+        Connection con = ConnectionFactory.getConnection();
+        String sql = "DELETE FROM leite WHERE idleite=?";
+        PreparedStatement stmt = null;
+        
+        try {
+            stmt = con.prepareStatement(sql);
+            stmt.setInt(1, r.getId_leite());
+            stmt.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Deletado com sucesso!");
+        } catch (SQLException ex) {
+            JOptionPane.showConfirmDialog(null, " Erro ao deletar: "+ex);
+        } finally{
+            ConnectionFactory.closeConnection(con, stmt);
+        }
+        
     }
 }

@@ -14,7 +14,6 @@ import javax.swing.JOptionPane;
 
 import br.com.farmcontrol.connection.ConnectionFactory;
 import br.com.farmcontrol.model.vo.Mamifero;
-import br.com.farmcontrol.model.vo.Ovo;
 import br.com.farmcontrol.model.vo.Racao;
 
 public class RacaoDAO {
@@ -199,7 +198,7 @@ public class RacaoDAO {
             stmt.setString(4, r.getDescricao());
             stmt.setInt(5,r.getId_racao());
             stmt.executeUpdate();
-            JOptionPane.showConfirmDialog(null, "Atualizado com sucesso!");
+            JOptionPane.showMessageDialog(null, "Atualizado com sucesso!");
             
         } catch (SQLException ex) {
             JOptionPane.showConfirmDialog(null, " Erro ao atualizar: "+ex);
@@ -209,4 +208,22 @@ public class RacaoDAO {
     }
 
 	
+	public static void delete(Racao r){
+	        
+        Connection con = ConnectionFactory.getConnection();
+        String sql = "DELETE FROM racao WHERE idracao=?";
+        PreparedStatement stmt = null;
+        
+        try {
+            stmt = con.prepareStatement(sql);
+            stmt.setInt(1, r.getId_racao());
+            stmt.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Deletado com sucesso!");
+        } catch (SQLException ex) {
+            JOptionPane.showConfirmDialog(null, " Erro ao deletar: "+ex);
+        } finally{
+            ConnectionFactory.closeConnection(con, stmt);
+        }
+        
+    }
 }
