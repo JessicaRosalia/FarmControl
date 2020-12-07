@@ -13,10 +13,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author viniciuslopes
- */
+
 public class ConnectionFactory {
     
     /*private static final String DRIVER = "org.postgresql.Driver";
@@ -24,10 +21,15 @@ public class ConnectionFactory {
     private static final String USER = "postgres";
     private static final String PASS = "francisca456";*/
     
-    private static final String DRIVER = "org.postgresql.Driver";
+    /*private static final String DRIVER = "org.postgresql.Driver";
     private static final String URL = "jdbc:postgresql://localhost:5432/farm_control";
     private static final String USER = "postgres";
-    private static final String PASS = "vinicius@123";
+    private static final String PASS = "vinicius@123"; */
+    
+    private static final String DRIVER = "org.postgresql.Driver";
+    private static final String URL = "jdbc:postgresql://localhost:5433/farm_control";
+    private static final String USER = "postgres";
+    private static final String PASS = "admin";
     
     public static Connection getConnection(){
    

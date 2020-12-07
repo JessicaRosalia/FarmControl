@@ -1,16 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.farmcontrol.model.vo;
 
 import java.util.Date;
 
-/**
- *
- * @author viniciuslopes
- */
 public class Racao {
     
     private int id_racao;
@@ -67,5 +58,12 @@ public class Racao {
     public void setAnimal(Animal animal) {
         this.animal = animal;
     }
+
+	@Override
+	public String toString() {
+		return "Ração{" + "ID da ração=" + this.id_racao + ", Descricão=" + this.descricao + ", Quantidade=" + this.qtd_racao + ", Custo=" + this.custo + ", ID Animal=" + this.animal.getId_animal() + ", Data="+this.data+'}';
+	}
+    
+    
     
 }

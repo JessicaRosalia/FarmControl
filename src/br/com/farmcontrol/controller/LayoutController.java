@@ -71,8 +71,13 @@ public class LayoutController {
     public AnchorPane crud;
 
     @FXML
-    void exibirPaginaAnimais(ActionEvent event) throws IOException {
-    	AnchorPane crudAnimal = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/animal/CrudAnimal.fxml"));
+    void exibirPaginaAnimais(ActionEvent event) {
+    	AnchorPane crudAnimal=null;
+		try {
+			crudAnimal = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/animal/CrudAnimal.fxml"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
         crud.getChildren().clear();
         crud.getChildren().add(crudAnimal);
     }
@@ -84,17 +89,36 @@ public class LayoutController {
 
     @FXML
     void exibirPaginaLeite(ActionEvent event) {
-
+    	AnchorPane crudLeite=null;
+		try {
+			crudLeite = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/leite/CrudLeite.fxml"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+        crud.getChildren().clear();
+        crud.getChildren().add(crudLeite);
     }
 
     @FXML
     void exibirPaginaOvos(ActionEvent event) {
-
+    	AnchorPane crudOvo=null;
+		try {
+			crudOvo = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/ovo/CrudOvo.fxml"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+        crud.getChildren().clear();
+        crud.getChildren().add(crudOvo);
     }
 
     @FXML
-    void exibirPaginaRacao(ActionEvent event) throws IOException {
-    	AnchorPane crudRacao = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/racao/CrudRacao.fxml"));
+    void exibirPaginaRacao(ActionEvent event) {
+    	AnchorPane crudRacao=null;
+		try {
+			crudRacao = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/racao/CrudRacao.fxml"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
         crud.getChildren().clear();
         crud.getChildren().add(crudRacao);
     }
@@ -106,12 +130,24 @@ public class LayoutController {
 
     @FXML
     void exibirPaginaReproducao(ActionEvent event) {
-
+    	AnchorPane crudReprod=null;
+		try {
+			crudReprod = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/reproducao/CrudReproducao.fxml"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+        crud.getChildren().clear();
+        crud.getChildren().add(crudReprod);
     }
 
     @FXML
-    void exibirPaginaVacina(ActionEvent event) throws IOException {
-    	AnchorPane crudVacina = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/Vacina/CrudVacina.fxml"));
+    void exibirPaginaVacina(ActionEvent event) {
+    	AnchorPane crudVacina=null;
+		try {
+			crudVacina = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/Vacina/CrudVacina.fxml"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
         crud.getChildren().clear();
         crud.getChildren().add(crudVacina);
     }

@@ -7,10 +7,7 @@ package br.com.farmcontrol.model.vo;
 
 import java.util.Date;
 
-/**
- *
- * @author viniciuslopes
- */
+
 public class Leite {
  
     private int id_leite;
@@ -58,5 +55,10 @@ public class Leite {
     public void setAnimal(Mamifero animal) {
         this.animal = animal;
     }
+    
+	@Override
+	public String toString() {
+		return "Leite{" + "ID do Leite=" + this.id_leite + ", Valor do litro=" + this.valor_litro + ", Quantidade=" + this.qtd_leite + ", Data=" + this.data_producao +", ID Animal=" + this.animal.getId_animal()+'}';
+	}
       
 }
