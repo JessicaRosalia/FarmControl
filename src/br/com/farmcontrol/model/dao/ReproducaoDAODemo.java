@@ -11,7 +11,7 @@ public class ReproducaoDAODemo {
 	public static void main(String[] args) {
 		Mamifero m = new Mamifero();
 		m.setId_animal(10);
-		
+		/*
 		LoteAves la = new LoteAves();
 		la.setId_animal(13);
 
@@ -64,6 +64,24 @@ public class ReproducaoDAODemo {
 	    	System.out.println(r);
 	    }
 	    
+	    */
+	
+		Reproducao re = new Reproducao();
+		re.setDescricao_reprod("testando delete 10");
+		re.setAnimal(m);
+		re.setId_repoducao(29);
+	  
+	     
+	 //    ReproducaoDAO.create(re); 
+	     
+	    ReproducaoDAO.delete(re);
+	     
+	     for(Reproducao r: ReproducaoDAO.read()) {
+		    	System.out.println(r);
+		    }
+
+	     System.out.println("deletado::::"+re);
+		    
 	    
 	}
 }

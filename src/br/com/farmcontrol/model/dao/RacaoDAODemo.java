@@ -6,14 +6,15 @@ import java.sql.Date;
 
 import br.com.farmcontrol.model.vo.Mamifero;
 import br.com.farmcontrol.model.vo.Racao;
+import br.com.farmcontrol.model.vo.Reproducao;
 
 public class RacaoDAODemo {
 
 	public static void main(String[] args) {
 		Mamifero m = new Mamifero();
-		m.setId_animal(10);
+		m.setId_animal(14);
 
-		
+		/*
 		Date d = new Date(2020-1900, 7-1, 22);
 		
 		
@@ -67,6 +68,24 @@ public class RacaoDAODemo {
         for(Racao r: RacaoDAO.read()) {
 	    	System.out.println(r);
 	    }
+        
+        */
+        
+        Racao re = new Racao();
+		re.setDescricao("racao teste delete 4");
+		re.setAnimal(m);
+		re.setId_racao(10);
+	  
+	     
+	//    RacaoDAO.create(re); 
+	     
+ RacaoDAO.delete(re);
+	     
+	     for(Racao r: RacaoDAO.read()) {
+		    	System.out.println(r);
+		    }
+
+	  // System.out.println("del:::"+re);
 	    
 	    
 	}

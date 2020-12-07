@@ -4,7 +4,7 @@ import java.sql.Date;
 
 import br.com.farmcontrol.model.vo.Leite;
 import br.com.farmcontrol.model.vo.Mamifero;
-import br.com.farmcontrol.model.vo.Racao;
+import br.com.farmcontrol.model.vo.Leite;
 
 
 public class LeiteDAODemo {
@@ -12,7 +12,7 @@ public class LeiteDAODemo {
 		Mamifero m = new Mamifero();
 		m.setId_animal(12);
 	
-		
+		/*
 		Date d = new Date(2000-1900, 2-1, 12);
 		
 		
@@ -66,5 +66,22 @@ public class LeiteDAODemo {
 	    	System.out.println(l);
 	    }
         
+        
+        */
+		
+		
+        Leite re = new Leite();
+		re.setQtd_leite(4);
+		re.setAnimal(m);
+		re.setId_leite(15);
+	  
+	     
+	 //   LeiteDAO.create(re); 
+	     
+		LeiteDAO.delete(re);
+	     
+	     for(Leite r: LeiteDAO.read()) {
+		    	System.out.println(r);
+		    }
 	}
 }
