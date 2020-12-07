@@ -132,10 +132,10 @@ public class CrudRacaoController {
     private DatePicker calDatVa;
 
     @FXML
-    private Button idCadastra;
-
-    @FXML
     private Button idDescarta;
+    
+    @FXML
+    private Button btn_salvarRacao;
 
     
     
@@ -152,7 +152,7 @@ public class CrudRacaoController {
 		AnchorPane ap = null;
 
 		try {
-			ap = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/racao/CadastroRacao.fxml"));
+			ap = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/racao/ExclusaoRacao.fxml"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -196,6 +196,12 @@ public class CrudRacaoController {
 			e.printStackTrace();
 		}
 		crudRacao.getChildren().add(ap);
+    }
+    
+    
+    @FXML
+    void salvar(ActionEvent event) {
+
     }
 
 }
