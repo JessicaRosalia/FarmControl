@@ -61,7 +61,7 @@ public class Mamifero extends Animal {
 
     @Override
     public String toString() {
-        return "Mamifero{" 
+        /*return "Mamifero{" 
                 + "id_animal=" + getId_animal()
                 + ", raca=" + getRaca()
                 + ", data_nasc_aquisicao=" + getData_nasc_aquisicao()
@@ -71,7 +71,9 @@ public class Mamifero extends Animal {
                 + ", valor_arroba="+ valor_arroba 
                 + ", peso=" + peso 
                 + ", tipo_mamifero=" + tipo_mamifero 
-                + ", data_abate=" + data_abate + '}';
+                + ", data_abate=" + data_abate + '}';*/
+        
+        return "idAnimal"+getId_animal()+" - "+getRaca();
     }
     
 }
