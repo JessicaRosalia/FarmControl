@@ -35,7 +35,7 @@ public class MamiferoDAO {
             stmt.setString(5, a.getTipo_mamifero());
             stmt.setDate(6, (Date) a.getData_abate());
             stmt.executeUpdate();
-            JOptionPane.showConfirmDialog(null, "Salvo com sucesso!");
+            JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
             
         } catch (SQLException ex) {
             JOptionPane.showConfirmDialog(null, " Erro ao salvar: "+ex);

@@ -1,7 +1,10 @@
 package br.com.farmcontrol.controller.racao;
 
+import java.io.IOException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TabPane;
@@ -13,8 +16,28 @@ import javafx.scene.text.Text;
 public class CrudRacaoController {
 
     @FXML
-    private AnchorPane oi;
+    private AnchorPane crudRacao;
+    
 
+    @FXML
+    private AnchorPane PaneCadastroRacao;
+
+
+    @FXML
+    private Button cadastrar_racao;
+
+    @FXML
+    private Button editar_racao;
+
+    @FXML
+    private Button buscar_racao;
+
+    @FXML
+    private Button excluir_racao;
+
+    @FXML
+    private Button listar_racao;
+    
     @FXML
     private Text idTituloCadastro;
 
@@ -114,9 +137,65 @@ public class CrudRacaoController {
     @FXML
     private Button idDescarta;
 
-    @FXML
-    void cadastrarAnimal(ActionEvent event) {
+    
+    
+    
 
+    @FXML
+    void buscarRacao(ActionEvent event) {
+
+    }
+
+    @FXML
+    void cadastrarRacao(ActionEvent event) {
+    	crudRacao.getChildren().clear();
+		AnchorPane ap = null;
+
+		try {
+			ap = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/racao/CadastroRacao.fxml"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		crudRacao.getChildren().add(ap);
+    }
+
+    @FXML
+    void editarRacao(ActionEvent event) {
+    	crudRacao.getChildren().clear();
+		AnchorPane ap = null;
+
+		try {
+			ap = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/racao/EdicaoRacao.fxml"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		crudRacao.getChildren().add(ap);
+    }
+
+    @FXML
+    void excluirRacao(ActionEvent event) {
+    	crudRacao.getChildren().clear();
+		AnchorPane ap = null;
+
+		try {
+			ap = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/racao/ExclusaoRacao.fxml"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		crudRacao.getChildren().add(ap);
+    }
+
+    @FXML
+    void listarRacao(ActionEvent event) {
+    	crudRacao.getChildren().clear();
+		AnchorPane ap = null;
+
+		try {
+			ap = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/racao/ListagemRacao.fxml"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		crudRacao.getChildren().add(ap);
     }
 
 }
