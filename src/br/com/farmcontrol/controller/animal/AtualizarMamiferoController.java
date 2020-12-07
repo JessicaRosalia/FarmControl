@@ -40,7 +40,7 @@ import javafx.stage.Stage;
  *
  * @author viniciuslopes
  */
-public class TesteLoadController implements Initializable {
+public class AtualizarMamiferoController implements Initializable {
 
     /**
      * Initializes the controller class.

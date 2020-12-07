@@ -7,6 +7,7 @@ package br.com.farmcontrol.controller.animal;
 
 import java.io.IOException;
 import javafx.application.Application;
+import static javafx.application.Application.launch;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -20,12 +21,12 @@ import javafx.stage.Stage;
  *
  * @author viniciuslopes
  */
-public class testeLoadAnimais extends Application {
+public class AtualizarMamiferoDEMO extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
 
-        Parent root = FXMLLoader.load(getClass().getResource("testeLoad.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/animal/AtualizarMamifero.fxml"));
         
         Scene scene = new Scene(root);
         
