@@ -15,7 +15,7 @@
          <children>
             <Label layoutX="367.0" layoutY="17.0" prefHeight="0.0" prefWidth="19.0" text="ID:" />
             <ListView fx:id="listAnimais" layoutX="14.0" layoutY="14.0" onMouseClicked="#pegarInforAnimais" prefHeight="384.0" prefWidth="239.0" style="-fx-background-color: #FFFFFF;" />
-            <Button fx:id="atualizarAnimal" layoutX="469.0" layoutY="423.0" mnemonicParsing="false" onAction="#atualizarAnimal" style="-fx-background-color: #7F7FFB;" text="Atualizar" textFill="WHITE">
+            <Button fx:id="atualizarAnimal" layoutX="491.0" layoutY="423.0" mnemonicParsing="false" onAction="#atualizarAnimal" style="-fx-background-color: #7F7FFB;" text="Atualizar" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font></Button>
@@ -71,7 +71,7 @@
                   <Label layoutX="28.0" layoutY="55.0" text="Quantidade:" />
                </children>
             </Pane>
-            <Button fx:id="sairAnimal" layoutX="21.0" layoutY="423.0" mnemonicParsing="false" onAction="#atualizarAnimal" prefHeight="37.0" prefWidth="91.0" style="-fx-background-color: #B2C0C2;" text="Sair" textFill="WHITE">
+            <Button fx:id="sairAnimal" layoutX="22.0" layoutY="423.0" mnemonicParsing="false" onAction="#atualizarAnimal" prefHeight="37.0" prefWidth="91.0" style="-fx-background-color: #B2C0C2;" text="Sair" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
