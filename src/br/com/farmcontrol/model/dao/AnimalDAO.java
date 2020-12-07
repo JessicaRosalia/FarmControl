@@ -35,7 +35,7 @@ public class AnimalDAO {
             //JOptionPane.showConfirmDialog(null, "Salvo com sucesso!");
             
         } catch (SQLException ex) {
-            JOptionPane.showConfirmDialog(null, " Erro ao salvar: "+ex);
+            JOptionPane.showMessageDialog(null, " Erro ao salvar: "+ex);
         }finally{
             ConnectionFactory.closeConnection(con, stmt);
         }
@@ -122,7 +122,7 @@ public class AnimalDAO {
             //JOptionPane.showConfirmDialog(null, "Atualizado com sucesso!");
             
         } catch (SQLException ex) {
-            JOptionPane.showConfirmDialog(null, " Erro ao atualizar: "+ex);
+            JOptionPane.showMessageDialog(null, " Erro ao atualizar: "+ex);
         }finally{
             ConnectionFactory.closeConnection(con, stmt);
         }
@@ -140,7 +140,7 @@ public class AnimalDAO {
             stmt.executeUpdate();
             //JOptionPane.showConfirmDialog(null, "Deletado com sucesso!");
         } catch (SQLException ex) {
-            JOptionPane.showConfirmDialog(null, " Erro ao deletar: "+ex);
+            JOptionPane.showMessageDialog(null, " Erro ao deletar: "+ex);
         } finally{
             ConnectionFactory.closeConnection(con, stmt);
         }

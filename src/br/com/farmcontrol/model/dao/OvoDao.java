@@ -31,10 +31,10 @@ public class OvoDao {
             stmt.setInt(3, o.getQtd_ovos());
             stmt.setDate(4, (Date) o.getData_producao());
             stmt.executeUpdate();
-            JOptionPane.showConfirmDialog(null, "Salvo com sucesso!");
+            JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
             
         } catch (SQLException ex) {
-            JOptionPane.showConfirmDialog(null, " Erro ao salvar: "+ex);
+            JOptionPane.showMessageDialog(null, " Erro ao salvar: "+ex);
         }finally{
             ConnectionFactory.closeConnection(con, stmt);
         }
@@ -188,10 +188,10 @@ public class OvoDao {
             stmt.setDate(3, (Date) o.getData_producao());
             stmt.setInt(4,o.getId_ovo());
             stmt.executeUpdate();
-            JOptionPane.showConfirmDialog(null, "Atualizado com sucesso!");
+            JOptionPane.showMessageDialog(null, "Atualizado com sucesso!");
             
         } catch (SQLException ex) {
-            JOptionPane.showConfirmDialog(null, " Erro ao atualizar: "+ex);
+            JOptionPane.showMessageDialog(null, " Erro ao atualizar: "+ex);
         }finally{
             ConnectionFactory.closeConnection(con, stmt);
         }
@@ -207,9 +207,9 @@ public class OvoDao {
             stmt = con.prepareStatement(sql);
             stmt.setInt(1, o.getId_ovo());
             stmt.executeUpdate();
-            JOptionPane.showConfirmDialog(null, "Deletado com sucesso!");
+            JOptionPane.showMessageDialog(null, "Deletado com sucesso!");
         } catch (SQLException ex) {
-            JOptionPane.showConfirmDialog(null, " Erro ao deletar: "+ex);
+            JOptionPane.showMessageDialog(null, " Erro ao deletar: "+ex);
         } finally{
             ConnectionFactory.closeConnection(con, stmt);
         }

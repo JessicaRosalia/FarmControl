@@ -35,10 +35,10 @@ public class MamiferoDAO {
             stmt.setString(5, a.getTipo_mamifero());
             stmt.setDate(6, (Date) a.getData_abate());
             stmt.executeUpdate();
-            JOptionPane.showConfirmDialog(null, "Salvo com sucesso!");
+            JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
             
         } catch (SQLException ex) {
-            JOptionPane.showConfirmDialog(null, " Erro ao salvar: "+ex);
+            JOptionPane.showMessageDialog(null, " Erro ao salvar: "+ex);
         }finally{
             ConnectionFactory.closeConnection(con, stmt);
         }
@@ -178,10 +178,10 @@ public class MamiferoDAO {
             stmt.setDate(5, (Date) a.getData_abate());
             stmt.setInt(6, a.getId_animal());
             stmt.executeUpdate();
-            JOptionPane.showConfirmDialog(null, "Atualizado com sucesso!");
+            JOptionPane.showMessageDialog(null, "Atualizado com sucesso!");
             
         } catch (SQLException ex) {
-            JOptionPane.showConfirmDialog(null, " Erro ao atualizar: "+ex);
+            JOptionPane.showMessageDialog(null, " Erro ao atualizar: "+ex);
         }finally{
             ConnectionFactory.closeConnection(con, stmt);
         }
@@ -198,9 +198,9 @@ public class MamiferoDAO {
             stmt.setInt(1, a.getId_animal());
             stmt.executeUpdate();
             AnimalDAO.delete(a);
-            JOptionPane.showConfirmDialog(null, "Deletado com sucesso!");
+            JOptionPane.showMessageDialog(null, "Deletado com sucesso!");
         } catch (SQLException ex) {
-            JOptionPane.showConfirmDialog(null, " Erro ao deletar: "+ex);
+            JOptionPane.showMessageDialog(null, " Erro ao deletar: "+ex);
         } finally{
             ConnectionFactory.closeConnection(con, stmt);
         }
