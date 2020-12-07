@@ -13,7 +13,6 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 import br.com.farmcontrol.connection.ConnectionFactory;
-import br.com.farmcontrol.model.vo.Leite;
 import br.com.farmcontrol.model.vo.Mamifero;
 import br.com.farmcontrol.model.vo.Reproducao;
 
