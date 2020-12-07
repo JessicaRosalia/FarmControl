@@ -7,10 +7,6 @@ package br.com.farmcontrol.model.vo;
 
 import java.util.Date;
 
-/**
- *
- * @author viniciuslopes
- */
 public class Reproducao {
     
     private int id_repoducao;
@@ -58,5 +54,12 @@ public class Reproducao {
     public void setData_reproducao(Date data_reproducao) {
         this.data_reproducao = data_reproducao;
     }
+
+	@Override
+	public String toString() {
+		return "Reproducao{" + "ID da reproducao=" + this.id_repoducao + ", Descricao=" + this.descricao_reprod + ", Quantidade=" + this.qntd_reproducao + ", Data da reproducao="+this.data_reproducao+", ID Animal=" + this.animal.getId_animal()+'}';
+	}
+    
+    
     
 }
