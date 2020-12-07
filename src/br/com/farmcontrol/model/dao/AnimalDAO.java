@@ -44,7 +44,7 @@ public class AnimalDAO {
         
     public static List<Animal> read(){
         Connection con = ConnectionFactory.getConnection();
-        String sql = "SELECT * FROM animal";
+        String sql = "SELECT * FROM animal ORDER BY idanimal";
         PreparedStatement stmt = null;
         ResultSet rs = null;
 

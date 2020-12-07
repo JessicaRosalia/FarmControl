@@ -61,7 +61,8 @@ abstract public class Animal {
 
     @Override
     public String toString() {
-        return "Animal{" + "id_animal=" + id_animal + ", raca=" + raca + ", data_nasc_aquisicao=" + data_nasc_aquisicao + ", data_venda=" + data_venda + ", valor_venda=" + valor_venda + '}';
+        //return "Animal{" + "id_animal=" + id_animal + ", raca=" + raca + ", data_nasc_aquisicao=" + data_nasc_aquisicao + ", data_venda=" + data_venda + ", valor_venda=" + valor_venda + '}';
+        return "idAnimal"+id_animal+" - "+raca;
     }
         
 }
