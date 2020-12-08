@@ -11,20 +11,20 @@
    <children>
       <Pane fx:id="paneAnimais" layoutX="14.0" layoutY="14.0" prefHeight="432.0" prefWidth="513.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
          <children>
-            <ListView layoutX="14.0" layoutY="14.0" prefHeight="404.0" prefWidth="198.0" />
-            <ListView layoutX="226.0" layoutY="14.0" prefHeight="185.0" prefWidth="263.0" />
+            <ListView fx:id="listAnimais" layoutX="14.0" layoutY="14.0" onMouseClicked="#carregarReproducoes" prefHeight="404.0" prefWidth="198.0" />
+            <ListView fx:id="listReprod" layoutX="226.0" layoutY="14.0" onMouseClicked="#pegarDadosReproducoes" prefHeight="185.0" prefWidth="263.0" />
             <Label layoutX="226.0" layoutY="218.0" text="ID Reprod" />
             <Label layoutX="226.0" layoutY="246.0" text="ID Animal" />
             <Label layoutX="226.0" layoutY="273.0" text="Quantidade" />
             <Label layoutX="226.0" layoutY="301.0" text="Descricao" />
             <Label layoutX="226.0" layoutY="332.0" text="Data" />
-            <TextField disable="true" editable="false" layoutX="319.0" layoutY="213.0" />
-            <TextField disable="true" editable="false" layoutX="319.0" layoutY="241.0" />
-            <TextField layoutX="319.0" layoutY="268.0" />
-            <TextField layoutX="319.0" layoutY="296.0" />
-            <TextField layoutX="319.0" layoutY="327.0" />
-            <Button layoutX="233.0" layoutY="373.0" mnemonicParsing="false" text="Atualizar" />
-            <Button layoutX="373.0" layoutY="373.0" mnemonicParsing="false" text="Deletar" />
+            <TextField fx:id="idreprod" disable="true" editable="false" layoutX="319.0" layoutY="213.0" />
+            <TextField fx:id="idanimal" disable="true" editable="false" layoutX="319.0" layoutY="241.0" />
+            <TextField fx:id="quantidade" layoutX="319.0" layoutY="268.0" />
+            <TextField fx:id="descricao" layoutX="319.0" layoutY="296.0" />
+            <TextField fx:id="data" layoutX="319.0" layoutY="327.0" />
+            <Button fx:id="atualizar" layoutX="233.0" layoutY="373.0" mnemonicParsing="false" onAction="#atualizarReprod" text="Atualizar" />
+            <Button fx:id="deletar" layoutX="373.0" layoutY="373.0" mnemonicParsing="false" onAction="#deletarReprod" text="Deletar" />
          </children>
       </Pane>
    </children>
