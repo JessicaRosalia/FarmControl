@@ -19,9 +19,13 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.DialogPane;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextInputDialog;
+import javafx.scene.control.TitledPane;
 import javafx.scene.layout.Pane;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -67,6 +71,30 @@ public class CRUDReproducaoController implements Initializable {
 
     @FXML
     private Button deletar;
+    
+    @FXML
+    private Button adicionar;
+
+    @FXML
+    private TitledPane titledPane;
+
+    @FXML
+    private TextField cadastrar_id;
+
+    @FXML
+    private TextField cadastrar_quant;
+
+    @FXML
+    private TextField cadastrar_desc;
+
+    @FXML
+    private TextField cadastrar_data;
+
+    @FXML
+    private Button cadastrar_button;
+
+    @FXML
+    private Button cancelar_button;
     /**
      * Initializes the controller class.
      */
@@ -74,6 +102,59 @@ public class CRUDReproducaoController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         carregarAnimais();
+    }
+    
+    public void cancelarCadastro(){
+        titledPane.setVisible(false);
+        listAnimais.setDisable(false);
+        listReprod.setDisable(false);
+        limparCampos();
+    }
+    
+    public void desativarComponentes(Boolean b){
+        listAnimais.setDisable(b);
+        listReprod.setDisable(b);
+        adicionar.setDisable(b);
+        atualizar.setDisable(b);
+        deletar.setDisable(b);
+    }
+    
+    public void novaReprod(){
+        //JOptionPane
+        Animal m = listAnimais.getSelectionModel().getSelectedItem();
+        
+        desativarComponentes(true);
+        
+        titledPane.setVisible(true);
+        cadastrar_id.setText(String.valueOf(m.getId_animal()));
+    }
+    
+    public void cadastrarReprod(){
+        
+        Animal a = listAnimais.getSelectionModel().getSelectedItem();
+        
+        if(cadastrar_data.getText()==null||cadastrar_data.getText()==""||
+                cadastrar_quant.getText()==null||cadastrar_quant.getText()==null){
+            JOptionPane.showMessageDialog(null, "Os campos de data e quantidade são obrigatórios");
+        }else{
+            Reproducao r = new Reproducao();
+            r.setAnimal(a);
+            r.setData_reproducao(dataPadrao(cadastrar_data.getText()));
+            r.setDescricao_reprod(cadastrar_desc.getText());
+            r.setQntd_reproducao(Integer.parseInt(cadastrar_quant.getText()));
+            ReproducaoDAO.create(r);
+            
+            titledPane.setVisible(false);
+            
+            carregarReproducoes();
+            
+            cadastrar_data.setText(null);
+            cadastrar_desc.setText(null);
+            cadastrar_quant.setText(null);
+            
+            desativarComponentes(false);
+        }
+        
     }
     
     public void deletarReprod(){
@@ -100,6 +181,8 @@ public class CRUDReproducaoController implements Initializable {
         quantidade.setText(String.valueOf(r.getQntd_reproducao()));
         descricao.setText(r.getDescricao_reprod());
         data.setText(String.valueOf(r.getData_reproducao()));
+        atualizar.setDisable(false);
+        deletar.setDisable(false);
     }
     
     public void carregarReproducoes(){
@@ -109,6 +192,9 @@ public class CRUDReproducaoController implements Initializable {
         listReprod.setItems(obsReprod);
         idanimal.setText(String.valueOf(m.getId_animal()));
         limparCampos();
+        atualizar.setDisable(true);
+        deletar.setDisable(true);
+        adicionar.setDisable(false);
     }
     
     public void carregarAnimais(){

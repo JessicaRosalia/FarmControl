@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.farmcontrol.controller.reproducao;
+package br.com.farmcontrol.controller.ovo;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -19,12 +19,12 @@ import javafx.stage.Stage;
  *
  * @author viniciuslopes
  */
-public class CRUDReproducaoDEMO extends Application {
+public class CRUDOvoDEMO extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
 
-        Parent root = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/reproducao/CRUDReproducao.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/ovo/CRUDOvo.fxml"));
         
         Scene scene = new Scene(root);
         

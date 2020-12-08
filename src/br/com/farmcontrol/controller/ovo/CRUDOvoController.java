@@ -3,12 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.farmcontrol.controller.reproducao;
+package br.com.farmcontrol.controller.ovo;
 
 import br.com.farmcontrol.model.dao.AnimalDAO;
+import br.com.farmcontrol.model.dao.LoteAvesDAO;
+import br.com.farmcontrol.model.dao.OvoDao;
 import br.com.farmcontrol.model.dao.ReproducaoDAO;
 import br.com.farmcontrol.model.vo.Animal;
-import br.com.farmcontrol.model.vo.Reproducao;
+import br.com.farmcontrol.model.vo.LoteAves;
+import br.com.farmcontrol.model.vo.Ovo;
 import java.net.URL;
 import java.sql.Date;
 import java.util.ArrayList;
@@ -28,27 +31,27 @@ import javafx.scene.layout.Pane;
  *
  * @author viniciuslopes
  */
-public class CRUDReproducaoController implements Initializable {
+public class CRUDOvoController implements Initializable {
     
     @FXML
     private Pane paneAnimais;
 
     @FXML
-    private ListView<Animal> listAnimais;
+    private ListView<LoteAves> listAnimais;
     
-    private List<Animal> animais = new ArrayList<>();
+    private List<LoteAves> animais = new ArrayList<>();
     
-    private ObservableList<Animal> obsAnimal;
+    private ObservableList<LoteAves> obsAnimal;
 
     @FXML
-    private ListView<Reproducao> listReprod;
+    private ListView<Ovo> listOvos;
     
-    private List<Reproducao> reproducoes = new ArrayList<>();
+    private List<Ovo> ovos = new ArrayList<>();
             
-    private ObservableList<Reproducao> obsReprod;
+    private ObservableList<Ovo> obsOvos;
     
     @FXML
-    private TextField idreprod;
+    private TextField idovo;
 
     @FXML
     private TextField idanimal;
@@ -57,7 +60,7 @@ public class CRUDReproducaoController implements Initializable {
     private TextField quantidade;
 
     @FXML
-    private TextField descricao;
+    private TextField valor_unidade;
 
     @FXML
     private TextField data;
@@ -76,51 +79,51 @@ public class CRUDReproducaoController implements Initializable {
         carregarAnimais();
     }
     
-    public void deletarReprod(){
-        Reproducao r = listReprod.getSelectionModel().getSelectedItem();
-        ReproducaoDAO.delete(r);
-        carregarReproducoes();
+    public void deletarOvo(){
+        Ovo r = listOvos.getSelectionModel().getSelectedItem();
+        OvoDao.delete(r);
+        carregarOvos();
     }
     
-    public void atualizarReprod(){
-        Reproducao r = new Reproducao();
-        Animal a =  listAnimais.getSelectionModel().getSelectedItem();
-        r.setAnimal(a);
-        r.setData_reproducao(dataPadrao(data.getText()));
-        r.setDescricao_reprod(descricao.getText());
-        r.setId_repoducao(Integer.parseInt(idreprod.getText()));
-        r.setQntd_reproducao(Integer.parseInt(quantidade.getText()));
-        ReproducaoDAO.update(r);
-        carregarReproducoes();
+    public void atualizarOvo(){
+        Ovo r = new Ovo();
+        LoteAves a =  listAnimais.getSelectionModel().getSelectedItem();
+        r.setLote(a);
+        r.setData_producao(dataPadrao(data.getText()));
+        r.setId_ovo(Integer.parseInt(idovo.getText()));
+        r.setQtd_ovos(Integer.parseInt(quantidade.getText()));
+        r.setValor_unidade(Float.parseFloat(valor_unidade.getText()));
+        OvoDao.update(r);
+        carregarOvos();
     }
     
-    public void pegarDadosReproducoes(){
-        Reproducao r = listReprod.getSelectionModel().getSelectedItem();
-        idreprod.setText(String.valueOf(r.getId_repoducao()));
-        quantidade.setText(String.valueOf(r.getQntd_reproducao()));
-        descricao.setText(r.getDescricao_reprod());
-        data.setText(String.valueOf(r.getData_reproducao()));
+    public void pegarDadosOvo(){
+        Ovo r = listOvos.getSelectionModel().getSelectedItem();
+        idovo.setText(String.valueOf(r.getId_ovo()));
+        quantidade.setText(String.valueOf(r.getQtd_ovos()));
+        valor_unidade.setText(String.valueOf(r.getValor_unidade()));
+        data.setText(String.valueOf(r.getData_producao()));
     }
     
-    public void carregarReproducoes(){
-        Animal m = listAnimais.getSelectionModel().getSelectedItem();
-        reproducoes = ReproducaoDAO.read(m);
-        obsReprod = FXCollections.observableArrayList(reproducoes);
-        listReprod.setItems(obsReprod);
+    public void carregarOvos(){
+        LoteAves m = listAnimais.getSelectionModel().getSelectedItem();
+        ovos = OvoDao.read(m);
+        obsOvos = FXCollections.observableArrayList(ovos);
+        listOvos.setItems(obsOvos);
         idanimal.setText(String.valueOf(m.getId_animal()));
         limparCampos();
     }
     
     public void carregarAnimais(){
-        animais = AnimalDAO.read();      
+        /*animais = LoteAvesDAO.read();      
         obsAnimal = FXCollections.observableArrayList(animais);
-        listAnimais.setItems(obsAnimal);     
+        listAnimais.setItems(obsAnimal);    */ 
     }
     
     public void limparCampos(){
-        idreprod.setText(null);
+        idovo.setText(null);
         quantidade.setText(null);
-        descricao.setText(null);
+        valor_unidade.setText(null);
         data.setText(null);
     }
     
