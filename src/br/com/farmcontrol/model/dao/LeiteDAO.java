@@ -13,8 +13,10 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 import br.com.farmcontrol.connection.ConnectionFactory;
+import br.com.farmcontrol.model.vo.Animal;
 import br.com.farmcontrol.model.vo.Leite;
 import br.com.farmcontrol.model.vo.Mamifero;
+import br.com.farmcontrol.model.vo.Reproducao;
 
 
 public class LeiteDAO {
@@ -145,6 +147,36 @@ public class LeiteDAO {
         return leites;
     }
 
+        public static List<Leite> read(Mamifero m){
+            Connection con = ConnectionFactory.getConnection();
+            String sql = "SELECT * FROM leite WHERE idanimal=?";
+            PreparedStatement stmt = null;
+            ResultSet rs = null;
+            
+            List<Leite> leites = new ArrayList<>();
+            
+            try {
+                stmt = con.prepareStatement(sql);
+                stmt.setInt(1, m.getId_animal());
+                rs = stmt.executeQuery();
+            
+            while(rs.next()){
+                Leite leite = new Leite();
+                leite.setAnimal(m);
+                leite.setData_producao(rs.getDate("data_leite"));
+                leite.setId_leite(rs.getInt("ideleite"));
+                leite.setQtd_leite(rs.getInt("quantidade"));
+                leite.setValor_litro(rs.getFloat("valor_litro"));
+                leites.add(leite);
+            }
+            
+            } catch (SQLException ex) {
+                Logger.getLogger(LeiteDAO.class.getName()).log(Level.SEVERE, null, ex);
+            } finally{
+                ConnectionFactory.closeConnection(con, stmt, rs);
+            }
+            return leites;
+        }
 
 	public static void update(Leite l){
         Connection con = ConnectionFactory.getConnection();
