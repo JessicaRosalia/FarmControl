@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="br.com.farmcontrol.controller.reproducao.CadastroReproducaoController">
+   <children>
+      <Pane layoutX="14.0" layoutY="14.0" prefHeight="375.0" prefWidth="572.0">
+         <children>
+            <ListView fx:id="listAnimais" layoutX="14.0" layoutY="14.0" onMouseClicked="#pegarIdAnimal" prefHeight="350.0" prefWidth="184.0" />
+            <Label layoutX="286.0" layoutY="14.0" text="Cadastrar Reproduçao" />
+            <Label layoutX="250.0" layoutY="76.0" text="ID Animal" />
+            <Label layoutX="246.0" layoutY="110.0" text="Quantidade" />
+            <Label layoutX="250.0" layoutY="147.0" text="Descriçao" />
+            <Label layoutX="250.0" layoutY="189.0" text="Data" />
+            <Button layoutX="250.0" layoutY="243.0" mnemonicParsing="false" onAction="#cadastrarReproducao" text="Cadastrar" />
+            <TextField fx:id="idAnimal" disable="true" editable="false" layoutX="347.0" layoutY="71.0" />
+            <TextField fx:id="quantidade" layoutX="347.0" layoutY="105.0" />
+            <TextField fx:id="descricao" layoutX="347.0" layoutY="142.0" />
+            <TextField fx:id="data" layoutX="347.0" layoutY="184.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
