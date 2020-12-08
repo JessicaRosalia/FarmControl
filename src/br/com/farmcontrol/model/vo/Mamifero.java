@@ -73,8 +73,8 @@ public class Mamifero extends Animal {
                 + ", peso=" + peso 
                 + ", tipo_mamifero=" + tipo_mamifero 
                 + ", data_abate=" + data_abate + '}';*/
-        
-        return "idAnimal"+getId_animal()+" - "+getRaca();
+        //return "Mamifero ID: "+getId_animal()+" - "+getRaca();
+        return super.toString();
     }
     
 }

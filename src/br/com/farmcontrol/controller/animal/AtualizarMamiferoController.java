@@ -98,6 +98,9 @@ public class AtualizarMamiferoController implements Initializable {
 
     @FXML
     private TextField quantidadeLote;
+    
+    @FXML
+    private Button deletar;
 
     
     
@@ -152,6 +155,27 @@ public class AtualizarMamiferoController implements Initializable {
         
         carregarAnimais();
       
+    }
+   
+    public void deletarAnimal(){
+        
+        Mamifero m = new Mamifero();
+        m.setId_animal(Integer.parseInt(id.getText()));
+        MamiferoDAO.delete(m);
+        
+        id.setText("");
+        raca.setText("");
+        dataAquisicao.setText("");
+        dataVenda.setText("");
+        valorVenda.setText("");
+        sexoMamifero.setText("");
+        valorArroba.setText("");
+        peso.setText("");
+        tipoMamifero.setText("");
+        dataAbate.setText("");
+        
+        carregarAnimais();
+        
     }
  
     public Date dataPadrao(String s){

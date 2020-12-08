@@ -10,7 +10,7 @@ import br.com.farmcontrol.model.vo.Reproducao;
 public class ReproducaoDAODemo {
 	public static void main(String[] args) {
 		Mamifero m = new Mamifero();
-		m.setId_animal(10);
+		m.setId_animal(13);
 		/*
 		LoteAves la = new LoteAves();
 		la.setId_animal(13);
@@ -65,22 +65,22 @@ public class ReproducaoDAODemo {
 	    }
 	    
 	    */
-	
+	/*
 		Reproducao re = new Reproducao();
 		re.setDescricao_reprod("testando delete 10");
 		re.setAnimal(m);
-		re.setId_repoducao(29);
+		re.setId_repoducao(29);*/
 	  
 	     
 	 //    ReproducaoDAO.create(re); 
 	     
-	    ReproducaoDAO.delete(re);
+	  //  ReproducaoDAO.delete(re);
 	     
-	     for(Reproducao r: ReproducaoDAO.read()) {
+	     for(Reproducao r: ReproducaoDAO.read(m)) {
 		    	System.out.println(r);
 		    }
 
-	     System.out.println("deletado::::"+re);
+//	     System.out.println("deletado::::"+re);
 		    
 	    
 	}

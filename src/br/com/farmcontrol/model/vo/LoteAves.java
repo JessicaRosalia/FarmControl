@@ -29,5 +29,12 @@ public class LoteAves extends Animal {
     public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
     }
+
+    @Override
+    public String toString() {
+        //return "LoteAves{" + "tipo_ave=" + tipo_ave + ", quantidade=" + quantidade + '}';
+        //eturn "Lote ID: "+getId_animal()+" - "+getRaca();
+        return super.toString();
+    }
     
 }

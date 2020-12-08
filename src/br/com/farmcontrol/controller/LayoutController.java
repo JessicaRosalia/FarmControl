@@ -132,7 +132,7 @@ public class LayoutController {
     void exibirPaginaReproducao(ActionEvent event) {
     	AnchorPane crudReprod=null;
 		try {
-			crudReprod = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/reproducao/CrudReproducao.fxml"));
+			crudReprod = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/reproducao/CRUDReproducao.fxml"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
