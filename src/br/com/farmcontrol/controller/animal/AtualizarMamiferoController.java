@@ -138,7 +138,7 @@ public class AtualizarMamiferoController implements Initializable {
         m.setValor_arroba(Float.parseFloat(valorArroba.getText()));
         m.setPeso(Float.parseFloat(peso.getText()));
         m.setTipo_mamifero(tipoMamifero.getText());
-        m.setData_abate(dataPadrao(dataAbate.getText()));
+        m.setData_abate((Date)dataPadrao(dataAbate.getText()));
         
         MamiferoDAO.update(m);
         
@@ -179,6 +179,9 @@ public class AtualizarMamiferoController implements Initializable {
     }
  
     public Date dataPadrao(String s){
+        if(s==null || s.equals("null") || s.equals("")){
+            return null;
+        }
         int ano = Integer.parseInt(s.substring(0,4));
         int mes = Integer.parseInt(s.substring(5,7));
         int dia = Integer.parseInt(s.substring(8,10));   
