@@ -164,7 +164,7 @@ public class LeiteDAO {
                 Leite leite = new Leite();
                 leite.setAnimal(m);
                 leite.setData_producao(rs.getDate("data_leite"));
-                leite.setId_leite(rs.getInt("ideleite"));
+                leite.setId_leite(rs.getInt("idleite"));
                 leite.setQtd_leite(rs.getInt("quantidade"));
                 leite.setValor_litro(rs.getFloat("valor_litro"));
                 leites.add(leite);

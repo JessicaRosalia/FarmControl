@@ -10,7 +10,7 @@ import br.com.farmcontrol.model.vo.Leite;
 public class LeiteDAODemo {
 	public static void main(String[] args) {
 		Mamifero m = new Mamifero();
-		m.setId_animal(12);
+		m.setId_animal(11);
 	
 		/*
 		Date d = new Date(2000-1900, 2-1, 12);
@@ -70,17 +70,17 @@ public class LeiteDAODemo {
         */
 		
 		
-        Leite re = new Leite();
+        /*Leite re = new Leite();
 		re.setQtd_leite(4);
 		re.setAnimal(m);
-		re.setId_leite(15);
+		re.setId_leite(15);*/
 	  
 	     
 	 //   LeiteDAO.create(re); 
 	     
-		LeiteDAO.delete(re);
+		//LeiteDAO.delete(re);
 	     
-	     for(Leite r: LeiteDAO.read()) {
+	     for(Leite r: LeiteDAO.read(m)) {
 		    	System.out.println(r);
 		    }
 	}
