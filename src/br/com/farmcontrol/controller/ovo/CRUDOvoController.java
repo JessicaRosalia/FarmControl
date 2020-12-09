@@ -8,6 +8,7 @@ import java.util.ResourceBundle;
 
 import javax.swing.JOptionPane;
 
+import br.com.farmcontrol.model.dao.LoteAvesDAO;
 import br.com.farmcontrol.model.dao.OvoDao;
 import br.com.farmcontrol.model.dao.ReproducaoDAO;
 import br.com.farmcontrol.model.vo.Animal;
@@ -40,9 +41,10 @@ public class CrudOvoController {
     @FXML
     private ListView<LoteAves> listLotes;
     
-    private List<LoteAves> lotes = new ArrayList();
+    private List<LoteAves> lotes = new ArrayList<>();
     
     private ObservableList<LoteAves> obsLotes;
+    
 
     @FXML
     private ListView<Ovo> listOvo;
@@ -102,7 +104,7 @@ public class CrudOvoController {
         o.setQtd_ovos(Integer.parseInt(quantidade.getText()));
         o.setValor_unidade(Float.parseFloat(valor_unid.getText()));
         OvoDao.update(o);
-        carregarProducoes();
+        carregarReproducoes();
     	
     }
     
@@ -123,7 +125,7 @@ public class CrudOvoController {
             
             titledPane.setVisible(false);
             
-            carregarProducoes();
+            carregarReproducoes();
             
             cadastrar_data.setText(null);
             valor_unid.setText(null);
@@ -142,7 +144,7 @@ public class CrudOvoController {
     
 
     @FXML
-    void carregarProducoes() {
+    void carregarReproducoes() {
     	LoteAves la = listLotes.getSelectionModel().getSelectedItem();
     	ovos = OvoDao.read(la);
     	obsOvos =FXCollections.observableArrayList(ovos);
@@ -161,7 +163,7 @@ public class CrudOvoController {
     void deletarOvos() {
     	Ovo o = listOvo.getSelectionModel().getSelectedItem();
     	OvoDao.delete(o);
-    	carregarProducoes();
+    	carregarReproducoes();
     }
     
     @FXML
@@ -176,7 +178,7 @@ public class CrudOvoController {
     
 
     @FXML
-    void pegarDadosProducoes() {
+    void pegarDadosReproducoes() {
     	Ovo o = listOvo.getSelectionModel().getSelectedItem();
     	idovos.setText(String.valueOf(o.getId_ovo()));
     	quantidade.setText(String.valueOf(o.getQtd_ovos()));
@@ -207,9 +209,9 @@ public class CrudOvoController {
 
     @FXML
     void carregarLotes() {
-    	//lotes = LoteAvesDAO.read();     
-    //	obsOvos = FXCollections.observableArrayList(lotes);
-      //  listLotes.setItems(obsOvos); 
+    	lotes = LoteAvesDAO.read();     
+    	obsLotes = FXCollections.observableArrayList(lotes);
+        listLotes.setItems(obsLotes);
     }
     
     public void desativarComponentes(Boolean b){
