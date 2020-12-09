@@ -1,49 +1,102 @@
 package br.com.farmcontrol.controller.vacina;
 
-import java.io.IOException;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.TitledPane;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 
 public class CrudVacinaController {
 
     @FXML
-    private AnchorPane crudVacina;
+    private Pane paneAnimais;
 
     @FXML
-    private Button cadastrar_vacina;
+    private ListView<?> listVacinas;
 
     @FXML
-    private Button editar_vacina;
+    private ListView<?> listVacina;
 
     @FXML
-    private Button buscar_vacina;
+    private TextField idVacina;
 
     @FXML
-    private Button excluir_vacina;
+    private TextField idanimal;
 
     @FXML
-    private Button listar_vacina;
+    private TextField descricao;
 
     @FXML
-    void buscarVacina(ActionEvent event) {
+    private TextField custo;
+
+    @FXML
+    private TextField data;
+
+    @FXML
+    private Button atualizar;
+
+    @FXML
+    private Button deletar;
+
+    @FXML
+    private Button adicionar;
+
+    @FXML
+    private TitledPane titledPane;
+
+    @FXML
+    private TextField cadastrar_id;
+
+    @FXML
+    private TextField cadastrar_desc;
+
+    @FXML
+    private TextField cadastrar_custo;
+
+    @FXML
+    private TextField cadastrar_data;
+
+    @FXML
+    private Button cadastrar_button;
+
+    @FXML
+    private Button cancelar_button;
+
+    @FXML
+    void atualizarVacina(ActionEvent event) {
 
     }
 
     @FXML
-    void cadastrarVacina(ActionEvent event) throws IOException {
- 
-    }
-
-    @FXML
-    void editarVacina(ActionEvent event) {
+    void cadastrarVacina(ActionEvent event) {
 
     }
 
     @FXML
-    void excluirVacina(ActionEvent event) {
+    void cancelarCadastro(ActionEvent event) {
+
+    }
+
+    @FXML
+    void carregarReproducoes(MouseEvent event) {
+
+    }
+
+    @FXML
+    void deletarVacina(ActionEvent event) {
+
+    }
+
+    @FXML
+    void novaVacina(ActionEvent event) {
+
+    }
+
+    @FXML
+    void pegarDadosReproducoes(MouseEvent event) {
 
     }
 

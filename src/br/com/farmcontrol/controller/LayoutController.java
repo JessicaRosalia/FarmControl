@@ -103,7 +103,7 @@ public class LayoutController {
     void exibirPaginaOvos(ActionEvent event) {
     	AnchorPane crudOvo=null;
 		try {
-			crudOvo = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/ovo/CrudOvo.fxml"));
+			crudOvo = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/ovo/CRUDOvo.fxml"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -144,7 +144,7 @@ public class LayoutController {
     void exibirPaginaVacina(ActionEvent event) {
     	AnchorPane crudVacina=null;
 		try {
-			crudVacina = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/Vacina/CrudVacina.fxml"));
+			crudVacina = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/vacina/CRUDVacina.fxml"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
