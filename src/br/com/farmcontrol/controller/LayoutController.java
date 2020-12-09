@@ -74,7 +74,7 @@ public class LayoutController {
     void exibirPaginaAnimais(ActionEvent event) {
     	AnchorPane crudAnimal=null;
 		try {
-			crudAnimal = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/animal/CrudAnimal.fxml"));
+			crudAnimal = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/animal/MenuAnimal.fxml"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

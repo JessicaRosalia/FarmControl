@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="564.0" style="-fx-background-color: #F5F8FB;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.farmcontrol.controller.animal.CrudAnimalController">
+<AnchorPane prefHeight="500.0" prefWidth="564.0" style="-fx-background-color: #F5F8FB;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.farmcontrol.controller.animal.MenuAnimalController">
          <children>
             <Button id="btn-cadastrar" fx:id="cadastrar_animal" layoutX="53.0" layoutY="125.0" mnemonicParsing="false" onAction="#cadastrarAnimal" prefHeight="60.0" prefWidth="209.0" text="Cadastrar Animal ou Lote" textFill="#7f7ffb" AnchorPane.leftAnchor="53.0" AnchorPane.topAnchor="125.0">
                <font>

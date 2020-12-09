@@ -46,7 +46,8 @@ public class AtualizacaoLotesController implements Initializable {
     /**
      * Initializes the controller class.
      */
-    
+	@FXML
+	    private AnchorPane crudLoteAves;
     
     @FXML
     private Button atualizarAnimal;

@@ -39,7 +39,7 @@ public class CRUDOvoController {
     private TextField idovos;
 
     @FXML
-    private ListView<LoteAves> listLotes;
+    private ListView<LoteAves> listAnimais;
     
     private List<LoteAves> lotes = new ArrayList<>();
     
@@ -47,7 +47,7 @@ public class CRUDOvoController {
     
 
     @FXML
-    private ListView<Ovo> listOvo;
+    private ListView<Ovo> listOvos;
  
     private List<Ovo> ovos = new ArrayList<>();
     
@@ -94,11 +94,11 @@ public class CRUDOvoController {
 
     @FXML
     private Button cancelar_button;
-
+    
     @FXML
     void atualizarOvos() {
     	Ovo o = new Ovo();
-    	LoteAves la = listLotes.getSelectionModel().getSelectedItem();
+    	LoteAves la = listAnimais.getSelectionModel().getSelectedItem();
     	o.setLote(la);
     	o.setData_producao(dataPadrao(data.getText()));
         o.setQtd_ovos(Integer.parseInt(quantidade.getText()));
@@ -111,7 +111,7 @@ public class CRUDOvoController {
 
     @FXML
     void cadastrarOvo(ActionEvent event) {
-    	LoteAves la = listLotes.getSelectionModel().getSelectedItem();
+    	LoteAves la = listAnimais.getSelectionModel().getSelectedItem();
     	
     	if(cadastrar_data.getText()==null || cadastrar_data.getText()=="" || cadastrar_quant.getText()==null || cadastrar_quant.getText()==null) {
     		JOptionPane.showMessageDialog(null, "Os campos de data e quantidade são obrigatórios");
@@ -138,17 +138,17 @@ public class CRUDOvoController {
     @FXML
     void cancelarCadastro() {
     	titledPane.setVisible(false);
-    	listLotes.setDisable(false);
-    	listOvo.setDisable(false);
+    	listAnimais.setDisable(false);
+    	listOvos.setDisable(false);
     }
     
 
     @FXML
     void carregarReproducoes() {
-    	LoteAves la = listLotes.getSelectionModel().getSelectedItem();
+    	LoteAves la = listAnimais.getSelectionModel().getSelectedItem();
     	ovos = OvoDao.read(la);
     	obsOvos =FXCollections.observableArrayList(ovos);
-    	listOvo.setItems(obsOvos);
+    	listOvos.setItems(obsOvos);
     	
     	idanimal.setText(String.valueOf(la.getId_animal()));
     	limparCampos();
@@ -161,14 +161,14 @@ public class CRUDOvoController {
 
     @FXML
     void deletarOvos() {
-    	Ovo o = listOvo.getSelectionModel().getSelectedItem();
+    	Ovo o = listOvos.getSelectionModel().getSelectedItem();
     	OvoDao.delete(o);
     	carregarReproducoes();
     }
     
     @FXML
     void novaProd() {
-    	LoteAves la = listLotes.getSelectionModel().getSelectedItem();
+    	LoteAves la = listAnimais.getSelectionModel().getSelectedItem();
     	desativarComponentes(true);
     	
         titledPane.setVisible(true);
@@ -179,7 +179,7 @@ public class CRUDOvoController {
 
     @FXML
     void pegarDadosReproducoes() {
-    	Ovo o = listOvo.getSelectionModel().getSelectedItem();
+    	Ovo o = listOvos.getSelectionModel().getSelectedItem();
     	idovos.setText(String.valueOf(o.getId_ovo()));
     	quantidade.setText(String.valueOf(o.getQtd_ovos()));
     	valor_unid.setText(String.valueOf(o.getValor_unidade()));
@@ -211,22 +211,19 @@ public class CRUDOvoController {
     void carregarLotes() {
     	lotes = LoteAvesDAO.read();     
     	obsLotes = FXCollections.observableArrayList(lotes);
-        listLotes.setItems(obsLotes);
+        listAnimais.setItems(obsLotes);
     }
     
     public void desativarComponentes(Boolean b){
-        listLotes.setDisable(b);
-        listOvo.setDisable(b);
+        listAnimais.setDisable(b);
+        listOvos.setDisable(b);
         adicionar.setDisable(b);
         atualizar.setDisable(b);
         deletar.setDisable(b);
     }
     
     
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-        carregarLotes();
-    }
+  
 
 }
 

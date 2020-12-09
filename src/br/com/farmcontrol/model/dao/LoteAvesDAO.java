@@ -24,7 +24,7 @@ public class LoteAvesDAO {
 			stmt.setString(2, l.getTipo_ave());
 			stmt.setInt(3, l.getQuantidade());
 			stmt.executeUpdate();
-			JOptionPane.showConfirmDialog(null, "Salvo com sucesso!");
+			JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
 			
 		} catch (SQLException e) {
 			 JOptionPane.showConfirmDialog(null, " Erro ao salvar: "+e);
@@ -41,7 +41,7 @@ public static List<LoteAves> read(){
 		List<LoteAves> lotes = new ArrayList<>();
 
         try {
-            stmt = con.prepareStatement("SELECT *FROM Lote_aves as l,animal as a "
+            stmt = con.prepareStatement("SELECT *FROM lote_aves as l,animal as a "
                     + "WHERE l.idanimal=a.idanimal");
             rs = stmt.executeQuery();
 
@@ -83,7 +83,6 @@ public static LoteAves read(int id){
         rs = stmt.executeQuery();
         
         if(!rs.next()){
-            //JOptionPane.showMessageDialog(null, "Nenhum item com esse ID!");
             throw new NullPointerException("Item inexistente!");
         };
         
@@ -116,7 +115,7 @@ public static List<LoteAves> read(String tipoNome){
 	Connection con = ConnectionFactory.getConnection();
 	PreparedStatement stmt = null;
 	ResultSet rs = null;
-	List<LoteAves> lotes = new ArrayList();
+	List<LoteAves> lotes = new ArrayList<>();
 	    
     try {
 	stmt = con.prepareStatement("SELECT *FROM lote_aves as l,animal as a WHERE l.idanimal=a.idanimal and l.tipo=?");
@@ -157,7 +156,7 @@ public static void update(LoteAves l){
     	stmt.setString(1, l.getTipo_ave());
         stmt.setInt(2, l.getQuantidade());
         stmt.executeUpdate();
-        JOptionPane.showConfirmDialog(null, "Atualizado com sucesso!");
+        JOptionPane.showMessageDialog(null, "Atualizado com sucesso!");
         
     } catch (SQLException e) {
         JOptionPane.showConfirmDialog(null, " Erro ao atualizar: "+e);
@@ -179,7 +178,7 @@ public static void delete(LoteAves l){
     	stmt.setInt(1,l.getId_animal());
         stmt.executeUpdate();
         AnimalDAO.delete(l);
-        JOptionPane.showConfirmDialog(null, "Deletado com sucesso!");
+        JOptionPane.showMessageDialog(null, "Deletado com sucesso!");
     } catch (SQLException e) {
         JOptionPane.showConfirmDialog(null, " Erro ao deletar: "+e);
     } finally{

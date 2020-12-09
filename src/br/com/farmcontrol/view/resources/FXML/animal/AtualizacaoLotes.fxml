@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
@@ -9,22 +10,25 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E5E5E5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.farmcontrol.controller.animal.AtualizacaoLotesController">
+<AnchorPane id="AnchorPane" fx:id="crudLoteAves" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E5E5E5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.farmcontrol.controller.animal.AtualizacaoLotesController">
      <children>
       <Pane layoutX="4.0" layoutY="3.0" prefHeight="474.0" prefWidth="613.0" style="-fx-background-color: #F1F5FE;">
          <children>
-            <Label layoutX="367.0" layoutY="17.0" prefHeight="0.0" prefWidth="19.0" text="ID:" />
+            <Label layoutX="350.0" layoutY="17.0" prefHeight="0.0" prefWidth="19.0" text="ID:" />
             <ListView fx:id="listAnimais" layoutX="14.0" layoutY="14.0" onMouseClicked="#pegarInforAnimais" prefHeight="336.0" prefWidth="239.0" style="-fx-background-color: #FFFFFF;" />
-            <Button fx:id="atualizarAnimal" layoutX="14.0" layoutY="368.0" mnemonicParsing="false" onAction="#atualizarAnimal" style="-fx-background-color: #7F7FFB;" text="Atualizar" textFill="WHITE">
+            <Button fx:id="atualizarAnimal" layoutX="14.0" layoutY="415.0" mnemonicParsing="false" onAction="#atualizarAnimal" style="-fx-background-color: #7F7FFB;" text="Atualizar" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
-               </font></Button>
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
             <TextField fx:id="valorVenda" layoutX="401.0" layoutY="175.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
                <padding>
                   <Insets top="10.0" />
                </padding>
             </TextField>
-            <Label layoutX="349.0" layoutY="60.0" text="Raca:" />
+            <Label layoutX="342.0" layoutY="60.0" text="Raça:" />
             <TextField fx:id="dataVenda" layoutX="401.0" layoutY="135.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
                <padding>
                   <Insets top="10.0" />
@@ -35,7 +39,7 @@
                   <Insets top="10.0" />
                </padding>
             </TextField>
-            <Label layoutX="280.0" layoutY="137.0" text="Data aquisicao:" />
+            <Label layoutX="291.0" layoutY="137.0" text="Data aquisição:" />
             <TextField fx:id="raca" layoutX="401.0" layoutY="56.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
                <padding>
                   <Insets top="10.0" />
@@ -46,33 +50,39 @@
                   <Insets top="10.0" />
                </padding>
             </TextField>
-            <Label layoutX="281.0" layoutY="96.0" text="Data de venda:" />
-            <Label layoutX="277.0" layoutY="187.0" text="Valor de venda:" />
+            <Label layoutX="291.0" layoutY="102.0" text="Data de venda:" />
+            <Label layoutX="288.0" layoutY="184.0" text="Valor de venda:" />
             <Pane fx:id="panelLote" layoutX="268.0" layoutY="210.0" prefHeight="216.0" prefWidth="309.0">
                <children>
-                  <TextField fx:id="tipoLote" layoutX="136.0" layoutY="4.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+                  <TextField fx:id="tipoLote" layoutX="134.0" layoutY="4.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
                      <padding>
                         <Insets top="10.0" />
                      </padding>
                   </TextField>
-                  <TextField fx:id="quantidadeLote" layoutX="137.0" layoutY="45.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+                  <TextField fx:id="quantidadeLote" layoutX="135.0" layoutY="45.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
                      <padding>
                         <Insets top="10.0" />
                      </padding>
                   </TextField>
                   <Label layoutX="75.0" layoutY="19.0" text="Tipo:" />
-                  <Label layoutX="28.0" layoutY="55.0" text="Quantidade:" />
+                  <Label layoutX="37.0" layoutY="55.0" text="Quantidade:" />
                </children>
             </Pane>
-            <Button fx:id="sairAnimal" layoutX="499.0" layoutY="415.0" mnemonicParsing="false" onAction="#atualizarAnimal" prefHeight="37.0" prefWidth="91.0" style="-fx-background-color: #B2C0C2;" text="Sair" textFill="WHITE">
+            <Button fx:id="sairAnimal" layoutX="514.0" layoutY="415.0" mnemonicParsing="false" onAction="#atualizarAnimal" prefHeight="37.0" prefWidth="91.0" style="-fx-background-color: #B2C0C2;" text="Sair" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
-            <Button fx:id="deletarLotes" layoutX="14.0" layoutY="415.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="91.0" style="-fx-background-color: FF6D6D;" text="Deletar" textFill="WHITE">
+            <Button fx:id="deletarLotes" layoutX="134.0" layoutY="415.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="91.0" style="-fx-background-color: FF6D6D;" text="Deletar" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
          </children>
       </Pane>

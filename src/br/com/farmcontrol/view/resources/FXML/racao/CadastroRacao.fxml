@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="PaneCadastroRacao" prefHeight="500.0" prefWidth="520.0" style="-fx-background-color: #F5F8FB;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.farmcontrol.controller.animal.CrudAnimalController">
+<AnchorPane fx:id="PaneCadastroRacao" prefHeight="500.0" prefWidth="520.0" style="-fx-background-color: #F5F8FB;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.farmcontrol.controller.animal.MenuAnimalController">
 	<children>
 	    <Text fx:id="idTituloCadastro" fill="#7f7ffb" layoutX="91.0" layoutY="43.740234375" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastro de Ração" wrappingWidth="419.515625" AnchorPane.leftAnchor="91.0" AnchorPane.rightAnchor="138.484375" AnchorPane.topAnchor="20.0">
 	       <font>
