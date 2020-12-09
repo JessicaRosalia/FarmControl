@@ -120,6 +120,25 @@ public class AtualizacaoLotesController implements Initializable {
         tipoLote.setText(m.getTipo_ave());
     }
     
+    public void deletarLote(){
+        
+        LoteAves m = new LoteAves();
+       
+        m.setId_animal(Integer.parseInt(id.getText()));
+        LoteAvesDAO.delete(m);
+        
+        id.setText("");
+        raca.setText("");
+        dataAquisicao.setText("");
+        dataVenda.setText("");
+        valorVenda.setText("");
+        tipoLote.setText("");
+        quantidadeLote.setText("");
+        
+        carregarAnimais();
+        
+    }
+    
    public void atualizarAnimal() throws Exception{
         //testeLoad.getChildren().clear();
         
@@ -134,7 +153,7 @@ public class AtualizacaoLotesController implements Initializable {
         m.setTipo_ave(tipoLote.getText());
         
         
-        //LoteAvesDAO.update(m);
+        LoteAvesDAO.update(m);
         
         id.setText("");
         raca.setText("");
@@ -149,6 +168,9 @@ public class AtualizacaoLotesController implements Initializable {
     }
  
     public Date dataPadrao(String s){
+        if(s==null || s.equals("null") || s.equals("")){
+            return null;
+        }
         int ano = Integer.parseInt(s.substring(0,4));
         int mes = Integer.parseInt(s.substring(5,7));
         int dia = Integer.parseInt(s.substring(8,10));   
@@ -159,7 +181,7 @@ public class AtualizacaoLotesController implements Initializable {
         
        // animais =  AnimalDAO.read();
         
-        //animais = LoteAvesDAO.read();
+        animais = LoteAvesDAO.read();
         
         obsAnimais = FXCollections.observableArrayList(animais);
 

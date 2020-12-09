@@ -76,7 +76,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="deletarLotes" layoutX="134.0" layoutY="415.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="91.0" style="-fx-background-color: FF6D6D;" text="Deletar" textFill="WHITE">
+            <Button fx:id="deletarLotes" layoutX="134.0" layoutY="415.0" mnemonicParsing="false" onAction="#deletarLote" prefHeight="37.0" prefWidth="91.0" style="-fx-background-color: FF6D6D;" text="Deletar" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>

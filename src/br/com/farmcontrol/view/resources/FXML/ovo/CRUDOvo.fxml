@@ -15,14 +15,14 @@
    <children>
       <Pane fx:id="paneAnimais" layoutX="14.0" layoutY="14.0" prefHeight="432.0" prefWidth="513.0" style="-fx-background-color: #F1F5FE;" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
          <children>
-            <ListView fx:id="listLotes" layoutX="23.0" layoutY="14.0" onKeyPressed="#carregarReproducoes" onMouseClicked="#carregarReproducoes" prefHeight="336.0" prefWidth="234.0" style="-fx-background-color: #FFFFFF;" />
+            <ListView fx:id="listAnimais" layoutX="23.0" layoutY="14.0" onKeyPressed="#carregarReproducoes" onMouseClicked="#carregarReproducoes" prefHeight="336.0" prefWidth="234.0" style="-fx-background-color: #FFFFFF;" />
             <ListView fx:id="listOvos" layoutX="312.0" layoutY="14.0" onKeyPressed="#pegarDadosReproducoes" onMouseClicked="#pegarDadosReproducoes" prefHeight="185.0" prefWidth="284.0" style="-fx-background-color: #FFFFFF;" />
             <Label layoutX="294.0" layoutY="216.0" text="ID Ovo:" />
             <Label layoutX="295.0" layoutY="254.0" text="ID do Animal:" />
             <Label layoutX="295.0" layoutY="292.0" text="Quantidade:" />
             <Label layoutX="296.0" layoutY="332.0" text="Valor unidade:" />
             <Label layoutX="297.0" layoutY="368.0" text="Data:" />
-            <TextField fx:id="idovos" disable="true" editable="false" layoutX="395.0" layoutY="211.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+            <TextField fx:id="idovo" disable="true" editable="false" layoutX="395.0" layoutY="211.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
                <padding>
                   <Insets top="10.0" />
                </padding></TextField>
@@ -34,7 +34,7 @@
                <padding>
                   <Insets top="10.0" />
                </padding></TextField>
-            <TextField fx:id="valor_unid" layoutX="395.0" layoutY="325.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+            <TextField fx:id="valor_und" layoutX="395.0" layoutY="325.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
                <padding>
                   <Insets top="10.0" />
                </padding></TextField>
@@ -42,21 +42,21 @@
                <padding>
                   <Insets top="10.0" />
                </padding></TextField>
-            <Button fx:id="atualizar" disable="true" layoutX="23.0" layoutY="424.0" mnemonicParsing="false" onAction="#atualizarOvos" style="-fx-background-color: #7F7FFB;" text="Atualizar" textFill="WHITE">
+            <Button fx:id="atualizar" disable="true" layoutX="23.0" layoutY="424.0" mnemonicParsing="false" onAction="#atualizarReprod" style="-fx-background-color: #7F7FFB;" text="Atualizar" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button fx:id="deletar" disable="true" layoutX="128.0" layoutY="424.0" mnemonicParsing="false" onAction="#deletarOvos" prefHeight="37.0" prefWidth="90.0" style="-fx-background-color: FF6D6D;" text="Deletar" textFill="WHITE">
+            <Button fx:id="deletar" disable="true" layoutX="128.0" layoutY="424.0" mnemonicParsing="false" onAction="#deletarReprod" prefHeight="37.0" prefWidth="90.0" style="-fx-background-color: FF6D6D;" text="Deletar" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button fx:id="adicionar" disable="true" layoutX="398.0" layoutY="424.0" mnemonicParsing="false" onAction="#novaProd" prefHeight="37.0" prefWidth="200.0" style="-fx-background-color: #7F7FFB;" text="Adicionar Produção" textFill="WHITE">
+            <Button fx:id="adicionar" disable="true" layoutX="398.0" layoutY="424.0" mnemonicParsing="false" onAction="#novaReprod" prefHeight="37.0" prefWidth="200.0" style="-fx-background-color: #7F7FFB;" text="Adicionar Reprodução" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -69,13 +69,13 @@
                      <children>
                         <Label layoutX="38.0" layoutY="10.0" text="ID do Animal:" />
                         <Label layoutX="39.0" layoutY="51.0" text="Quantidade:" />
-                        <Label layoutX="40.0" layoutY="87.0" text="Valor unidade:" />
+                        <Label layoutX="31.0" layoutY="91.0" text="Valor unidade" />
                         <Label layoutX="41.0" layoutY="129.0" text="Data:" />
                         <TextField fx:id="cadastrar_id" disable="true" editable="false" layoutX="130.0" layoutY="3.0" prefWidth="200.0" />
                         <TextField fx:id="cadastrar_quant" layoutX="130.0" layoutY="44.0" prefWidth="200.0" />
-                        <TextField fx:id="cadastrar_valor_unid" layoutX="130.0" layoutY="84.0" prefWidth="200.0" />
+                        <TextField fx:id="cadastrar_valor" layoutX="130.0" layoutY="84.0" prefWidth="200.0" />
                         <TextField fx:id="cadastrar_data" layoutX="130.0" layoutY="124.0" prefWidth="200.0" />
-                        <Button fx:id="cadastrar_button" layoutX="19.0" layoutY="183.0" mnemonicParsing="false" onAction="#cadastrarOvo" style="-fx-background-color: #7F7FFB;" text="Cadastrar" textFill="WHITE">
+                        <Button fx:id="cadastrar_button" layoutX="19.0" layoutY="183.0" mnemonicParsing="false" onAction="#cadastrarReprod" style="-fx-background-color: #7F7FFB;" text="Cadastrar" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>

@@ -5,6 +5,7 @@
  */
 package br.com.farmcontrol.controller.ovo;
 
+import br.com.farmcontrol.controller.reproducao.*;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -24,7 +25,7 @@ public class CRUDOvoDEMO extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-        Parent root = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/ovo/CrudOvo.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/ovo/CRUDOvo.fxml"));
         
         Scene scene = new Scene(root);
         

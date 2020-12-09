@@ -69,7 +69,7 @@
                   <Insets top="10.0" />
                </padding>
             </TextField>
-            <TitledPane fx:id="titledPane" alignment="CENTER" layoutX="270.0" layoutY="204.0" prefHeight="275.0" prefWidth="354.0" style="-fx-background-color: #7F7FFB;" text="Cadastrar" textAlignment="CENTER" textFill="#7f7ffb">
+            <TitledPane fx:id="titledPane" alignment="CENTER" layoutX="270.0" layoutY="204.0" prefHeight="275.0" prefWidth="354.0" style="-fx-background-color: #7F7FFB;" text="Cadastrar" textAlignment="CENTER" textFill="#7f7ffb" visible="false">
                <content>
                   <Pane prefHeight="200.0" prefWidth="200.0" visible="false">
                      <children>

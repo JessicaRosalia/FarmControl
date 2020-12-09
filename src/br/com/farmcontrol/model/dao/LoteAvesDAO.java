@@ -151,10 +151,12 @@ public static void update(LoteAves l){
 	PreparedStatement stmt = null;
 	
     try {
-    	stmt = con.prepareStatement("UPDATE lote_aves SET tipo=?,quantidade=?");
+    	stmt = con.prepareStatement("UPDATE lote_aves SET tipo=?,quantidade=?"
+                + "WHERE idanimal=?");
     	AnimalDAO.update(l);
     	stmt.setString(1, l.getTipo_ave());
         stmt.setInt(2, l.getQuantidade());
+        stmt.setInt(3, l.getId_animal());
         stmt.executeUpdate();
         JOptionPane.showMessageDialog(null, "Atualizado com sucesso!");
         
