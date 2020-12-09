@@ -91,7 +91,7 @@ public class LayoutController {
     void exibirPaginaLeite(ActionEvent event) {
     	AnchorPane crudLeite=null;
 		try {
-			crudLeite = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/leite/CrudLeite.fxml"));
+			crudLeite = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/leite/CRUDLeite.fxml"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
