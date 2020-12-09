@@ -58,6 +58,12 @@ public class Vacina {
     public void setAnimal(Animal animal) {
         this.animal = animal;
     }
+
+    @Override
+    public String toString() {
+        //return "Vacina{" + "id_vacina=" + id_vacina + ", data_vacina=" + data_vacina + '}';
+        return "ID: "+this.id_vacina+" - "+this.data_vacina;
+    }
     
     
     
