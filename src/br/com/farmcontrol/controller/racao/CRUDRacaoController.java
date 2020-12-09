@@ -3,16 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.farmcontrol.controller.leite;
+package br.com.farmcontrol.controller.racao;
 
 import br.com.farmcontrol.controller.reproducao.*;
 import br.com.farmcontrol.model.dao.AnimalDAO;
-import br.com.farmcontrol.model.dao.LeiteDAO;
-import br.com.farmcontrol.model.dao.MamiferoDAO;
+import br.com.farmcontrol.model.dao.RacaoDAO;
 import br.com.farmcontrol.model.dao.ReproducaoDAO;
 import br.com.farmcontrol.model.vo.Animal;
-import br.com.farmcontrol.model.vo.Leite;
-import br.com.farmcontrol.model.vo.Mamifero;
+import br.com.farmcontrol.model.vo.Racao;
 import br.com.farmcontrol.model.vo.Reproducao;
 import java.net.URL;
 import java.sql.Date;
@@ -37,27 +35,29 @@ import javax.swing.JOptionPane;
  *
  * @author viniciuslopes
  */
-public class CrudLeiteController implements Initializable {
+
+public class CRUDRacaoController implements Initializable {
+
     
     @FXML
     private Pane paneAnimais;
 
     @FXML
-    private ListView<Mamifero> listAnimais;
+    private ListView<Animal> listAnimais;
     
-    private List<Mamifero> animais = new ArrayList<>();
+    private List<Animal> animais = new ArrayList<>();
     
-    private ObservableList<Mamifero> obsAnimal;
+    private ObservableList<Animal> obsAnimal;
 
     @FXML
-    private ListView<Leite> listLeite;
+    private ListView<Racao> listRacao;
     
-    private List<Leite> leites = new ArrayList<>();
+    private List<Racao> racoes = new ArrayList<>();
             
-    private ObservableList<Leite> obsLeite;
+    private ObservableList<Racao> obsRacao;
     
-    @FXML
-    private TextField idleite;
+   @FXML
+    private TextField idracao;
 
     @FXML
     private TextField idanimal;
@@ -66,7 +66,7 @@ public class CrudLeiteController implements Initializable {
     private TextField quantidade;
 
     @FXML
-    private TextField valor_litro;
+    private TextField descricao;
 
     @FXML
     private TextField data;
@@ -81,6 +81,9 @@ public class CrudLeiteController implements Initializable {
     private Button adicionar;
 
     @FXML
+    private TextField custo;
+
+    @FXML
     private TitledPane titledPane;
 
     @FXML
@@ -90,7 +93,7 @@ public class CrudLeiteController implements Initializable {
     private TextField cadastrar_quant;
 
     @FXML
-    private TextField cadastrar_valor;
+    private TextField cadastrar_desc;
 
     @FXML
     private TextField cadastrar_data;
@@ -100,6 +103,9 @@ public class CrudLeiteController implements Initializable {
 
     @FXML
     private Button cancelar_button;
+
+    @FXML
+    private TextField cadastrar_custo;
     /**
      * Initializes the controller class.
      */
@@ -112,13 +118,13 @@ public class CrudLeiteController implements Initializable {
     public void cancelarCadastro(){
         titledPane.setVisible(false);
         listAnimais.setDisable(false);
-        listLeite.setDisable(false);
+        listRacao.setDisable(false);
         limparCampos();
     }
     
     public void desativarComponentes(Boolean b){
         listAnimais.setDisable(b);
-        listLeite.setDisable(b);
+        listRacao.setDisable(b);
         adicionar.setDisable(b);
         atualizar.setDisable(b);
         deletar.setDisable(b);
@@ -126,7 +132,7 @@ public class CrudLeiteController implements Initializable {
     
     public void novaReprod(){
         //JOptionPane
-        Mamifero m = listAnimais.getSelectionModel().getSelectedItem();
+        Animal m = listAnimais.getSelectionModel().getSelectedItem();
         
         desativarComponentes(true);
         
@@ -136,25 +142,25 @@ public class CrudLeiteController implements Initializable {
     
     public void cadastrarReprod(){
         
-        Mamifero a = listAnimais.getSelectionModel().getSelectedItem();
+        Animal a = listAnimais.getSelectionModel().getSelectedItem();
         
-        if(cadastrar_data.getText()==null||cadastrar_data.getText()==""||
-                cadastrar_quant.getText()==null||cadastrar_quant.getText()==null){
+        if(cadastrar_data.getText()==null||cadastrar_data.getText()==""||cadastrar_quant.getText()==null||cadastrar_quant.getText()==null){
             JOptionPane.showMessageDialog(null, "Os campos de data e quantidade são obrigatórios");
         }else{
-            Leite r = new Leite();
+            Racao r = new Racao();
             r.setAnimal(a);
-            r.setData_producao(dataPadrao(cadastrar_data.getText()));
-            r.setValor_litro(Float.parseFloat(cadastrar_valor.getText()));
-            r.setQtd_leite(Integer.parseInt(cadastrar_quant.getText()));
-            LeiteDAO.create(r);
+            r.setData(dataPadrao(cadastrar_data.getText()));
+            r.setDescricao(cadastrar_desc.getText());
+            r.setQtd_racao(Integer.parseInt(cadastrar_quant.getText()));
+            r.setCusto(Float.parseFloat(cadastrar_custo.getText()));
+            RacaoDAO.create(r);
             
             titledPane.setVisible(false);
             
             carregarReproducoes();
             
             cadastrar_data.setText(null);
-            cadastrar_valor.setText(null);
+            cadastrar_desc.setText(null);
             cadastrar_quant.setText(null);
             
             desativarComponentes(false);
@@ -163,38 +169,40 @@ public class CrudLeiteController implements Initializable {
     }
     
     public void deletarReprod(){
-        Leite r = listLeite.getSelectionModel().getSelectedItem();
-        LeiteDAO.delete(r);
+        Racao r = listRacao.getSelectionModel().getSelectedItem();
+        RacaoDAO.delete(r);
         carregarReproducoes();
     }
     
     public void atualizarReprod(){
-        Leite r = new Leite();
-        Mamifero a =  listAnimais.getSelectionModel().getSelectedItem();
+        Racao r = new Racao();
+        Animal a =  listAnimais.getSelectionModel().getSelectedItem();
         r.setAnimal(a);
-        r.setData_producao(dataPadrao(data.getText()));
-        r.setValor_litro(Float.parseFloat(valor_litro.getText()));
-        r.setId_leite(Integer.parseInt(idleite.getText()));
-        r.setQtd_leite(Integer.parseInt(quantidade.getText()));
-        LeiteDAO.update(r);
+        r.setData(dataPadrao(data.getText()));
+        r.setDescricao(descricao.getText());
+        r.setId_racao(Integer.parseInt(idracao.getText()));
+        r.setQtd_racao(Integer.parseInt(quantidade.getText()));
+        r.setCusto(Float.parseFloat(custo.getText()));
+        RacaoDAO.update(r);
         carregarReproducoes();
     }
     
     public void pegarDadosReproducoes(){
-        Leite r = listLeite.getSelectionModel().getSelectedItem();
-        idleite.setText(String.valueOf(r.getId_leite()));
-        quantidade.setText(String.valueOf(r.getQtd_leite()));
-        valor_litro.setText(String.valueOf(r.getValor_litro()));
-        data.setText(String.valueOf(r.getData_producao()));
+        Racao r = listRacao.getSelectionModel().getSelectedItem();
+        idracao.setText(String.valueOf(r.getId_racao()));
+        quantidade.setText(String.valueOf(r.getQtd_racao()));
+        descricao.setText(r.getDescricao());
+        data.setText(String.valueOf(r.getData()));
+        custo.setText(String.valueOf(r.getCusto()));
         atualizar.setDisable(false);
         deletar.setDisable(false);
     }
     
     public void carregarReproducoes(){
-        Mamifero m = listAnimais.getSelectionModel().getSelectedItem();
-        leites = LeiteDAO.read(m);
-        obsLeite = FXCollections.observableArrayList(leites);
-        listLeite.setItems(obsLeite);
+        Animal m = listAnimais.getSelectionModel().getSelectedItem();
+        racoes = RacaoDAO.read(m);
+        obsRacao = FXCollections.observableArrayList(racoes);
+        listRacao.setItems(obsRacao);
         idanimal.setText(String.valueOf(m.getId_animal()));
         limparCampos();
         atualizar.setDisable(true);
@@ -203,16 +211,17 @@ public class CrudLeiteController implements Initializable {
     }
     
     public void carregarAnimais(){
-        animais = MamiferoDAO.read();      
+        animais = AnimalDAO.read();      
         obsAnimal = FXCollections.observableArrayList(animais);
         listAnimais.setItems(obsAnimal);     
     }
     
     public void limparCampos(){
-        idleite.setText(null);
+        idracao.setText(null);
         quantidade.setText(null);
-        valor_litro.setText(null);
+        descricao.setText(null);
         data.setText(null);
+        custo.setText(null);
     }
     
     public Date dataPadrao(String s){

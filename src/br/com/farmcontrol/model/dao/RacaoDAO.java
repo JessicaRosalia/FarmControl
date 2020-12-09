@@ -13,6 +13,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 import br.com.farmcontrol.connection.ConnectionFactory;
+import br.com.farmcontrol.model.vo.Animal;
 import br.com.farmcontrol.model.vo.Mamifero;
 import br.com.farmcontrol.model.vo.Racao;
 
@@ -108,6 +109,41 @@ public class RacaoDAO {
         
         return racao;
     }
+        
+        public static List<Racao> read(Animal m){
+            Connection con = ConnectionFactory.getConnection();
+            String sql = "SELECT * FROM racao WHERE idanimal=?";
+            PreparedStatement stmt = null;
+            ResultSet rs = null;
+            
+            List<Racao> racoes = new ArrayList<>();
+            
+            try {
+                stmt = con.prepareStatement(sql);
+                stmt.setInt(1, m.getId_animal());
+                rs = stmt.executeQuery();
+            
+            while(rs.next()){
+                Racao r = new Racao();
+                r.setAnimal(m);
+                r.setData(rs.getDate("data_racao"));
+                r.setId_racao(rs.getInt("idracao"));
+                r.setDescricao(rs.getString("descricao"));
+                r.setQtd_racao(rs.getInt("quantidade"));
+                r.setCusto(rs.getFloat("custo"));
+
+                racoes.add(r);
+            }
+            
+            } catch (SQLException ex) {
+                Logger.getLogger(RacaoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            } finally{
+                ConnectionFactory.closeConnection(con, stmt, rs);
+            }
+            
+            
+            return racoes;
+        }
 	
 	public static List<Racao> read(String descricao){
         Connection con = ConnectionFactory.getConnection();
