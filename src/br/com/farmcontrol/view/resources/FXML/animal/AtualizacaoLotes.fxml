@@ -29,12 +29,12 @@
                </padding>
             </TextField>
             <Label layoutX="342.0" layoutY="60.0" text="Raça:" />
-            <TextField fx:id="dataVenda" layoutX="401.0" layoutY="135.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+            <TextField fx:id="dataVenda" layoutX="401.0" layoutY="95.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
                <padding>
                   <Insets top="10.0" />
                </padding>
             </TextField>
-            <TextField fx:id="dataAquisicao" layoutX="401.0" layoutY="95.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+            <TextField fx:id="dataAquisicao" layoutX="401.0" layoutY="130.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
                <padding>
                   <Insets top="10.0" />
                </padding>
