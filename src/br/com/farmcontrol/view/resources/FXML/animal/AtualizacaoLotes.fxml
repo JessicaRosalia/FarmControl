@@ -14,33 +14,38 @@
       <Pane layoutX="4.0" layoutY="3.0" prefHeight="474.0" prefWidth="613.0" style="-fx-background-color: #F1F5FE;">
          <children>
             <Label layoutX="367.0" layoutY="17.0" prefHeight="0.0" prefWidth="19.0" text="ID:" />
-            <ListView fx:id="listAnimais" layoutX="14.0" layoutY="14.0" onMouseClicked="#pegarInforAnimais" prefHeight="384.0" prefWidth="239.0" style="-fx-background-color: #FFFFFF;" />
-            <Button fx:id="atualizarAnimal" layoutX="491.0" layoutY="423.0" mnemonicParsing="false" onAction="#atualizarAnimal" style="-fx-background-color: #7F7FFB;" text="Atualizar" textFill="WHITE">
+            <ListView fx:id="listAnimais" layoutX="14.0" layoutY="14.0" onMouseClicked="#pegarInforAnimais" prefHeight="336.0" prefWidth="239.0" style="-fx-background-color: #FFFFFF;" />
+            <Button fx:id="atualizarAnimal" layoutX="14.0" layoutY="368.0" mnemonicParsing="false" onAction="#atualizarAnimal" style="-fx-background-color: #7F7FFB;" text="Atualizar" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font></Button>
-            <TextField fx:id="valorVenda" layoutX="401.0" layoutY="181.0" style="-fx-background-color: #FFFFFF;">
+            <TextField fx:id="valorVenda" layoutX="401.0" layoutY="175.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
                <padding>
-                  <Insets top="2.0" />
-               </padding></TextField>
+                  <Insets top="10.0" />
+               </padding>
+            </TextField>
             <Label layoutX="349.0" layoutY="60.0" text="Raca:" />
-            <TextField fx:id="dataVenda" layoutX="401.0" layoutY="136.0" style="-fx-background-color: #FFFFFF;">
+            <TextField fx:id="dataVenda" layoutX="401.0" layoutY="135.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
                <padding>
-                  <Insets top="2.0" />
-               </padding></TextField>
-            <TextField fx:id="dataAquisicao" layoutX="401.0" layoutY="95.0" style="-fx-background-color: #FFFFFF;">
+                  <Insets top="10.0" />
+               </padding>
+            </TextField>
+            <TextField fx:id="dataAquisicao" layoutX="401.0" layoutY="95.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
                <padding>
-                  <Insets top="2.0" />
-               </padding></TextField>
+                  <Insets top="10.0" />
+               </padding>
+            </TextField>
             <Label layoutX="280.0" layoutY="137.0" text="Data aquisicao:" />
-            <TextField fx:id="raca" layoutX="401.0" layoutY="59.0" style="-fx-background-color: #FFFFFF;">
+            <TextField fx:id="raca" layoutX="401.0" layoutY="56.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
                <padding>
-                  <Insets top="2.0" />
-               </padding></TextField>
-            <TextField fx:id="id" disable="true" editable="false" layoutX="401.0" layoutY="16.0" style="-fx-background-color: #FFFFFF;">
+                  <Insets top="10.0" />
+               </padding>
+            </TextField>
+            <TextField fx:id="id" disable="true" editable="false" layoutX="401.0" layoutY="16.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
                <padding>
-                  <Insets top="2.0" />
-               </padding></TextField>
+                  <Insets top="10.0" />
+               </padding>
+            </TextField>
             <Label layoutX="281.0" layoutY="96.0" text="Data de venda:" />
             <Label layoutX="277.0" layoutY="187.0" text="Valor de venda:" />
             <Pane fx:id="panelMamifero" layoutX="262.0" layoutY="197.0" prefHeight="208.0" prefWidth="345.0" visible="false">
@@ -59,19 +64,24 @@
             </Pane>
             <Pane fx:id="panelLote" layoutX="268.0" layoutY="210.0" prefHeight="216.0" prefWidth="309.0">
                <children>
-                  <TextField fx:id="tipoLote" layoutX="133.0" layoutY="13.0" style="-fx-background-color: #FFFFFF;">
+                  <TextField fx:id="tipoLote" layoutX="133.0" layoutY="4.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
                      <padding>
-                        <Insets top="2.0" />
+                        <Insets top="10.0" />
                      </padding></TextField>
-                  <TextField fx:id="quantidadeLote" layoutX="133.0" layoutY="49.0" style="-fx-background-color: #FFFFFF;">
+                  <TextField fx:id="quantidadeLote" layoutX="133.0" layoutY="44.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
                      <padding>
-                        <Insets top="2.0" />
+                        <Insets top="10.0" />
                      </padding></TextField>
                   <Label layoutX="75.0" layoutY="19.0" text="Tipo:" />
                   <Label layoutX="28.0" layoutY="55.0" text="Quantidade:" />
                </children>
             </Pane>
-            <Button fx:id="sairAnimal" layoutX="22.0" layoutY="423.0" mnemonicParsing="false" onAction="#atualizarAnimal" prefHeight="37.0" prefWidth="91.0" style="-fx-background-color: #B2C0C2;" text="Sair" textFill="WHITE">
+            <Button fx:id="sairAnimal" layoutX="499.0" layoutY="415.0" mnemonicParsing="false" onAction="#atualizarAnimal" prefHeight="37.0" prefWidth="91.0" style="-fx-background-color: #B2C0C2;" text="Sair" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="deletarLotes" layoutX="14.0" layoutY="415.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="91.0" style="-fx-background-color: FF6D6D;" text="Deletar" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>

@@ -45,7 +45,7 @@
                <font>
                   <Font name="System Bold" size="16.0" />
                </font></Button>
-            <Button fx:id="deletar" disable="true" layoutX="23.0" layoutY="424.0" mnemonicParsing="false" onAction="#deletarReprod" prefHeight="37.0" prefWidth="90.0" style="-fx-background-color: FF4040;" text="Deletar" textFill="WHITE">
+            <Button fx:id="deletar" disable="true" layoutX="23.0" layoutY="424.0" mnemonicParsing="false" onAction="#deletarReprod" prefHeight="37.0" prefWidth="90.0" style="-fx-background-color: FF6D6D;" text="Deletar" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font></Button>
