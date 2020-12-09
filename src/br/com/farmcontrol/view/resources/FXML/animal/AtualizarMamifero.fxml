@@ -73,14 +73,14 @@
                   <Label layoutX="82.0" layoutY="92.0" text="Peso:" />
                   <Label layoutX="83.0" layoutY="134.0" text="Tipo:" />
                   <Label layoutX="24.0" layoutY="170.0" text="Data de abate:" />
-               </children>
-            </Pane>
-            <Pane fx:id="panelLote" layoutX="279.0" layoutY="214.0" prefHeight="182.0" prefWidth="309.0" visible="false">
-               <children>
-                  <TextField fx:id="tipoLote" layoutX="124.0" layoutY="14.0" />
-                  <TextField fx:id="quantidadeLote" layoutX="124.0" layoutY="50.0" />
-                  <Label layoutX="75.0" layoutY="19.0" text="Tipo:" />
-                  <Label layoutX="28.0" layoutY="55.0" text="Quantidade:" />
+                  <Pane fx:id="panelLote" layoutX="24.0" layoutY="68.0" prefHeight="182.0" prefWidth="309.0" visible="false">
+                     <children>
+                        <TextField fx:id="tipoLote" layoutX="124.0" layoutY="11.0" prefWidth="200.0" />
+                        <TextField fx:id="quantidadeLote" layoutX="124.0" layoutY="51.0" prefWidth="200.0" />
+                        <Label layoutX="71.0" layoutY="17.0" text="Tipo:" />
+                        <Label layoutX="19.0" layoutY="57.0" text="Quantidade:" />
+                     </children>
+                  </Pane>
                </children>
             </Pane>
             <Button fx:id="atualizarAnimal1" layoutX="511.0" layoutY="424.0" mnemonicParsing="false" onAction="#atualizarAnimal" prefHeight="10.0" prefWidth="90.0" style="-fx-background-color: #B2C0C2;" text="Sair" textFill="WHITE">
