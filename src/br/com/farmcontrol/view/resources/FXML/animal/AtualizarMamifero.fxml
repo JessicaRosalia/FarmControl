@@ -16,7 +16,7 @@
          <children>
             <Label layoutX="347.0" layoutY="33.0" prefHeight="0.0" prefWidth="19.0" text="ID:" />
             <ListView fx:id="listAnimais" layoutX="14.0" layoutY="15.0" onMouseClicked="#pegarInforAnimais" prefHeight="331.0" prefWidth="239.0" style="-fx-background-color: #FFFFFF;" />
-            <Button fx:id="atualizarAnimal" layoutX="21.0" layoutY="372.0" mnemonicParsing="false" onAction="#atualizarAnimal" prefHeight="10.0" prefWidth="90.0" style="-fx-background-color: #7F7FFB;" text="Atualizar" textFill="WHITE">
+            <Button fx:id="atualizarAnimal" layoutX="310.0" layoutY="424.0" mnemonicParsing="false" onAction="#atualizarAnimal" prefHeight="10.0" prefWidth="90.0" style="-fx-background-color: #7F7FFB;" text="Atualizar" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -87,7 +87,7 @@
                   </Pane>
                </children>
             </Pane>
-            <Button fx:id="atualizarAnimal1" layoutX="511.0" layoutY="424.0" mnemonicParsing="false" onAction="#atualizarAnimal" prefHeight="10.0" prefWidth="90.0" style="-fx-background-color: #B2C0C2;" text="Sair" textFill="WHITE">
+            <Button fx:id="atualizarAnimal1" layoutX="510.0" layoutY="424.0" mnemonicParsing="false" onAction="#atualizarAnimal" prefHeight="10.0" prefWidth="90.0" style="-fx-background-color: #B2C0C2;" text="Sair" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -95,13 +95,21 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="deletar" layoutX="21.0" layoutY="424.0" mnemonicParsing="false" onAction="#deletarAnimal" prefHeight="37.0" prefWidth="91.0" style="-fx-background-color: FF6D6D;" text="Deletar" textFill="WHITE">
+            <Button fx:id="deletar" layoutX="410.0" layoutY="424.0" mnemonicParsing="false" onAction="#deletarAnimal" prefHeight="37.0" prefWidth="91.0" style="-fx-background-color: FF6D6D;" text="Deletar" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
+            <Button fx:id="atualizarAnimal2" layoutX="73.0" layoutY="419.0" mnemonicParsing="false" onAction="#atualizarAnimal" prefHeight="48.0" prefWidth="122.0" style="-fx-background-color: #7F7FFB;" text="Adicionar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
          </children>
       </Pane>
    </children>

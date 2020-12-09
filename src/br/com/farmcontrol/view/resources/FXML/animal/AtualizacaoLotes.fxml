@@ -12,11 +12,11 @@
 
 <AnchorPane id="AnchorPane" fx:id="crudLoteAves" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E5E5E5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.farmcontrol.controller.animal.AtualizacaoLotesController">
      <children>
-      <Pane layoutX="4.0" layoutY="3.0" prefHeight="474.0" prefWidth="613.0" style="-fx-background-color: #F1F5FE;">
+      <Pane layoutX="2.0" layoutY="2.0" prefHeight="474.0" prefWidth="613.0" style="-fx-background-color: #F1F5FE;">
          <children>
             <Label layoutX="350.0" layoutY="17.0" prefHeight="0.0" prefWidth="19.0" text="ID:" />
             <ListView fx:id="listAnimais" layoutX="14.0" layoutY="14.0" onMouseClicked="#pegarInforAnimais" prefHeight="336.0" prefWidth="239.0" style="-fx-background-color: #FFFFFF;" />
-            <Button fx:id="atualizarAnimal" layoutX="14.0" layoutY="415.0" mnemonicParsing="false" onAction="#atualizarAnimal" style="-fx-background-color: #7F7FFB;" text="Atualizar" textFill="WHITE">
+            <Button fx:id="atualizarAnimal" layoutX="66.0" layoutY="410.0" mnemonicParsing="false" onAction="#atualizarAnimal" prefHeight="48.0" prefWidth="122.0" style="-fx-background-color: #7F7FFB;" text="Adicionar" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -68,7 +68,7 @@
                   <Label layoutX="37.0" layoutY="55.0" text="Quantidade:" />
                </children>
             </Pane>
-            <Button fx:id="sairAnimal" layoutX="514.0" layoutY="415.0" mnemonicParsing="false" onAction="#atualizarAnimal" prefHeight="37.0" prefWidth="91.0" style="-fx-background-color: #B2C0C2;" text="Sair" textFill="WHITE">
+            <Button fx:id="deletarLotes" layoutX="410.0" layoutY="415.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="91.0" style="-fx-background-color: FF6D6D;" text="Deletar" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -77,6 +77,17 @@
                </cursor>
             </Button>
             <Button fx:id="deletarLotes" layoutX="134.0" layoutY="415.0" mnemonicParsing="false" onAction="#deletarLote" prefHeight="37.0" prefWidth="91.0" style="-fx-background-color: FF6D6D;" text="Deletar" textFill="WHITE">
+
+            <Button fx:id="atualizarAnimal1" layoutX="310.0" layoutY="415.0" mnemonicParsing="false" onAction="#atualizarAnimal" style="-fx-background-color: #7F7FFB;" text="Atualizar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="sairAnimal" layoutX="510.0" layoutY="415.0" mnemonicParsing="false" onAction="#atualizarAnimal" prefHeight="37.0" prefWidth="91.0" style="-fx-background-color: #B2C0C2;" text="Sair" textFill="WHITE">
+
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
