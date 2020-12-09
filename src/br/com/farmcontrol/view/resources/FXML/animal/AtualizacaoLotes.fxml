@@ -48,7 +48,7 @@
             </TextField>
             <Label layoutX="281.0" layoutY="96.0" text="Data de venda:" />
             <Label layoutX="277.0" layoutY="187.0" text="Valor de venda:" />
-            <Pane fx:id="panelMamifero" layoutX="262.0" layoutY="197.0" prefHeight="208.0" prefWidth="345.0" visible="false">
+            <Pane fx:id="panelMamifero" layoutX="262.0" layoutY="197.0" prefHeight="208.0" prefWidth="345.0">
                <children>
                   <TextField fx:id="sexoMamifero" layoutX="146.0" layoutY="20.0" style="-fx-background-color: #FFFFFF;" />
                   <TextField fx:id="valorArroba" layoutX="146.0" layoutY="57.0" style="-fx-background-color: #FFFFFF;" />
@@ -64,14 +64,16 @@
             </Pane>
             <Pane fx:id="panelLote" layoutX="268.0" layoutY="210.0" prefHeight="216.0" prefWidth="309.0">
                <children>
-                  <TextField fx:id="tipoLote" layoutX="133.0" layoutY="4.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+                  <TextField fx:id="tipoLote" layoutX="136.0" layoutY="4.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
                      <padding>
                         <Insets top="10.0" />
-                     </padding></TextField>
-                  <TextField fx:id="quantidadeLote" layoutX="133.0" layoutY="44.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+                     </padding>
+                  </TextField>
+                  <TextField fx:id="quantidadeLote" layoutX="137.0" layoutY="45.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
                      <padding>
                         <Insets top="10.0" />
-                     </padding></TextField>
+                     </padding>
+                  </TextField>
                   <Label layoutX="75.0" layoutY="19.0" text="Tipo:" />
                   <Label layoutX="28.0" layoutY="55.0" text="Quantidade:" />
                </children>
