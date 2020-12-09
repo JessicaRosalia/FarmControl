@@ -53,23 +53,34 @@
                <font>
                   <Font name="System Bold" size="16.0" />
                </font></Button>
-            <TitledPane fx:id="titledPane" layoutX="75.0" layoutY="84.0" prefHeight="258.0" prefWidth="334.0" text="Cadastrar" visible="false">
+            <TitledPane fx:id="titledPane" alignment="CENTER" layoutX="270.0" layoutY="204.0" prefHeight="275.0" prefWidth="354.0" style="-fx-background-color: #7F7FFB;" text="Cadastrar" textAlignment="CENTER" textFill="#7f7ffb" visible="false">
                <content>
                   <Pane prefHeight="200.0" prefWidth="200.0" visible="false">
                      <children>
-                        <Label layoutX="25.0" layoutY="22.0" text="ID Animal" />
-                        <Label layoutX="25.0" layoutY="46.0" text="Quantidade" />
-                        <Label layoutX="24.0" layoutY="72.0" text="Descricao" />
-                        <Label layoutX="25.0" layoutY="100.0" text="Data" />
-                        <TextField fx:id="cadastrar_id" disable="true" editable="false" layoutX="130.0" layoutY="17.0" />
-                        <TextField fx:id="cadastrar_quant" layoutX="130.0" layoutY="41.0" />
-                        <TextField fx:id="cadastrar_desc" layoutX="130.0" layoutY="67.0" />
-                        <TextField fx:id="cadastrar_data" layoutX="130.0" layoutY="95.0" />
-                        <Button fx:id="cadastrar_button" layoutX="25.0" layoutY="164.0" mnemonicParsing="false" onAction="#cadastrarReprod" text="Cadastrar" />
-                        <Button fx:id="cancelar_button" layoutX="226.0" layoutY="164.0" mnemonicParsing="false" onAction="#cancelarCadastro" text="Cancelar" />
+                        <Label layoutX="25.0" layoutY="10.0" text="ID do Animal:" />
+                        <Label layoutX="34.0" layoutY="49.0" text="Quantidade:" />
+                        <Label layoutX="48.0" layoutY="87.0" text="Descricao:" />
+                        <Label layoutX="84.0" layoutY="125.0" text="Data:" />
+                        <TextField fx:id="cadastrar_id" disable="true" editable="false" layoutX="130.0" layoutY="3.0" prefWidth="200.0" />
+                        <TextField fx:id="cadastrar_quant" layoutX="130.0" layoutY="44.0" prefWidth="200.0" />
+                        <TextField fx:id="cadastrar_desc" layoutX="130.0" layoutY="84.0" prefWidth="200.0" />
+                        <TextField fx:id="cadastrar_data" layoutX="130.0" layoutY="124.0" prefWidth="200.0" />
+                        <Button fx:id="cadastrar_button" layoutX="19.0" layoutY="183.0" mnemonicParsing="false" onAction="#cadastrarReprod" style="-fx-background-color: #7F7FFB;" text="Cadastrar" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="cancelar_button" layoutX="243.0" layoutY="183.0" mnemonicParsing="false" onAction="#cancelarCadastro" style="-fx-background-color: #B2C0C2;" text="Cancelar" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
                      </children>
                   </Pane>
                </content>
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
             </TitledPane>
          </children>
       </Pane>
