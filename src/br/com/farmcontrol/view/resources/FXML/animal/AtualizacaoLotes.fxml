@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E5E5E5;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.farmcontrol.controller.animal.AtualizacaoLotesController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E5E5E5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.farmcontrol.controller.animal.AtualizacaoLotesController">
      <children>
       <Pane layoutX="4.0" layoutY="3.0" prefHeight="474.0" prefWidth="613.0" style="-fx-background-color: #F1F5FE;">
          <children>
@@ -48,20 +48,6 @@
             </TextField>
             <Label layoutX="281.0" layoutY="96.0" text="Data de venda:" />
             <Label layoutX="277.0" layoutY="187.0" text="Valor de venda:" />
-            <Pane fx:id="panelMamifero" layoutX="262.0" layoutY="197.0" prefHeight="208.0" prefWidth="345.0">
-               <children>
-                  <TextField fx:id="sexoMamifero" layoutX="146.0" layoutY="20.0" style="-fx-background-color: #FFFFFF;" />
-                  <TextField fx:id="valorArroba" layoutX="146.0" layoutY="57.0" style="-fx-background-color: #FFFFFF;" />
-                  <TextField fx:id="peso" layoutX="146.0" layoutY="91.0" style="-fx-background-color: #FFFFFF;" />
-                  <TextField fx:id="tipoMamifero" layoutX="146.0" layoutY="129.0" style="-fx-background-color: #FFFFFF;" />
-                  <TextField fx:id="dataAbate" layoutX="146.0" layoutY="168.0" style="-fx-background-color: #FFFFFF;" />
-                  <Label layoutX="81.0" layoutY="25.0" text="Sexo:" />
-                  <Label layoutX="31.0" layoutY="62.0" text="Valor arroba:" />
-                  <Label layoutX="82.0" layoutY="96.0" text="Peso:" />
-                  <Label layoutX="83.0" layoutY="134.0" text="Tipo:" />
-                  <Label layoutX="23.0" layoutY="173.0" text="Data de abate:" />
-               </children>
-            </Pane>
             <Pane fx:id="panelLote" layoutX="268.0" layoutY="210.0" prefHeight="216.0" prefWidth="309.0">
                <children>
                   <TextField fx:id="tipoLote" layoutX="136.0" layoutY="4.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">

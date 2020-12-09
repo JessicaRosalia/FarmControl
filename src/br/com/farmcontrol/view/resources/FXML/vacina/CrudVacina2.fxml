@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="crudRacao" prefHeight="500.0" prefWidth="564.0" style="-fx-background-color: #F5F8FB;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.farmcontrol.controller.racao.CrudRacaoController">
+<AnchorPane fx:id="crudVacina" prefHeight="500.0" prefWidth="564.0" style="-fx-background-color: #F5F8FB;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.farmcontrol.controller.vacina.CrudVacinaController">
          <children>
-            <Button id="btn-cadastrar" fx:id="cadastrar_racao" layoutX="53.0" layoutY="125.0" mnemonicParsing="false" onAction="#cadastrarRacao" prefHeight="60.0" prefWidth="209.0" text="Cadastrar Ração" textFill="#7f7ffb" AnchorPane.leftAnchor="53.0" AnchorPane.topAnchor="125.0">
+            <Button id="btn-cadastrar" fx:id="cadastrar_vacina" layoutX="53.0" layoutY="125.0" mnemonicParsing="false" onAction="#cadastrarVacina" prefHeight="60.0" prefWidth="209.0" text="Cadastrar Vacina" textFill="#7f7ffb" AnchorPane.leftAnchor="53.0" AnchorPane.topAnchor="125.0">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
@@ -20,12 +20,12 @@
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0">
                      <image>
-                        <Image url="@../../images/icone-racao.png" />
+                        <Image url="@../../images/icone-vacina.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
-            <Button id="btn-editar" fx:id="editar_racao" layoutX="287.0" layoutY="125.0" mnemonicParsing="false" onAction="#editarRacao" prefHeight="60.0" prefWidth="209.0" text="Editar Ração" textFill="#7f7ffb" AnchorPane.rightAnchor="53.0">
+            <Button id="btn-editar" fx:id="editar_vacina" layoutX="287.0" layoutY="125.0" mnemonicParsing="false" onAction="#editarVacina" prefHeight="60.0" prefWidth="209.0" text="Editar Vacina" textFill="#7f7ffb" AnchorPane.rightAnchor="53.0">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
@@ -40,7 +40,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button id="btn-buscar" fx:id="buscar_racao" layoutX="287.0" layoutY="235.0" mnemonicParsing="false" onAction="#buscarRacao" prefHeight="60.0" prefWidth="209.0" text="Buscar Ração" textFill="#7f7ffb" AnchorPane.rightAnchor="53.0">
+            <Button id="btn-buscar" fx:id="buscar_vacina" layoutX="287.0" layoutY="235.0" mnemonicParsing="false" onAction="#buscarVacina" prefHeight="60.0" prefWidth="209.0" text="Buscar Vacina" textFill="#7f7ffb" AnchorPane.rightAnchor="53.0">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
@@ -55,7 +55,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button id="btn-excluir" fx:id="excluir_racao" layoutX="53.0" layoutY="235.0" mnemonicParsing="false" onAction="#excluirRacao" prefHeight="60.0" prefWidth="209.0" text="Excluir Ração" textFill="#7f7ffb">
+            <Button id="btn-excluir" fx:id="excluir_vacina" layoutX="53.0" layoutY="235.0" mnemonicParsing="false" onAction="#excluirVacina" prefHeight="60.0" prefWidth="209.0" text="Excluir Vacina" textFill="#7f7ffb">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
@@ -65,12 +65,12 @@
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0">
                      <image>
-                        <Image url="@../../images/icone-racao.png" />
+                        <Image url="@../../images/icone-vacina.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
-            <Button id="btn-listar" fx:id="listar_racao" layoutX="53.0" layoutY="343.0" mnemonicParsing="false" onAction="#listarRacao" prefHeight="60.0" prefWidth="209.0" text="Listar Rações" textFill="#7f7ffb">
+            <Button id="btn-listar" fx:id="listar_vacina" layoutX="53.0" layoutY="343.0" mnemonicParsing="false" onAction="#buscarVacina" prefHeight="60.0" prefWidth="209.0" text="Listar Vacina" textFill="#7f7ffb">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
