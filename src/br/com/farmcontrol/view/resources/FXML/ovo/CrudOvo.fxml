@@ -17,11 +17,11 @@
          <children>
             <ListView fx:id="listAnimais" layoutX="23.0" layoutY="14.0" onKeyPressed="#carregarReproducoes" onMouseClicked="#carregarReproducoes" prefHeight="336.0" prefWidth="234.0" style="-fx-background-color: #FFFFFF;" />
             <ListView fx:id="listOvos" layoutX="312.0" layoutY="14.0" onKeyPressed="#pegarDadosReproducoes" onMouseClicked="#pegarDadosReproducoes" prefHeight="185.0" prefWidth="284.0" style="-fx-background-color: #FFFFFF;" />
-            <Label layoutX="294.0" layoutY="216.0" text="ID Ovo:" />
-            <Label layoutX="295.0" layoutY="254.0" text="ID do Animal:" />
-            <Label layoutX="295.0" layoutY="292.0" text="Quantidade:" />
-            <Label layoutX="296.0" layoutY="332.0" text="Valor unidade:" />
-            <Label layoutX="297.0" layoutY="368.0" text="Data:" />
+            <Label layoutX="312.0" layoutY="216.0" text="ID Ovo:" />
+            <Label layoutX="312.0" layoutY="254.0" text="ID do Animal:" />
+            <Label layoutX="312.0" layoutY="292.0" text="Quantidade:" />
+            <Label layoutX="312.0" layoutY="332.0" text="Valor unidade:" />
+            <Label layoutX="312.0" layoutY="368.0" text="Data:" />
             <TextField fx:id="idovos" disable="true" editable="false" layoutX="395.0" layoutY="211.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
                <padding>
                   <Insets top="10.0" />
@@ -49,7 +49,7 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button fx:id="deletar" disable="true" layoutX="128.0" layoutY="424.0" mnemonicParsing="false" onAction="#deletarOvos" prefHeight="37.0" prefWidth="90.0" style="-fx-background-color: FF6D6D;" text="Deletar" textFill="WHITE">
+            <Button fx:id="deletar" disable="true" layoutX="128.0" layoutY="424.0" mnemonicParsing="false" onAction="#deletarOvos" prefHeight="37.0" prefWidth="114.0" style="-fx-background-color: FF6D6D;" text="Deletar" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
