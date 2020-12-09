@@ -42,14 +42,14 @@
                <padding>
                   <Insets top="10.0" />
                </padding></TextField>
-            <Button fx:id="atualizar" disable="true" layoutX="41.0" layoutY="372.0" mnemonicParsing="false" onAction="#atualizarVacina" style="-fx-background-color: #7F7FFB;" text="Atualizar" textFill="WHITE">
+            <Button fx:id="atualizar" disable="true" layoutX="23.0" layoutY="424.0" mnemonicParsing="false" onAction="#atualizarVacina" style="-fx-background-color: #7F7FFB;" text="Atualizar" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button fx:id="deletar" disable="true" layoutX="150.0" layoutY="372.0" mnemonicParsing="false" onAction="#deletarVacina" prefHeight="37.0" prefWidth="90.0" style="-fx-background-color: FF6D6D;" text="Deletar" textFill="WHITE">
+            <Button fx:id="deletar" disable="true" layoutX="132.0" layoutY="424.0" mnemonicParsing="false" onAction="#deletarVacina" prefHeight="37.0" prefWidth="90.0" style="-fx-background-color: FF6D6D;" text="Deletar" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>

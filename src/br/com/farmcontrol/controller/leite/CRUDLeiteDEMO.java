@@ -25,7 +25,7 @@ public class CRUDLeiteDEMO extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-        Parent root = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/leite/CRUDLeite.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/leite/CrudLeite.fxml"));
         
         Scene scene = new Scene(root);
         
