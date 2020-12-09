@@ -144,7 +144,7 @@ public class LayoutController {
     void exibirPaginaVacina(ActionEvent event) {
     	AnchorPane crudVacina=null;
 		try {
-			crudVacina = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/vacina/CRUDVacina.fxml"));
+			crudVacina = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/vacina/CrudVacina.fxml"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
