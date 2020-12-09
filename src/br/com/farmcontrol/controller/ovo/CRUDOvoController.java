@@ -27,7 +27,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
-public class CrudOvoController {
+public class CRUDOvoController {
 
     @FXML
     private AnchorPane crudReprod;

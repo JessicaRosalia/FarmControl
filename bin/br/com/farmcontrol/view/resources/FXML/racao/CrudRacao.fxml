@@ -69,7 +69,7 @@
                   <Insets top="10.0" />
                </padding>
             </TextField>
-            <TitledPane fx:id="titledPane" alignment="CENTER" layoutX="270.0" layoutY="204.0" prefHeight="275.0" prefWidth="354.0" style="-fx-background-color: #7F7FFB;" text="Cadastrar" textAlignment="CENTER" textFill="#7f7ffb" visible="false">
+            <TitledPane fx:id="titledPane" alignment="CENTER" layoutX="270.0" layoutY="204.0" prefHeight="275.0" prefWidth="354.0" style="-fx-background-color: #7F7FFB;" text="Cadastrar" textAlignment="CENTER" textFill="#7f7ffb">
                <content>
                   <Pane prefHeight="200.0" prefWidth="200.0" visible="false">
                      <children>
@@ -89,7 +89,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Button fx:id="cancelar_button" layoutX="237.0" layoutY="189.0" mnemonicParsing="false" onAction="#cancelarCadastro" style="-fx-background-color: #B2C0C2;" text="Cancelar" textFill="WHITE">
+                        <Button fx:id="cancelar_button" layoutX="244.0" layoutY="189.0" mnemonicParsing="false" onAction="#cancelarCadastro" style="-fx-background-color: #B2C0C2;" text="Cancelar" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
