@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="crudReprod" prefHeight="491.0" prefWidth="639.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.farmcontrol.controller.ovo.CrudOvoController">
+<AnchorPane id="AnchorPane" fx:id="crudReprod" prefHeight="491.0" prefWidth="639.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.farmcontrol.controller.ovo.CRUDOvoController">
    <children>
       <Pane fx:id="paneAnimais" layoutX="14.0" layoutY="14.0" prefHeight="432.0" prefWidth="513.0" style="-fx-background-color: #F1F5FE;" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
          <children>
