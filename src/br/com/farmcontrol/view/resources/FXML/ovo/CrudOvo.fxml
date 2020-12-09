@@ -1,30 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="456.0" prefWidth="515.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.farmcontrol.controller.ovo.CRUDOvoController">
+<AnchorPane id="AnchorPane" prefHeight="491.0" prefWidth="639.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.farmcontrol.controller.ovo.CrudOvoController">
    <children>
-      <Pane fx:id="paneAnimais" layoutX="14.0" layoutY="14.0" prefHeight="432.0" prefWidth="513.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
+      <Pane fx:id="paneAnimais" layoutX="14.0" layoutY="14.0" prefHeight="432.0" prefWidth="513.0" style="-fx-background-color: #F1F5FE;" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
          <children>
-            <ListView fx:id="listAnimais" layoutX="14.0" layoutY="14.0" onMouseClicked="#carregarOvos" prefHeight="404.0" prefWidth="198.0" />
-            <ListView fx:id="listOvos" layoutX="226.0" layoutY="14.0" onMouseClicked="#pegarDadosOvo" prefHeight="185.0" prefWidth="263.0" />
-            <Label layoutX="226.0" layoutY="218.0" text="ID Prod. Ovo" />
-            <Label layoutX="226.0" layoutY="246.0" text="ID Animal" />
-            <Label layoutX="226.0" layoutY="273.0" text="Quantidade" />
-            <Label layoutX="226.0" layoutY="301.0" text="Valor unidade" />
-            <Label layoutX="226.0" layoutY="332.0" text="Data" />
-            <TextField fx:id="idovo" disable="true" editable="false" layoutX="319.0" layoutY="213.0" />
-            <TextField fx:id="idanimal" disable="true" editable="false" layoutX="319.0" layoutY="241.0" />
-            <TextField fx:id="quantidade" layoutX="319.0" layoutY="268.0" />
-            <TextField fx:id="valor_unidade" layoutX="319.0" layoutY="296.0" />
-            <TextField fx:id="data" layoutX="319.0" layoutY="327.0" />
-            <Button fx:id="atualizar" layoutX="233.0" layoutY="373.0" mnemonicParsing="false" onAction="#atualizarOvo" text="Atualizar" />
-            <Button fx:id="deletar" layoutX="373.0" layoutY="373.0" mnemonicParsing="false" onAction="#deletarOvo" text="Deletar" />
+            <ListView fx:id="listOvos" layoutX="23.0" layoutY="14.0" onKeyPressed="#carregarReproducoes" onMouseClicked="#carregarReproducoes" prefHeight="336.0" prefWidth="234.0" style="-fx-background-color: #FFFFFF;" />
+            <ListView fx:id="listOvo" layoutX="312.0" layoutY="14.0" onKeyPressed="#pegarDadosReproducoes" onMouseClicked="#pegarDadosReproducoes" prefHeight="185.0" prefWidth="284.0" style="-fx-background-color: #FFFFFF;" />
+            <Label layoutX="294.0" layoutY="216.0" text="ID Ovo:" />
+            <Label layoutX="294.0" layoutY="254.0" text="ID do Animal:" />
+            <Label layoutX="294.0" layoutY="292.0" text="Quantidade Ovos:" />
+            <Label layoutX="294.0" layoutY="332.0" text="Valor unidade:" />
+            <Label layoutX="294.0" layoutY="368.0" text="Data de produção:" />
+            <TextField fx:id="idOvos" disable="true" editable="false" layoutX="395.0" layoutY="211.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+               <padding>
+                  <Insets top="10.0" />
+               </padding></TextField>
+            <TextField fx:id="idanimal" disable="true" editable="false" layoutX="395.0" layoutY="249.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+               <padding>
+                  <Insets top="10.0" />
+               </padding></TextField>
+            <TextField fx:id="qtd" layoutX="395.0" layoutY="287.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+               <padding>
+                  <Insets top="10.0" />
+               </padding></TextField>
+            <TextField fx:id="valor_unid" layoutX="395.0" layoutY="325.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+               <padding>
+                  <Insets top="10.0" />
+               </padding></TextField>
+            <TextField fx:id="data_prod" layoutX="395.0" layoutY="363.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+               <padding>
+                  <Insets top="10.0" />
+               </padding></TextField>
+            <Button fx:id="atualizar" disable="true" layoutX="23.0" layoutY="424.0" mnemonicParsing="false" onAction="#atualizarOvos" style="-fx-background-color: #7F7FFB;" text="Atualizar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="deletar" disable="true" layoutX="140.0" layoutY="424.0" mnemonicParsing="false" onAction="#deletarOvos" prefHeight="37.0" prefWidth="90.0" style="-fx-background-color: FF6D6D;" text="Deletar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="adicionar" disable="true" layoutX="504.0" layoutY="424.0" mnemonicParsing="false" onAction="#novoOvos" style="-fx-background-color: #7F7FFB;" text="Adicionar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Button>
+            <TitledPane fx:id="titledPane" alignment="CENTER" layoutX="270.0" layoutY="204.0" prefHeight="275.0" prefWidth="354.0" style="-fx-background-color: #7F7FFB;" text="Cadastrar" textAlignment="CENTER" textFill="#7f7ffb" visible="false">
+               <content>
+                  <Pane prefHeight="200.0" prefWidth="200.0" visible="false">
+                     <children>
+                        <Label layoutX="32.0" layoutY="10.0" text="ID do Animal:" />
+                        <Label layoutX="32.0" layoutY="51.0" text="Quantidade:" />
+                        <Label layoutX="32.0" layoutY="90.0" text="Descrição:" />
+                        <Label layoutX="33.0" layoutY="130.0" text="Data:" />
+                        <TextField fx:id="cadastrar_id" disable="true" editable="false" layoutX="130.0" layoutY="3.0" prefWidth="200.0" />
+                        <TextField fx:id="cadastrar_qtd" layoutX="130.0" layoutY="44.0" prefWidth="200.0" />
+                        <TextField fx:id="cadastrar_desc" layoutX="130.0" layoutY="84.0" prefWidth="200.0" />
+                        <TextField fx:id="cadastrar_data" layoutX="130.0" layoutY="124.0" prefWidth="200.0" />
+                        <Button fx:id="cadastrar_button" layoutX="19.0" layoutY="183.0" mnemonicParsing="false" onAction="#cadastrarOvos" style="-fx-background-color: #7F7FFB;" text="Cadastrar" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="cancelar_button" layoutX="243.0" layoutY="183.0" mnemonicParsing="false" onAction="#cancelarCadastro" style="-fx-background-color: #B2C0C2;" text="Cancelar" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </Pane>
+               </content>
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </TitledPane>
          </children>
       </Pane>
    </children>

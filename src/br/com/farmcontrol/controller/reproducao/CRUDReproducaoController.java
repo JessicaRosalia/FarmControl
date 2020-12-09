@@ -24,6 +24,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.control.TitledPane;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javax.swing.JOptionPane;
 
@@ -36,6 +37,9 @@ public class CRUDReproducaoController implements Initializable {
     
     @FXML
     private Pane paneAnimais;
+    
+    @FXML
+    private AnchorPane crudReprod;
 
     @FXML
     private ListView<Animal> listAnimais;

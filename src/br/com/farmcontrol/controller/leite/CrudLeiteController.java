@@ -37,7 +37,7 @@ import javax.swing.JOptionPane;
  *
  * @author viniciuslopes
  */
-public class CRUDLeiteController implements Initializable {
+public class CrudLeiteController implements Initializable {
     
     @FXML
     private Pane paneAnimais;

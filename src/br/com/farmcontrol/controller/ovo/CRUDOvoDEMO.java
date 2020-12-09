@@ -24,7 +24,7 @@ public class CRUDOvoDEMO extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-        Parent root = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/ovo/CRUDOvo.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/ovo/CrudOvo.fxml"));
         
         Scene scene = new Scene(root);
         
