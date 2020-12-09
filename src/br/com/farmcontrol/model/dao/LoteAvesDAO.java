@@ -35,10 +35,10 @@ public class LoteAvesDAO {
 	
 public static List<LoteAves> read(){
         
-		Connection con = ConnectionFactory.getConnection();
-		PreparedStatement stmt = null;
-		ResultSet rs = null;
-		List<LoteAves> lotes = new ArrayList<>();
+        Connection con = ConnectionFactory.getConnection();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        List<LoteAves> lotes = new ArrayList<>();
 
         try {
             stmt = con.prepareStatement("SELECT *FROM lote_aves as l,animal as a "

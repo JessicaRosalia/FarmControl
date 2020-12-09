@@ -5,6 +5,7 @@
  */
 package br.com.farmcontrol.model.vo;
 
+
 /**
  *
  * @author viniciuslopes
@@ -34,9 +35,10 @@ public class LoteAves extends Animal {
     public String toString() {
         //return "LoteAves{" + "tipo_ave=" + tipo_ave + ", quantidade=" + quantidade + '}';
         //eturn "Lote ID: "+getId_animal()+" - "+getRaca();
-        String r= super.toString();
-        r+="- Tipo ave: "+this.tipo_ave+"- qtd: "+this.quantidade+"\n";
-        return r;
+        /*String r= super.toString();
+        r+="- Tipo ave: "+this.tipo_ave+"- qtd: "+this.quantidade+"";
+        return r;*/
+        return "LoteID: "+this.getId_animal()+" - "+this.tipo_ave;
     }
     
 }

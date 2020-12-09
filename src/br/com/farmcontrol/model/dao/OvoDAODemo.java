@@ -16,7 +16,7 @@ import java.sql.Date;
  */
 public class OvoDAODemo {
     public static void main(String[] args){
-        /* TESTE DA OPERAÇÃO CREATE DA CLASSE OvoDao 
+        /*TESTE DA OPERAÇÃO CREATE DA CLASSE OvoDao 
         
         LoteAves lote = new LoteAves();
         lote.setId_animal(1);
@@ -25,7 +25,7 @@ public class OvoDAODemo {
                 
         o.setLote(lote);
         o.setQtd_ovos(30);
-        o.setValor_unidade((float) 0.80);
+        o.setValor_unidade((float) 0.60);
         o.setData_producao(new Date(2020-1900, 12-1, 5));
         
         
@@ -33,8 +33,7 @@ public class OvoDAODemo {
         System.out.println(o.getQtd_ovos());
         System.out.println(o.getValor_unidade());
         
-        OvoDao.create(o);
-        */
+        OvoDao.create(o);*/
         
         /*TESTANDO OPERAÇÃO read()
         //OvoDao dao = new OvoDao();
@@ -45,7 +44,7 @@ public class OvoDAODemo {
             
         }*/
         
-        /*TESTANDO OPERACÇÃO update()     
+        //TESTANDO OPERACÇÃO update()     
         Ovo o = new Ovo();
         OvoDao dao = new OvoDao();
                
@@ -56,9 +55,9 @@ public class OvoDAODemo {
 //0 -1 tem que ter pra normalizar o mês
 //Date d2 = new Date((2020-1900), 11-1, 27);
         o.setData_producao(new Date((2020-1900), (8-1), 13));
-        o.setId_ovo(3);
+        o.setId_ovo(4);
         
-        dao.update(o);*/
+        dao.update(o);
         
         /*//TESTANDO OPERACAO delete()
         Ovo o = new Ovo();

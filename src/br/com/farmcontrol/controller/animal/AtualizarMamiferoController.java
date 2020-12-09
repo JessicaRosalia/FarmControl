@@ -124,7 +124,7 @@ public class AtualizarMamiferoController implements Initializable {
         dataAbate.setText(String.valueOf(m.getData_abate()));    
     }
     
-   public void atualizarAnimal() throws Exception{
+   public void atualizarAnimal() throws NullPointerException{
         //testeLoad.getChildren().clear();
         
         Mamifero m = new Mamifero();
@@ -132,7 +132,7 @@ public class AtualizarMamiferoController implements Initializable {
         m.setId_animal(Integer.parseInt(id.getText()));
         m.setRaca(raca.getText());
         m.setData_nasc_aquisicao(dataPadrao(dataAquisicao.getText()));
-        m.setData_venda(dataPadrao(dataVenda.getText()));
+        m.setData_venda(dataPadrao(String.valueOf(dataVenda.getText())));
         m.setValor_venda(Float.parseFloat(valorVenda.getText()));
         m.setSexo_mamifero(sexoMamifero.getText());
         m.setValor_arroba(Float.parseFloat(valorArroba.getText()));
