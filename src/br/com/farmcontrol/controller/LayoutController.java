@@ -115,7 +115,7 @@ public class LayoutController {
     void exibirPaginaRacao(ActionEvent event) {
     	AnchorPane crudRacao=null;
 		try {
-			crudRacao = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/racao/CrudRacao.fxml"));
+			crudRacao = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/racao/CRUDRacao.fxml"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

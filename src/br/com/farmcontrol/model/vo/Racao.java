@@ -61,8 +61,9 @@ public class Racao {
 
 	@Override
 	public String toString() {
-		return "Racao{" + "ID da racao=" + this.id_racao + ", Descricao=" + this.descricao + ", Quantidade=" + this.qtd_racao + ", Custo=" + this.custo + ", ID Animal=" + this.animal.getId_animal() + ", Data="+this.data+'}';
-	}
+            //return "Racao{" + "ID da racao=" + this.id_racao + ", Descricao=" + this.descricao + ", Quantidade=" + this.qtd_racao + ", Custo=" + this.custo + ", ID Animal=" + this.animal.getId_animal() + ", Data="+this.data+'}';
+            return "ID: "+this.id_racao+" - "+this.data;
+        }
     
     
     
