@@ -15,7 +15,7 @@
       <Pane layoutX="4.0" layoutY="3.0" prefHeight="474.0" prefWidth="613.0" style="-fx-background-color: #F1F5FE;">
          <children>
             <Label layoutX="350.0" layoutY="17.0" prefHeight="0.0" prefWidth="19.0" text="ID:" />
-            <ListView fx:id="listAnimais" layoutX="14.0" layoutY="14.0" onMouseClicked="#pegarInforAnimais" prefHeight="336.0" prefWidth="239.0" style="-fx-background-color: #FFFFFF;" />
+            <ListView fx:id="listAnimais" layoutX="14.0" layoutY="14.0" onKeyPressed="#pegarInforAnimais" onKeyReleased="#pegarInforAnimais" onMouseClicked="#pegarInforAnimais" prefHeight="336.0" prefWidth="239.0" style="-fx-background-color: #FFFFFF;" />
             <Button fx:id="atualizarAnimal" layoutX="14.0" layoutY="415.0" mnemonicParsing="false" onAction="#atualizarAnimal" style="-fx-background-color: #7F7FFB;" text="Atualizar" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
@@ -29,12 +29,12 @@
                </padding>
             </TextField>
             <Label layoutX="342.0" layoutY="60.0" text="Raça:" />
-            <TextField fx:id="dataVenda" layoutX="401.0" layoutY="135.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+            <TextField fx:id="dataVenda" layoutX="401.0" layoutY="95.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
                <padding>
                   <Insets top="10.0" />
                </padding>
             </TextField>
-            <TextField fx:id="dataAquisicao" layoutX="401.0" layoutY="95.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+            <TextField fx:id="dataAquisicao" layoutX="401.0" layoutY="130.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
                <padding>
                   <Insets top="10.0" />
                </padding>
@@ -76,7 +76,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="deletarLotes" layoutX="134.0" layoutY="415.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="91.0" style="-fx-background-color: FF6D6D;" text="Deletar" textFill="WHITE">
+            <Button fx:id="deletarLotes" layoutX="134.0" layoutY="415.0" mnemonicParsing="false" onAction="#deletarLote" prefHeight="37.0" prefWidth="91.0" style="-fx-background-color: FF6D6D;" text="Deletar" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>

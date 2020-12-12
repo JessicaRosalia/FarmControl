@@ -23,7 +23,7 @@ public class MenuAnimalController {
     void cadastrarLote(ActionEvent event) {
     	AnchorPane crudLotesAves=null;
 		try {
-			crudLotesAves = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/animal/AtualizacaoLotes.fxml"));
+			crudLotesAves = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/animal/CadastroAves.fxml"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -35,6 +35,17 @@ public class MenuAnimalController {
     void cadastrarMamifero(ActionEvent event) {
     	AnchorPane crudMamifero=null;
 		try {
+			crudMamifero = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/animal/CadastroMamifero.fxml"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+        crudAnimal.getChildren().clear();
+        crudAnimal.getChildren().add(crudMamifero);
+    }
+    
+    public void GerenciarMamifero(){
+        AnchorPane crudMamifero=null;
+		try {
 			crudMamifero = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/animal/AtualizarMamifero.fxml"));
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -42,5 +53,27 @@ public class MenuAnimalController {
         crudAnimal.getChildren().clear();
         crudAnimal.getChildren().add(crudMamifero);
     }
-
+    
+    public void GerenciarLote(){
+        AnchorPane crudLotesAves=null;
+        try {
+                crudLotesAves = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/animal/AtualizacaoLotes.fxml"));
+        } catch (IOException e) {
+                e.printStackTrace();
+        }
+        crudAnimal.getChildren().clear();
+        crudAnimal.getChildren().add(crudLotesAves);
+    }
+    
+    public void sair(){
+        AnchorPane menu=null;
+        try {
+            menu = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/animal/MenuAnimal.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        crudAnimal.getChildren().clear();
+        crudAnimal.getChildren().add(menu);
+    }
+    
 }

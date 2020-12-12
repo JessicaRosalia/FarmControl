@@ -5,9 +5,10 @@
  */
 package br.com.farmcontrol.controller.animal;
 
+import br.com.farmcontrol.model.dao.LoteAvesDAO;
 import br.com.farmcontrol.model.dao.MamiferoDAO;
+import br.com.farmcontrol.model.vo.LoteAves;
 import br.com.farmcontrol.model.vo.Mamifero;
-import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
 import java.util.Observable;
@@ -15,11 +16,9 @@ import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import javax.swing.JOptionPane;
 
 /**
@@ -27,21 +26,21 @@ import javax.swing.JOptionPane;
  *
  * @author viniciuslopes
  */
-public class CadastroMamiferoController implements Initializable {
+public class CadastroAvesController implements Initializable {
     
     @FXML
     private TextField raca;
 
     @FXML
     private TextField dataNasc;
-
+    
     @FXML
-    private ComboBox<String> cbSexo;
+    private TextField quantidade;
 
     @FXML
     private ComboBox<String> cbTipo;
+
     
-    private ObservableList<String> obsSexo;
     private ObservableList<String> obsTipo;
     
     /**
@@ -51,33 +50,27 @@ public class CadastroMamiferoController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         String[] itens = new String[2];
-        itens[0] = "Macho";
-        itens[1] = "Femea";
+        itens[0] = "Tipo Galinha";
+        itens[1] = "Tpo Codorna";
         
-        String[] tipos = new String[2];
-        tipos[0] = "Bovino";
-        tipos[1] = "Suíno";
         
-        obsSexo=FXCollections.observableArrayList(itens);
-        cbSexo.setItems(obsSexo);
-        
-        obsTipo=FXCollections.observableArrayList(tipos);
+        obsTipo=FXCollections.observableArrayList(itens);
         cbTipo.setItems(obsTipo);
+        
     }    
     
     public void cadastrarMamifero(){
         
-        Mamifero m = new Mamifero();
+        LoteAves m = new LoteAves();
         if(raca.getText()==null || dataNasc.getText()==null ||
-                cbSexo.getSelectionModel().getSelectedItem()==null ||
                 cbTipo.getSelectionModel().getSelectedItem()==null){
             JOptionPane.showMessageDialog(null, "Há campos a serem preecnhidos!");
         }else{
             m.setRaca(raca.getText());
             m.setData_nasc_aquisicao(dataPadrao(dataNasc.getText()));
-            m.setSexo_mamifero(cbSexo.getSelectionModel().getSelectedItem());
-            m.setTipo_mamifero(cbTipo.getSelectionModel().getSelectedItem());
-            MamiferoDAO.create(m);
+            m.setTipo_ave(cbTipo.getSelectionModel().getSelectedItem());
+            m.setQuantidade(Integer.parseInt(quantidade.getText()));
+            LoteAvesDAO.create(m);
             limparCampos();
         }
         
@@ -97,9 +90,5 @@ public class CadastroMamiferoController implements Initializable {
         int dia = Integer.parseInt(s.substring(8,10));   
         return new Date(ano-1900, mes-1, dia);
     } 
-    
-    public void sair(){
-        MenuAnimalController:sair();
-    }
     
 }

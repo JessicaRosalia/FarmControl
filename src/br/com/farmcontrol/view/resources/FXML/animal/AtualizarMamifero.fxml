@@ -15,7 +15,7 @@
       <Pane layoutX="13.0" layoutY="9.0" prefHeight="474.0" prefWidth="613.0" style="-fx-background-color: #F1F5FE;" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
          <children>
             <Label layoutX="347.0" layoutY="33.0" prefHeight="0.0" prefWidth="19.0" text="ID:" />
-            <ListView fx:id="listAnimais" layoutX="14.0" layoutY="15.0" onMouseClicked="#pegarInforAnimais" prefHeight="331.0" prefWidth="239.0" style="-fx-background-color: #FFFFFF;" />
+            <ListView fx:id="listAnimais" layoutX="14.0" layoutY="15.0" onKeyPressed="#pegarInforAnimais" onKeyReleased="#pegarInforAnimais" onMouseClicked="#pegarInforAnimais" prefHeight="331.0" prefWidth="239.0" style="-fx-background-color: #FFFFFF;" />
             <Button fx:id="atualizarAnimal" layoutX="21.0" layoutY="372.0" mnemonicParsing="false" onAction="#atualizarAnimal" prefHeight="10.0" prefWidth="90.0" style="-fx-background-color: #7F7FFB;" text="Atualizar" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />

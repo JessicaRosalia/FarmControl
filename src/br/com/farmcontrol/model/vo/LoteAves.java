@@ -38,7 +38,7 @@ public class LoteAves extends Animal {
         /*String r= super.toString();
         r+="- Tipo ave: "+this.tipo_ave+"- qtd: "+this.quantidade+"";
         return r;*/
-        return "LoteID: "+this.getId_animal()+" - "+this.tipo_ave;
+        return "LoteID: "+this.getId_animal()+" - "+this.getRaca();
     }
     
 }

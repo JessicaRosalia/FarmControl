@@ -138,6 +138,7 @@ public class CRUDRacaoController implements Initializable {
         
         titledPane.setVisible(true);
         cadastrar_id.setText(String.valueOf(m.getId_animal()));
+        cadastrar_custo.setText("0");
     }
     
     public void cadastrarReprod(){

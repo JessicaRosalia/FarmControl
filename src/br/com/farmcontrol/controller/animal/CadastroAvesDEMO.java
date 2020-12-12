@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.farmcontrol.controller.ovo;
+package br.com.farmcontrol.controller.animal;
 
-import br.com.farmcontrol.controller.reproducao.*;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -20,12 +19,12 @@ import javafx.stage.Stage;
  *
  * @author viniciuslopes
  */
-public class CRUDOvoDEMO extends Application {
+public class CadastroAvesDEMO extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
 
-        Parent root = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/ovo/CRUDOvo.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/animal/CadastroAves.fxml"));
         
         Scene scene = new Scene(root);
         
