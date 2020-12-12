@@ -27,7 +27,7 @@ public class LoteAvesDAO {
 			JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
 			
 		} catch (SQLException e) {
-			 JOptionPane.showConfirmDialog(null, " Erro ao salvar: "+e);
+			 JOptionPane.showMessageDialog(null, " Erro ao salvar: "+e);
 		} finally {
 			 ConnectionFactory.closeConnection(con,stmt);
 		}
@@ -42,7 +42,7 @@ public static List<LoteAves> read(){
 
         try {
             stmt = con.prepareStatement("SELECT *FROM lote_aves as l,animal as a "
-                    + "WHERE l.idanimal=a.idanimal");
+                    + "WHERE l.idanimal=a.idanimal ORDER BY l.idanimal");
             rs = stmt.executeQuery();
 
             while(rs.next()){
@@ -161,7 +161,7 @@ public static void update(LoteAves l){
         JOptionPane.showMessageDialog(null, "Atualizado com sucesso!");
         
     } catch (SQLException e) {
-        JOptionPane.showConfirmDialog(null, " Erro ao atualizar: "+e);
+        JOptionPane.showMessageDialog(null, " Erro ao atualizar: "+e);
     
     }finally{
         ConnectionFactory.closeConnection(con, stmt);
@@ -182,7 +182,7 @@ public static void delete(LoteAves l){
         AnimalDAO.delete(l);
         JOptionPane.showMessageDialog(null, "Deletado com sucesso!");
     } catch (SQLException e) {
-        JOptionPane.showConfirmDialog(null, " Erro ao deletar: "+e);
+        JOptionPane.showMessageDialog(null, " Erro ao deletar: "+e);
     } finally{
         ConnectionFactory.closeConnection(con, stmt);
     }

@@ -110,7 +110,7 @@ public class OvoDao {
     
     public static List<Ovo> read(LoteAves l){
         Connection con = ConnectionFactory.getConnection();
-        String sql = "SELECT * FROM ovos WHERE idanimal=?";
+        String sql = "SELECT * FROM ovos WHERE idanimal=? ORDER BY idovos";
         PreparedStatement stmt = null;
         ResultSet rs = null;
         

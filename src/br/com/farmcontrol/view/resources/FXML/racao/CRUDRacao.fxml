@@ -15,8 +15,8 @@
    <children>
       <Pane fx:id="paneAnimais" layoutX="14.0" layoutY="14.0" prefHeight="432.0" prefWidth="513.0" style="-fx-background-color: #F1F5FE;" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
          <children>
-            <ListView fx:id="listAnimais" layoutX="23.0" layoutY="14.0" onKeyPressed="#carregarReproducoes" onMouseClicked="#carregarReproducoes" prefHeight="336.0" prefWidth="234.0" style="-fx-background-color: #FFFFFF;" />
-            <ListView fx:id="listRacao" layoutX="312.0" layoutY="14.0" onKeyPressed="#pegarDadosReproducoes" onMouseClicked="#pegarDadosReproducoes" prefHeight="185.0" prefWidth="284.0" style="-fx-background-color: #FFFFFF;" />
+            <ListView fx:id="listAnimais" layoutX="23.0" layoutY="14.0" onKeyPressed="#carregarReproducoes" onKeyReleased="#carregarReproducoes" onMouseClicked="#carregarReproducoes" prefHeight="336.0" prefWidth="234.0" style="-fx-background-color: #FFFFFF;" />
+            <ListView fx:id="listRacao" layoutX="312.0" layoutY="14.0" onKeyPressed="#pegarDadosReproducoes" onKeyReleased="#pegarDadosReproducoes" onMouseClicked="#pegarDadosReproducoes" prefHeight="185.0" prefWidth="284.0" style="-fx-background-color: #FFFFFF;" />
             <Label layoutX="308.0" layoutY="216.0" text="ID Ração:" />
             <Label layoutX="308.0" layoutY="254.0" text="ID do Animal:" />
             <Label layoutX="308.0" layoutY="292.0" text="Quantidade:" />

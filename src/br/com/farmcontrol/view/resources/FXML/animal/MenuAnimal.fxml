@@ -25,7 +25,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button id="btn-editar" fx:id="cadastrar_lote" layoutX="361.0" layoutY="125.0" mnemonicParsing="false" onAction="#cadastrarLote" prefHeight="60.0" prefWidth="209.0" text="Cadastrar Lote de Aves" textFill="#7f7ffb" AnchorPane.rightAnchor="70.0">
+            <Button id="btn-editar" fx:id="cadastrar_lote" layoutX="361.0" layoutY="125.0" mnemonicParsing="false" onAction="#cadastrarLote" prefHeight="60.0" prefWidth="209.0" text="Cadastrar Lote de Aves" textFill="#7f7ffb" wrapText="true" AnchorPane.rightAnchor="70.0">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
@@ -40,6 +40,36 @@
                   </ImageView>
                </graphic>
             </Button>
+      <Button id="btn-cadastrar" fx:id="cadastrar_mamifero1" layoutX="70.0" layoutY="220.0" mnemonicParsing="false" onAction="#GerenciarMamifero" prefHeight="60.0" prefWidth="209.0" text="Gerenciar Mamíferos" textFill="#7f7ffb">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0">
+               <image>
+                  <Image url="@../../images/cadastrar-animal.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button id="btn-editar" fx:id="cadastrar_lote1" layoutX="361.0" layoutY="220.0" mnemonicParsing="false" onAction="#GerenciarLote" prefHeight="60.0" prefWidth="209.0" text="Gerenciar Lote de Aves" textFill="#7f7ffb" wrapText="true">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0">
+               <image>
+                  <Image url="@../../images/cadastrar-animal.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
          </children>
          <effect>
             <DropShadow color="#0000003d" />

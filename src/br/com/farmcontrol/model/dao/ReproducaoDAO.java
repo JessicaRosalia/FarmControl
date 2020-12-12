@@ -148,7 +148,7 @@ public class ReproducaoDAO {
         
         public static List<Reproducao> read(Animal m){
             Connection con = ConnectionFactory.getConnection();
-            String sql = "SELECT * FROM reproducao WHERE idanimal=?";
+            String sql = "SELECT * FROM reproducao WHERE idanimal=? ORDER BY idreprod";
             PreparedStatement stmt = null;
             ResultSet rs = null;
             
@@ -234,7 +234,7 @@ public class ReproducaoDAO {
             JOptionPane.showMessageDialog(null, "Atualizado com sucesso!");
             
         } catch (SQLException ex) {
-            JOptionPane.showConfirmDialog(null, " Erro ao atualizar: "+ex);
+            JOptionPane.showMessageDialog(null, " Erro ao atualizar: "+ex);
         }finally{
             ConnectionFactory.closeConnection(con, stmt);
         }
@@ -252,7 +252,7 @@ public class ReproducaoDAO {
             stmt.executeUpdate();
             JOptionPane.showMessageDialog(null, "Deletado com sucesso!");
         } catch (SQLException ex) {
-            JOptionPane.showConfirmDialog(null, " Erro ao deletar: "+ex);
+            JOptionPane.showMessageDialog(null, " Erro ao deletar: "+ex);
         } finally{
             ConnectionFactory.closeConnection(con, stmt);
         }

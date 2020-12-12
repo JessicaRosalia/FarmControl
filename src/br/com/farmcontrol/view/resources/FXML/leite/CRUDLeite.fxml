@@ -7,26 +7,36 @@
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="456.0" prefWidth="515.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.farmcontrol.controller.leite.CRUDLeiteController">
+<AnchorPane id="AnchorPane" prefHeight="491.0" prefWidth="639.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.farmcontrol.controller.leite.CRUDLeiteController">
    <children>
-      <Pane fx:id="paneAnimais" layoutX="14.0" layoutY="14.0" prefHeight="432.0" prefWidth="513.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
+      <Pane fx:id="paneAnimais" layoutX="3.0" layoutY="3.0" prefHeight="432.0" prefWidth="513.0" style="-fx-background-color: #F1F5FE;" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
          <children>
-            <ListView fx:id="listAnimais" layoutX="14.0" layoutY="14.0" onKeyPressed="#carregarReproducoes" onMouseClicked="#carregarReproducoes" prefHeight="404.0" prefWidth="198.0" />
-            <ListView fx:id="listLeite" layoutX="226.0" layoutY="14.0" onKeyPressed="#pegarDadosReproducoes" onMouseClicked="#pegarDadosReproducoes" prefHeight="185.0" prefWidth="263.0" />
-            <Label layoutX="226.0" layoutY="218.0" text="ID Leite" />
-            <Label layoutX="226.0" layoutY="246.0" text="ID Animal" />
-            <Label layoutX="226.0" layoutY="273.0" text="Quantidade" />
-            <Label layoutX="226.0" layoutY="301.0" text="Valor litro" />
-            <Label layoutX="226.0" layoutY="332.0" text="Data" />
-            <TextField fx:id="idleite" disable="true" editable="false" layoutX="319.0" layoutY="213.0" />
-            <TextField fx:id="idanimal" disable="true" editable="false" layoutX="319.0" layoutY="241.0" />
-            <TextField fx:id="quantidade" layoutX="319.0" layoutY="268.0" />
-            <TextField fx:id="valor_litro" layoutX="319.0" layoutY="296.0" />
-            <TextField fx:id="data" layoutX="319.0" layoutY="327.0" />
-            <Button fx:id="atualizar" disable="true" layoutX="233.0" layoutY="373.0" mnemonicParsing="false" onAction="#atualizarReprod" text="Atualizar" />
-            <Button fx:id="deletar" disable="true" layoutX="324.0" layoutY="373.0" mnemonicParsing="false" onAction="#deletarReprod" text="Deletar" />
-            <Button fx:id="adicionar" disable="true" layoutX="404.0" layoutY="373.0" mnemonicParsing="false" onAction="#novaReprod" text="Adicionar" />
+            <ListView fx:id="listAnimais" layoutX="23.0" layoutY="14.0" onKeyPressed="#carregarReproducoes" onKeyReleased="#carregarReproducoes" onMouseClicked="#carregarReproducoes" prefHeight="336.0" prefWidth="234.0" />
+            <ListView fx:id="listLeite" layoutX="312.0" layoutY="14.0" onKeyPressed="#pegarDadosReproducoes" onKeyReleased="#pegarDadosReproducoes" onMouseClicked="#pegarDadosReproducoes" prefHeight="185.0" prefWidth="284.0" />
+            <Label layoutX="312.0" layoutY="216.0" prefHeight="17.0" prefWidth="62.0" text="ID Leite:" />
+            <Label layoutX="312.0" layoutY="254.0" text="ID Animal:" />
+            <Label layoutX="312.0" layoutY="292.0" text="Quantidade:" />
+            <Label layoutX="312.0" layoutY="330.0" text="Valor litro:" />
+            <Label layoutX="312.0" layoutY="368.0" text="Data:" />
+            <TextField fx:id="idleite" disable="true" editable="false" layoutX="395.0" layoutY="211.0" prefHeight="27.0" prefWidth="200.0" />
+            <TextField fx:id="idanimal" disable="true" editable="false" layoutX="395.0" layoutY="249.0" prefHeight="27.0" prefWidth="200.0" />
+            <TextField fx:id="quantidade" layoutX="395.0" layoutY="287.0" prefHeight="27.0" prefWidth="200.0" />
+            <TextField fx:id="valor_litro" layoutX="395.0" layoutY="325.0" prefHeight="27.0" prefWidth="200.0" />
+            <TextField fx:id="data" layoutX="395.0" layoutY="363.0" prefHeight="27.0" prefWidth="200.0" />
+            <Button fx:id="atualizar" disable="true" layoutX="23.0" layoutY="424.0" mnemonicParsing="false" onAction="#atualizarReprod" prefHeight="37.0" prefWidth="114.0" style="-fx-background-color: #7F7FFB;" text="Atualizar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Button>
+            <Button fx:id="deletar" disable="true" layoutX="153.0" layoutY="424.0" mnemonicParsing="false" onAction="#deletarReprod" prefHeight="37.0" prefWidth="114.0" style="-fx-background-color: FF6D6D;" text="Deletar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Button>
+            <Button fx:id="adicionar" disable="true" layoutX="398.0" layoutY="424.0" mnemonicParsing="false" onAction="#novaReprod" prefHeight="27.0" prefWidth="200.0" style="-fx-background-color: #7F7FFB;" text="Adicionar Produção" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Button>
             <TitledPane fx:id="titledPane" layoutX="75.0" layoutY="84.0" prefHeight="258.0" prefWidth="334.0" text="Cadastrar" visible="false">
                <content>
                   <Pane prefHeight="200.0" prefWidth="200.0" visible="false">

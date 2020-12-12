@@ -40,7 +40,7 @@
                   <Image url="@../../../../../../../../bin/br/com/farmcontrol/view/resources/images/cadastrar-animal.png" />
                </image>
             </ImageView>
-            <Button fx:id="sairMamifero" layoutX="325.0" layoutY="324.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="95.0" style="-fx-background-color: #B2C0C2;" text="Sair" textFill="WHITE">
+            <Button fx:id="sairMamifero" layoutX="325.0" layoutY="324.0" mnemonicParsing="false" onAction="#sair" prefHeight="10.0" prefWidth="95.0" style="-fx-background-color: #B2C0C2;" text="Sair" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -48,7 +48,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="cadastrarMamifero" layoutX="151.0" layoutY="323.0" mnemonicParsing="false" onAction="#cadastrarMamifero" prefHeight="10.0" prefWidth="95.0" style="-fx-background-color: #7F7FFB;" text="Cadastrar" textFill="WHITE">
+            <Button fx:id="cadastrarMamifero" layoutX="128.0" layoutY="323.0" mnemonicParsing="false" onAction="#cadastrarMamifero" prefHeight="32.0" prefWidth="118.0" style="-fx-background-color: #7F7FFB;" text="Cadastrar" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>

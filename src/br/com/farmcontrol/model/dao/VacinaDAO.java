@@ -28,10 +28,10 @@ public class VacinaDAO {
 			stmt.setString(3, v.getDescricao());
 			stmt.setFloat(4, v.getCusto());
 			stmt.executeUpdate();
-			JOptionPane.showConfirmDialog(null, "Salvo com sucesso!");
+			JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
 			
 		} catch (SQLException e) {
-			 JOptionPane.showConfirmDialog(null, " Erro ao salvar: "+e);
+			 JOptionPane.showMessageDialog(null, " Erro ao salvar: "+e);
 		} finally {
 			 ConnectionFactory.closeConnection(con, stmt);
 		}
@@ -73,7 +73,7 @@ public class VacinaDAO {
 	
         public static List<Vacina> read(Animal m){
             Connection con = ConnectionFactory.getConnection();
-            String sql = "SELECT * FROM vacina WHERE idanimal=?";
+            String sql = "SELECT * FROM vacina WHERE idanimal=? ORDER BY idvacina";
             PreparedStatement stmt = null;
             ResultSet rs = null;
             
@@ -180,15 +180,16 @@ public class VacinaDAO {
 		PreparedStatement stmt = null;
 		
 	    try {
-	    	stmt = con.prepareStatement("UPDATE vacina SET data_vacina=?, descricao=?, custo=? ");
+	    	stmt = con.prepareStatement("UPDATE vacina SET data_vacina=?, descricao=?, custo=? WHERE idvacina=?");
 	        stmt.setDate(1,(Date) v.getData_vacina());
 	        stmt.setString(2, v.getDescricao());
 	        stmt.setFloat(3, v.getCusto());
+                stmt.setInt(4, v.getId_vacina());
 	        stmt.executeUpdate();
-	        JOptionPane.showConfirmDialog(null, "Atualizado com sucesso!");
+	        JOptionPane.showMessageDialog(null, "Atualizado com sucesso!");
 	        
 	    } catch (SQLException e) {
-	        JOptionPane.showConfirmDialog(null, " Erro ao atualizar: "+e);
+	        JOptionPane.showMessageDialog(null, " Erro ao atualizar: "+e);
 	    
 	    }finally{
 	        ConnectionFactory.closeConnection(con, stmt);
@@ -205,9 +206,9 @@ public class VacinaDAO {
 	    	stmt = con.prepareStatement("DELETE FROM vacina WHERE idvacina=?");
 	    	stmt.setInt(1, v.getId_vacina());
 	        stmt.executeUpdate();
-	        JOptionPane.showConfirmDialog(null, "Deletado com sucesso!");
+	        JOptionPane.showMessageDialog(null, "Deletado com sucesso!");
 	    } catch (SQLException e) {
-	        JOptionPane.showConfirmDialog(null, " Erro ao deletar: "+e);
+	        JOptionPane.showMessageDialog(null, " Erro ao deletar: "+e);
 	    } finally{
 	        ConnectionFactory.closeConnection(con, stmt);
 	    }

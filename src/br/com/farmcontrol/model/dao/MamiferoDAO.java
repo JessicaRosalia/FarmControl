@@ -49,7 +49,7 @@ public class MamiferoDAO {
         
         Connection con = ConnectionFactory.getConnection();
         String sql = "SELECT * FROM mamifero_abate as m,animal as a "
-                + "WHERE m.idanimal=a.idanimal";
+                + "WHERE m.idanimal=a.idanimal ORDER BY m.idanimal";
         PreparedStatement stmt = null;
         ResultSet rs = null;
 

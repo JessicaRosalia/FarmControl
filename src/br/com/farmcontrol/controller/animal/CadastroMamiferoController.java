@@ -7,6 +7,7 @@ package br.com.farmcontrol.controller.animal;
 
 import br.com.farmcontrol.model.dao.MamiferoDAO;
 import br.com.farmcontrol.model.vo.Mamifero;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
 import java.util.Observable;
@@ -14,9 +15,11 @@ import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javax.swing.JOptionPane;
 
 /**
@@ -94,5 +97,9 @@ public class CadastroMamiferoController implements Initializable {
         int dia = Integer.parseInt(s.substring(8,10));   
         return new Date(ano-1900, mes-1, dia);
     } 
+    
+    public void sair(){
+        MenuAnimalController:sair();
+    }
     
 }
