@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="wrapper" prefHeight="494.0" prefWidth="648.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.farmcontrol.controller.LayoutController">
+   <children>
+      <Pane prefHeight="494.0" prefWidth="648.0" style="-fx-background-color: #F5F8FB;">
+         <children>
+            <Pane fx:id="producoes" layoutX="371.0" layoutY="233.0" prefHeight="69.0" prefWidth="237.0" style="-fx-background-color: #fff; -fx-border-radius: 15px;">
+               <children>
+                  <TextField fx:id="lbqtdAnimais" alignment="CENTER" layoutX="65.0" layoutY="8.0" onAction="#qtdAnimais" prefHeight="32.0" prefWidth="51.0" />
+                  <Label contentDisplay="CENTER" layoutX="66.0" layoutY="37.0" prefHeight="32.0" prefWidth="158.0" style="-fx-background-color: #fff; -fx-view-order: 100;" text="Produções cadastradas" textFill="#8b8b8b">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Pane layoutX="44.0" layoutY="33.0" prefHeight="25.0" prefWidth="2.0" style="-fx-background-color: #F89B2D;" />
+                  <Pane layoutX="33.0" layoutY="18.0" prefHeight="40.0" prefWidth="2.0" style="-fx-background-color: #F89B2D;" />
+                  <Pane layoutX="21.0" layoutY="43.0" prefHeight="15.0" prefWidth="2.0" style="-fx-background-color: #F89B2D;" />
+               </children>
+            </Pane>
+            <Pane fx:id="producoes1" layoutX="371.0" layoutY="313.0" prefHeight="69.0" prefWidth="237.0" style="-fx-background-color: #fff; -fx-border-radius: 15px;">
+               <children>
+                  <TextField alignment="CENTER" disable="true" layoutX="65.0" layoutY="8.0" prefHeight="32.0" prefWidth="51.0" />
+                  <Label contentDisplay="CENTER" layoutX="66.0" layoutY="37.0" prefHeight="32.0" prefWidth="158.0" style="-fx-background-color: #fff; -fx-view-order: 100;" text="Animais cadastrados" textFill="#8b8b8b">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Pane layoutX="44.0" layoutY="33.0" prefHeight="25.0" prefWidth="2.0" style="-fx-background-color: #2D2DF8;" />
+                  <Pane layoutX="33.0" layoutY="18.0" prefHeight="40.0" prefWidth="2.0" style="-fx-background-color: #2D2DF8;" />
+                  <Pane layoutX="21.0" layoutY="43.0" prefHeight="15.0" prefWidth="2.0" style="-fx-background-color: #2D2DF8;" />
+               </children>
+            </Pane>
+            <Pane fx:id="producoes11" layoutX="371.0" layoutY="393.0" prefHeight="69.0" prefWidth="237.0" style="-fx-background-color: #fff; -fx-border-radius: 15px;">
+               <children>
+                  <TextField alignment="CENTER" disable="true" layoutX="65.0" layoutY="8.0" prefHeight="32.0" prefWidth="51.0" />
+                  <Label contentDisplay="CENTER" layoutX="66.0" layoutY="37.0" prefHeight="32.0" prefWidth="158.0" style="-fx-background-color: #fff; -fx-view-order: 100;" text="Ração cadastrada" textFill="#8b8b8b">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Pane layoutX="44.0" layoutY="33.0" prefHeight="25.0" prefWidth="2.0" style="-fx-background-color: red;" />
+                  <Pane layoutX="33.0" layoutY="18.0" prefHeight="40.0" prefWidth="2.0" style="-fx-background-color: red;" />
+                  <Pane layoutX="21.0" layoutY="43.0" prefHeight="15.0" prefWidth="2.0" style="-fx-background-color: red;" />
+               </children>
+            </Pane>
+            <ImageView fitHeight="437.0" fitWidth="341.0" layoutX="45.0" layoutY="28.0" style="-fx-view-order: 100;">
+               <image>
+                  <Image url="@../images/page-home.jpeg" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

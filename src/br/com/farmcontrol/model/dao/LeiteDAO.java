@@ -13,14 +13,24 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 import br.com.farmcontrol.connection.ConnectionFactory;
-import br.com.farmcontrol.model.vo.Animal;
 import br.com.farmcontrol.model.vo.Leite;
 import br.com.farmcontrol.model.vo.Mamifero;
-import br.com.farmcontrol.model.vo.Reproducao;
 
-
+/**
+* Classe responsável pela manipulação dos dados a respeito da produção de Leite vindos do Banco de Dados, como cadastro, leitura, atualização e exclusão.
+* @author equipe
+* @version 1.1
+* @since Release 1.2 da aplicação
+*/
 public class LeiteDAO {
 	
+
+	/**
+	* Método create, responsável por inserir no Banco de Dados uma instância de Leite(uma produção, e não uma unidade). 
+	* Não retorna nada.
+	* @author equipe
+	* @param leite - instância de Leite
+	*/
 	public static void create(Leite leite) {
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
@@ -44,6 +54,12 @@ public class LeiteDAO {
 		}
 	}
 	
+	/**
+	* Método read, responsável por capturar, se houver, todas as ocorrências da instância de produção de Leite
+	* existentes no Banco de Dados inserindo em um List, para depois retorná-lo.
+	* @author equipe
+	* @return List<Leite> - um list com todos os leites do Banco de Dados.
+	*/
 	public static List<Leite> read(){
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
@@ -79,6 +95,13 @@ public class LeiteDAO {
 
 	}
 	
+	/**
+	* Método read que recebe um id como paramêtro, e é responsável por capturar, se houver, a ocorrência de produção Leite
+	* existente no Banco de Dados que corresponde ao id passado como paramêtro. Se encontrado, Leite será retornado.
+	* @author equipe
+	* @param id - id da produção de leite buscada
+	* @return Leite - A produção de Leite encontrada no Banco de Dados que corresponde ao id passado.
+	*/
 	public static Leite read(int id){
         Connection con = ConnectionFactory.getConnection();
         String sql = "SELECT * FROM leite WHERE idleite=?";
@@ -91,7 +114,6 @@ public class LeiteDAO {
             stmt.setInt(1, id);
             rs = stmt.executeQuery();
             if(!rs.next()){
-                //JOptionPane.showMessageDialog(null, "Nenhum item com esse ID!");
                 throw new NullPointerException("Item inexistente!");
             };
             Mamifero m = new Mamifero();
@@ -111,6 +133,14 @@ public class LeiteDAO {
         return leite;
     }
 
+	/**
+	* Método read que recebe uma data como paramêtro, e é responsável por capturar, se houver,
+	* todas as ocorrências de instâncias de Leite com aquela data passada como paramêtro. 
+	* Se encontrado, uma lista dos Leites será retornada.
+	* @author equipe
+	* @param d - data a ser buscada nas produções leites
+	* @return List<Leite> - Lista de produções de Leite encontradas no Banco de Dados que correspondem à busca.
+	*/
 	public static List<Leite> read(Date d){
         Connection con = ConnectionFactory.getConnection();
         String sql = "SELECT * FROM leite WHERE data_leite=?";
@@ -133,8 +163,6 @@ public class LeiteDAO {
                 leite.setId_leite(rs.getInt("idleite"));
                 leite.setQtd_leite(rs.getInt("quantidade"));
                 leite.setValor_litro(rs.getFloat("valor_litro"));
-            
-
                 leites.add(leite);
             }
             
@@ -147,37 +175,52 @@ public class LeiteDAO {
         return leites;
     }
 
-        public static List<Leite> read(Mamifero m){
-            Connection con = ConnectionFactory.getConnection();
-            String sql = "SELECT * FROM leite WHERE idanimal=? ORDER BY idleite";
-            PreparedStatement stmt = null;
-            ResultSet rs = null;
-            
-            List<Leite> leites = new ArrayList<>();
-            
-            try {
-                stmt = con.prepareStatement(sql);
-                stmt.setInt(1, m.getId_animal());
-                rs = stmt.executeQuery();
-            
-            while(rs.next()){
-                Leite leite = new Leite();
-                leite.setAnimal(m);
-                leite.setData_producao(rs.getDate("data_leite"));
-                leite.setId_leite(rs.getInt("idleite"));
-                leite.setQtd_leite(rs.getInt("quantidade"));
-                leite.setValor_litro(rs.getFloat("valor_litro"));
-                leites.add(leite);
-            }
-            
-            } catch (SQLException ex) {
-                Logger.getLogger(LeiteDAO.class.getName()).log(Level.SEVERE, null, ex);
-            } finally{
-                ConnectionFactory.closeConnection(con, stmt, rs);
-            }
-            return leites;
+	
+	/**
+	* Método read que recebe um Mamífero como paramêtro, e é responsável por capturar, se houver,
+	* todas as ocorrências de instâncias de Leite no Banco de Dados com aquele mamífero associado.
+	* Se encontrado, uma lista com os Leites será retornada.
+	* @author equipe
+	* @param m - Mamífero a ter suas produções de Leite buscadas.
+	* @return List<Leite> - Lista de produções de Leites encontradas no Banco de Dados que correspondem à busca.
+	*/
+    public static List<Leite> read(Mamifero m){
+        Connection con = ConnectionFactory.getConnection();
+        String sql = "SELECT * FROM leite WHERE idanimal=? ORDER BY idleite";
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        
+        List<Leite> leites = new ArrayList<>();
+        
+        try {
+            stmt = con.prepareStatement(sql);
+            stmt.setInt(1, m.getId_animal());
+            rs = stmt.executeQuery();
+        
+        while(rs.next()){
+            Leite leite = new Leite();
+            leite.setAnimal(m);
+            leite.setData_producao(rs.getDate("data_leite"));
+            leite.setId_leite(rs.getInt("idleite"));
+            leite.setQtd_leite(rs.getInt("quantidade"));
+            leite.setValor_litro(rs.getFloat("valor_litro"));
+            leites.add(leite);
         }
+        
+        } catch (SQLException ex) {
+            Logger.getLogger(LeiteDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally{
+            ConnectionFactory.closeConnection(con, stmt, rs);
+        }
+        return leites;
+    }
 
+	/**
+	* Método update que é responsável por atualizar a produção de leite recebido como paramêtro,
+	* com as novas informações vindas com ele. A atualização é refletida no Banco de Dados. Não retorna nada.
+	* @author equipe
+	* @param l - Produção de Leite a ser atualizada.
+	*/
 	public static void update(Leite l){
         Connection con = ConnectionFactory.getConnection();
         String sql = "UPDATE leite "
@@ -194,7 +237,6 @@ public class LeiteDAO {
             stmt.setInt(4,l.getId_leite());
             stmt.executeUpdate();
             JOptionPane.showMessageDialog(null, "Atualizado com sucesso!");
-            
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, " Erro ao atualizar: "+ex);
         }finally{
@@ -203,6 +245,11 @@ public class LeiteDAO {
     }
 	
 	
+	/**
+	* Método delete que é responsável por deletar uma produção leite recebida como paramêtro do Banco de Dados. Nâo retorna nada.
+	* @author equipe
+	* @param r - Produção de Leite a ser deletada.
+	*/
 	public static void delete(Leite r){
         
         Connection con = ConnectionFactory.getConnection();

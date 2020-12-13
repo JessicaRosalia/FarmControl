@@ -8,5 +8,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFx"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/post"/>
+	<classpathentry kind="lib" path="C:/Users/jessi/Downloads/itext-5.0.5.jar/itext-5.0.5.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

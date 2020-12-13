@@ -2,7 +2,6 @@ package br.com.farmcontrol.model.dao;
 
 import br.com.farmcontrol.connection.ConnectionFactory;
 import br.com.farmcontrol.model.vo.Animal;
-import br.com.farmcontrol.model.vo.LoteAves;
 import br.com.farmcontrol.model.vo.Mamifero;
 import java.sql.Connection;
 import java.sql.Date;
@@ -15,8 +14,21 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
+/**
+* Classe responsável pela manipulação dos dados a respeito de Animal vindos do Banco de Dados,
+* como cadastro, leitura, atualização e exclusão.
+* @author equipe
+* @version 1.1
+* @since Release 1.2 da aplicação
+*/
 public class AnimalDAO {
 
+	
+	/**
+	* Método create, responsável por inserir no Banco de Dados uma instância de Animal. Não retorna nada.
+	* @author equipe
+	* @param a - Instância de Animal.
+	*/
     public static void create(Animal a){
         
         Connection con = ConnectionFactory.getConnection();
@@ -41,7 +53,14 @@ public class AnimalDAO {
         }
         
     }
-        
+       
+    
+	/**
+	* Método read, responsável por capturar, se houver, todas as ocorrências de Animal
+	* existentes no Banco de Dados inserindo em um List, para depois retorná-lo.
+	* @author equipe
+	* @return List<Animal> - um list com todas os Animais do Banco de Dados.
+	*/
     public static List<Animal> read(){
         Connection con = ConnectionFactory.getConnection();
         String sql = "SELECT * FROM animal ORDER BY idanimal";
@@ -72,7 +91,16 @@ public class AnimalDAO {
 
         return animais;
     }
-        
+    
+    
+	/**
+	* Método read que recebe um id como paramêtro, e é responsável por capturar, se houver,
+	* a ocorrência de uma instância de Animal existente no Banco de Dados que corresponde ao id passado como paramêtro.
+	* Se encontrado, o Animal será retornado.
+	* @author equipe
+	* @param id - id do Animal buscado.
+	* @return Animal - O Animal encontrado no Banco de Dados que corresponde ao id passado.
+	*/
     public static Animal read(int id){
         Connection con = ConnectionFactory.getConnection();
         String sql = "SELECT * FROM animal WHERE idanimal=?";
@@ -102,7 +130,13 @@ public class AnimalDAO {
 
         return a;
     }
-        
+    
+	/**
+	* Método update que é responsável por atualizar o Animal recebida como paramêtro,
+	* com as novas informações vindas com ele. A atualização é refletida no Banco de Dados. Não retorna nada.
+	* @author equipe
+	* @param a - Animal a ser atualizado.
+	*/
     public static void update(Animal a){
         Connection con = ConnectionFactory.getConnection();
         String sql = "UPDATE animal "
@@ -119,15 +153,18 @@ public class AnimalDAO {
             stmt.setFloat(4,a.getValor_venda());
             stmt.setInt(5, a.getId_animal());
             stmt.executeUpdate();
-            //JOptionPane.showConfirmDialog(null, "Atualizado com sucesso!");
-            
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, " Erro ao atualizar: "+ex);
         }finally{
             ConnectionFactory.closeConnection(con, stmt);
         }
     }
-        
+       
+	/**
+	* Método delete que é responsável por deletar um Animal recebido como paramêtro do Banco de Dados. Nâo retorna nada.
+	* @author equipe
+	* @param a - Animal a ser deletado.
+	*/
     public static void delete(Animal a){
 
         Connection con = ConnectionFactory.getConnection();
@@ -138,7 +175,6 @@ public class AnimalDAO {
             stmt = con.prepareStatement(sql);
             stmt.setInt(1, a.getId_animal());
             stmt.executeUpdate();
-            //JOptionPane.showConfirmDialog(null, "Deletado com sucesso!");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, " Erro ao deletar: "+ex);
         } finally{

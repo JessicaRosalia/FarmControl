@@ -1,10 +1,10 @@
 package br.com.farmcontrol.controller;
 import java.io.IOException;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
@@ -69,6 +69,12 @@ public class LayoutController {
 
     @FXML
     public AnchorPane crud;
+    
+    
+    
+    @FXML
+    private TextField lbqtdAnimais = new TextField();
+    
 
     @FXML
     void exibirPaginaAnimais(ActionEvent event) {
@@ -84,7 +90,14 @@ public class LayoutController {
 
     @FXML
     void exibirPaginaInicial(ActionEvent event) {
-
+    	AnchorPane home=null;
+		try {
+			home = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/pagina-inicial.fxml"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+        crud.getChildren().clear();
+        crud.getChildren().add(home);
     }
 
     @FXML
@@ -125,7 +138,14 @@ public class LayoutController {
 
     @FXML
     void exibirPaginaRelatorios(ActionEvent event) {
-
+    	AnchorPane crudRel=null;
+		try {
+			crudRel = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/relatorios/MenuRelatorios.fxml"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+        crud.getChildren().clear();
+        crud.getChildren().add(crudRel);
     }
 
     @FXML
@@ -152,4 +172,9 @@ public class LayoutController {
         crud.getChildren().add(crudVacina);
     }
 
+
+    @FXML
+    void qtdAnimais(ActionEvent event) {
+
+    }
 }
