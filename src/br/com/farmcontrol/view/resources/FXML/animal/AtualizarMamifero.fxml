@@ -95,12 +95,12 @@
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
             <Label layoutX="37.0" layoutY="14.0" text="Animais e Lotes &gt;" />
-            <Label layoutX="44.0" layoutY="67.0" text="Mamíferos cadastrados no Sistema" textFill="#7f7ffb">
+            <Label layoutX="33.0" layoutY="67.0" text="Mamíferos cadastrados no Sistema" textFill="#7f7ffb">
                <font>
                   <Font name="Carlito Bold" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="521.0" layoutY="14.0" prefHeight="58.0" prefWidth="180.0" text="Alterar dados do Mamífero selecionado" textFill="#7f7ffb" wrapText="true">
+            <Label layoutX="511.0" layoutY="14.0" prefHeight="58.0" prefWidth="180.0" text="Alterar dados do Mamífero selecionado" textFill="#7f7ffb" wrapText="true">
                <font>
                   <Font name="Carlito Bold" size="15.0" />
                </font>

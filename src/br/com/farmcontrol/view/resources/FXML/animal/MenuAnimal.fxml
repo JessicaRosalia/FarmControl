@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="crudAnimal" prefHeight="500.0" prefWidth="640.0" style="-fx-background-color: #F5F8FB;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.farmcontrol.controller.animal.MenuAnimalController">
+<AnchorPane fx:id="crudAnimal" prefHeight="550.0" prefWidth="782.0" style="-fx-background-color: #F5F8FB;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.farmcontrol.controller.animal.MenuAnimalController">
          <children>
-            <Button id="btn-cadastrar" fx:id="cadastrar_mamifero" layoutX="70.0" layoutY="125.0" mnemonicParsing="false" onAction="#cadastrarMamifero" prefHeight="60.0" prefWidth="209.0" text="Cadastrar Mamíferos" textFill="#7f7ffb" AnchorPane.leftAnchor="70.0" AnchorPane.topAnchor="125.0">
+            <Button id="btn-cadastrar" fx:id="cadastrar_mamifero" layoutX="70.0" layoutY="125.0" mnemonicParsing="false" onAction="#cadastrarMamifero" prefHeight="60.0" prefWidth="209.0" text="Cadastrar Mamíferos" textFill="#7f7ffb" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="125.0">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
@@ -25,7 +25,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button id="btn-editar" fx:id="cadastrar_lote" layoutX="361.0" layoutY="125.0" mnemonicParsing="false" onAction="#cadastrarLote" prefHeight="60.0" prefWidth="209.0" text="Cadastrar Lote de Aves" textFill="#7f7ffb" wrapText="true" AnchorPane.rightAnchor="70.0">
+            <Button id="btn-editar" fx:id="cadastrar_lote" layoutX="361.0" layoutY="125.0" mnemonicParsing="false" onAction="#cadastrarLote" prefHeight="60.0" prefWidth="209.0" text="Cadastrar Lote de Aves" textFill="#7f7ffb" wrapText="true" AnchorPane.rightAnchor="100.0">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
@@ -40,7 +40,7 @@
                   </ImageView>
                </graphic>
             </Button>
-      <Button id="btn-cadastrar" fx:id="cadastrar_mamifero1" layoutX="70.0" layoutY="220.0" mnemonicParsing="false" onAction="#GerenciarMamifero" prefHeight="60.0" prefWidth="209.0" text="Gerenciar Mamíferos" textFill="#7f7ffb">
+      <Button id="btn-cadastrar" fx:id="cadastrar_mamifero1" layoutX="70.0" layoutY="220.0" mnemonicParsing="false" onAction="#GerenciarMamifero" prefHeight="60.0" prefWidth="209.0" text="Gerenciar Mamíferos" textFill="#7f7ffb" AnchorPane.leftAnchor="100.0">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
@@ -55,7 +55,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button id="btn-editar" fx:id="cadastrar_lote1" layoutX="361.0" layoutY="220.0" mnemonicParsing="false" onAction="#GerenciarLote" prefHeight="60.0" prefWidth="209.0" text="Gerenciar Lote de Aves" textFill="#7f7ffb" wrapText="true">
+      <Button id="btn-editar" fx:id="cadastrar_lote1" layoutX="361.0" layoutY="220.0" mnemonicParsing="false" onAction="#GerenciarLote" prefHeight="60.0" prefWidth="209.0" text="Gerenciar Lote de Aves" textFill="#7f7ffb" wrapText="true" AnchorPane.rightAnchor="100.0">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
