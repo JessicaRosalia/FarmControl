@@ -12,63 +12,59 @@
 
 <AnchorPane id="AnchorPane" fx:id="crudLoteAves" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E5E5E5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.farmcontrol.controller.animal.AtualizacaoLotesController">
      <children>
-      <Pane layoutX="4.0" layoutY="3.0" prefHeight="474.0" prefWidth="613.0" style="-fx-background-color: #F1F5FE;">
+      <Pane layoutX="4.0" layoutY="3.0" prefHeight="550.0" prefWidth="782.0" style="-fx-background-color: #F1F5FE;">
          <children>
-            <Label layoutX="350.0" layoutY="17.0" prefHeight="0.0" prefWidth="19.0" text="ID:" />
-            <ListView fx:id="listAnimais" layoutX="14.0" layoutY="14.0" onKeyPressed="#pegarInforAnimais" onKeyReleased="#pegarInforAnimais" onMouseClicked="#pegarInforAnimais" prefHeight="336.0" prefWidth="239.0" style="-fx-background-color: #FFFFFF;" />
-            <Button fx:id="atualizarAnimal" layoutX="14.0" layoutY="415.0" mnemonicParsing="false" onAction="#atualizarAnimal" style="-fx-background-color: #7F7FFB;" text="Atualizar" textFill="WHITE">
+            <ListView fx:id="listAnimais" layoutX="33.0" layoutY="110.0" onKeyPressed="#pegarInforAnimais" onKeyReleased="#pegarInforAnimais" onMouseClicked="#pegarInforAnimais" prefHeight="336.0" prefWidth="239.0" style="-fx-background-color: #FFFFFF;" />
+            <Label layoutX="465.0" layoutY="126.0" prefHeight="0.0" prefWidth="19.0" text="ID:" />
+            <TextField fx:id="id" disable="true" editable="false" layoutX="516.0" layoutY="120.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </TextField>
+            <Label layoutX="457.0" layoutY="167.0" text="Raça:" />
+            <TextField fx:id="raca" layoutX="516.0" layoutY="160.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </TextField>
+            <Label layoutX="406.0" layoutY="206.0" text="Data de venda:" />
+            <TextField fx:id="dataVenda" layoutX="516.0" layoutY="199.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </TextField>
+            <Label layoutX="406.0" layoutY="244.0" text="Data aquisição:" />
+            <TextField fx:id="dataAquisicao" layoutX="516.0" layoutY="238.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </TextField>
+            <Label layoutX="403.0" layoutY="288.0" text="Valor de venda:" />
+            <TextField fx:id="valorVenda" layoutX="516.0" layoutY="279.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </TextField>
+            <Label layoutX="455.0" layoutY="326.0" text="Tipo:" />
+            <TextField fx:id="tipoLote" layoutX="516.0" layoutY="318.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </TextField>
+            <Label layoutX="416.0" layoutY="365.0" text="Quantidade:" />
+            <TextField fx:id="quantidadeLote" layoutX="516.0" layoutY="358.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </TextField>
+            <Button fx:id="atualizarAnimal" layoutX="33.0" layoutY="495.0" mnemonicParsing="false" onAction="#atualizarAnimal" style="-fx-background-color: #7F7FFB;" text="Atualizar" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <TextField fx:id="valorVenda" layoutX="401.0" layoutY="175.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
-               <padding>
-                  <Insets top="10.0" />
-               </padding>
-            </TextField>
-            <Label layoutX="342.0" layoutY="60.0" text="Raça:" />
-            <TextField fx:id="dataVenda" layoutX="401.0" layoutY="95.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
-               <padding>
-                  <Insets top="10.0" />
-               </padding>
-            </TextField>
-            <TextField fx:id="dataAquisicao" layoutX="401.0" layoutY="130.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
-               <padding>
-                  <Insets top="10.0" />
-               </padding>
-            </TextField>
-            <Label layoutX="291.0" layoutY="137.0" text="Data aquisição:" />
-            <TextField fx:id="raca" layoutX="401.0" layoutY="56.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
-               <padding>
-                  <Insets top="10.0" />
-               </padding>
-            </TextField>
-            <TextField fx:id="id" disable="true" editable="false" layoutX="401.0" layoutY="16.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
-               <padding>
-                  <Insets top="10.0" />
-               </padding>
-            </TextField>
-            <Label layoutX="291.0" layoutY="102.0" text="Data de venda:" />
-            <Label layoutX="288.0" layoutY="184.0" text="Valor de venda:" />
-            <Pane fx:id="panelLote" layoutX="268.0" layoutY="210.0" prefHeight="216.0" prefWidth="309.0">
-               <children>
-                  <TextField fx:id="tipoLote" layoutX="134.0" layoutY="4.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
-                     <padding>
-                        <Insets top="10.0" />
-                     </padding>
-                  </TextField>
-                  <TextField fx:id="quantidadeLote" layoutX="135.0" layoutY="45.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
-                     <padding>
-                        <Insets top="10.0" />
-                     </padding>
-                  </TextField>
-                  <Label layoutX="75.0" layoutY="19.0" text="Tipo:" />
-                  <Label layoutX="37.0" layoutY="55.0" text="Quantidade:" />
-               </children>
-            </Pane>
-            <Button fx:id="sairAnimal" layoutX="514.0" layoutY="415.0" mnemonicParsing="false" onAction="#atualizarAnimal" prefHeight="37.0" prefWidth="91.0" style="-fx-background-color: #B2C0C2;" text="Sair" textFill="WHITE">
+            <Button fx:id="deletarLotes" layoutX="153.0" layoutY="495.0" mnemonicParsing="false" onAction="#deletarLote" prefHeight="37.0" prefWidth="91.0" style="-fx-background-color: FF6D6D;" text="Deletar" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -76,7 +72,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="deletarLotes" layoutX="134.0" layoutY="415.0" mnemonicParsing="false" onAction="#deletarLote" prefHeight="37.0" prefWidth="91.0" style="-fx-background-color: FF6D6D;" text="Deletar" textFill="WHITE">
+            <Button fx:id="sairAnimal" layoutX="629.0" layoutY="497.0" mnemonicParsing="false" onAction="#atualizarAnimal" prefHeight="37.0" prefWidth="91.0" style="-fx-background-color: #B2C0C2;" text="Sair" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -84,6 +80,18 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
+            <Label layoutX="33.0" layoutY="14.0" text="Animais e Lotes &gt; " />
+            <Label layoutX="134.0" layoutY="14.0" text="Gerenciar Lote de Aves" textFill="#7f7ffb" />
+            <Label layoutX="35.0" layoutY="67.0" text="Lotes de Aves cadastrados no Sistema" textFill="#7f7ffb">
+               <font>
+                  <Font name="Carlito Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="510.0" layoutY="75.0" text="Alterar dados do Lote selecionado" textFill="#7f7ffb">
+               <font>
+                  <Font name="Carlito Bold" size="15.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>
