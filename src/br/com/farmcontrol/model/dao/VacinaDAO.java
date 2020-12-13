@@ -49,7 +49,7 @@ public class VacinaDAO {
 		
 	} 
 	
-	/** Método read, que tem como finalidade capturar todas as ocorrências da instância de leite
+	/** Método read, que tem como finalidade capturar todas as ocorrências da instância de Vacina
 	 * existentes no banco de dados, os dados são inseridos em uma list<Vacina> e essa é retornada.
 	 * @return List<Vacina> - uma lista com todas as vacinas do banco de dados.
 	 * @author equipe
