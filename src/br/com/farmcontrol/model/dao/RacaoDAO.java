@@ -17,8 +17,20 @@ import br.com.farmcontrol.model.vo.Animal;
 import br.com.farmcontrol.model.vo.Mamifero;
 import br.com.farmcontrol.model.vo.Racao;
 
+
+/**
+* Classe responsável pela manipulação dos dados a respeito de Racao vindos do Banco de Dados, como cadastro, leitura, atualização e exclusão.
+* @author equipe
+* @version 1.1
+* @since Release 1.2 da aplicação
+*/
 public class RacaoDAO {
 
+	/**
+	* Método create, responsável por inserir no Banco de Dados uma instância de Racao. Não retorna nada.
+	* @author equipe
+	* @param racao - instância de Racao.
+	*/
 	public static void create(Racao racao) {
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
@@ -43,6 +55,13 @@ public class RacaoDAO {
 		}
 	}
 	
+	
+	/**
+	* Método read, responsável por capturar, se houver, todas as ocorrências da instância de Racao
+	* existentes no Banco de Dados inserindo em um List, para depois retorná-lo.
+	* @author equipe
+	* @return List<Racao> - um list com todas as Racões do Banco de Dados.
+	*/
 	public static List<Racao> read(){
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
@@ -77,6 +96,14 @@ public class RacaoDAO {
 		return racoes;
 	}
 	
+	
+	/**
+	* Método read que recebe um id como paramêtro, e é responsável por capturar, se houver, a ocorrência de uma instância de Racao
+	* existente no Banco de Dados que corresponde ao id passado como paramêtro. Se encontrado, a Racao será retornada.
+	* @author equipe
+	* @param id - id da Racao buscada.
+	* @return Racao - A instância de Racao encontrada no Banco de Dados que corresponde ao id passado.
+	*/
 	public static Racao read(int id){
         Connection con = ConnectionFactory.getConnection();
         String sql = "SELECT * FROM racao WHERE idracao=?";
@@ -109,42 +136,60 @@ public class RacaoDAO {
         
         return racao;
     }
-        
-        public static List<Racao> read(Animal m){
-            Connection con = ConnectionFactory.getConnection();
-            String sql = "SELECT * FROM racao WHERE idanimal=? ORDER By idracao";
-            PreparedStatement stmt = null;
-            ResultSet rs = null;
-            
-            List<Racao> racoes = new ArrayList<>();
-            
-            try {
-                stmt = con.prepareStatement(sql);
-                stmt.setInt(1, m.getId_animal());
-                rs = stmt.executeQuery();
-            
-            while(rs.next()){
-                Racao r = new Racao();
-                r.setAnimal(m);
-                r.setData(rs.getDate("data_racao"));
-                r.setId_racao(rs.getInt("idracao"));
-                r.setDescricao(rs.getString("descricao"));
-                r.setQtd_racao(rs.getInt("quantidade"));
-                r.setCusto(rs.getFloat("custo"));
-
-                racoes.add(r);
-            }
-            
-            } catch (SQLException ex) {
-                Logger.getLogger(RacaoDAO.class.getName()).log(Level.SEVERE, null, ex);
-            } finally{
-                ConnectionFactory.closeConnection(con, stmt, rs);
-            }
-            
-            
-            return racoes;
-        }
+       
 	
+	/**
+	* Método read que recebe um Animal como paramêtro, e é responsável por capturar, se houver,
+	* todas as ocorrências de Racao no Banco de Dados que diz respeito àquele Animal(ao seu consumo).
+	* Se encontrado, uma lista com as Rações será retornada.
+	* @author equipe
+	* @param m - Animal a ter suas Rações buscadas.
+	* @return List<Racao> - Lista de Rações encontradas no Banco de Dados que correspondem à busca.
+	*/
+    public static List<Racao> read(Animal m){
+        Connection con = ConnectionFactory.getConnection();
+        String sql = "SELECT * FROM racao WHERE idanimal=? ORDER By idracao";
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        
+        List<Racao> racoes = new ArrayList<>();
+        
+        try {
+            stmt = con.prepareStatement(sql);
+            stmt.setInt(1, m.getId_animal());
+            rs = stmt.executeQuery();
+        
+        while(rs.next()){
+            Racao r = new Racao();
+            r.setAnimal(m);
+            r.setData(rs.getDate("data_racao"));
+            r.setId_racao(rs.getInt("idracao"));
+            r.setDescricao(rs.getString("descricao"));
+            r.setQtd_racao(rs.getInt("quantidade"));
+            r.setCusto(rs.getFloat("custo"));
+
+            racoes.add(r);
+        }
+        
+        } catch (SQLException ex) {
+            Logger.getLogger(RacaoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally{
+            ConnectionFactory.closeConnection(con, stmt, rs);
+        }
+        
+        
+        return racoes;
+    }
+	
+    
+	/**
+	* Método read que recebe uma descrição como paramêtro, e é responsável por capturar, se houver,
+	* todas as ocorrências de Racao no Banco de Dados que possuem aquela descrição.
+	* Se encontrado, uma lista com as Rações será retornada.
+	* @author equipe
+	* @param descricao - Descrição a ser buscada na tabela racao do Banco de Dados.
+	* @return List<Racao> - Lista de Racões encontradas no Banco de Dados que correspondem à busca.
+	*/
 	public static List<Racao> read(String descricao){
         Connection con = ConnectionFactory.getConnection();
         String sql = "SELECT * FROM racao WHERE descricao=?";
@@ -181,6 +226,16 @@ public class RacaoDAO {
 		return racoes;
 	}
 	
+	
+	
+	/**
+	* Método read que recebe uma data como paramêtro, e é responsável por capturar, se houver,
+	* todas as ocorrências de Racao com aquela data passada como paramêtro. 
+	* Se encontrado, uma lista das Racções será retornada.
+	* @author equipe
+	* @param d - data a ser buscada na tabela racao.
+	* @return List<Racao> - Lista de Rações encontradas no Banco de Dados que correspondem à busca.
+	*/
 	public static List<Racao> read(Date d){
         Connection con = ConnectionFactory.getConnection();
         String sql = "SELECT * FROM racao WHERE data_racao=?";
@@ -218,6 +273,12 @@ public class RacaoDAO {
     }
 
 	
+	/**
+	* Método update que é responsável por atualizar a Racao recebida como paramêtro,
+	* com as novas informações vindas com ela. A atualização é refletida no Banco de Dados. Não retorna nada.
+	* @author equipe
+	* @param rep - Racao a ser atualizada.
+	*/
 	public static void update(Racao r){
         Connection con = ConnectionFactory.getConnection();
         String sql = "UPDATE racao "
@@ -243,7 +304,12 @@ public class RacaoDAO {
         }
     }
 
-	
+
+	/**
+	* Método delete que é responsável por deletar uma Racao recebida como paramêtro do Banco de Dados. Nâo retorna nada.
+	* @author equipe
+	* @param reprod - Racao a ser deletada.
+	*/
 	public static void delete(Racao r){
 	        
         Connection con = ConnectionFactory.getConnection();

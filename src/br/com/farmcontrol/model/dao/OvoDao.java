@@ -14,8 +14,22 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
+
+/**
+* Classe responsável pela manipulação dos dados a respeito da produção de Ovo vindos do Banco de Dados,
+* como cadastro, leitura, atualização e exclusão.
+* @author equipe
+* @version 1.1
+* @since Release 1.2 da aplicação
+*/
 public class OvoDao {
     
+	
+	/**
+	* Método create, responsável por inserir no Banco de Dados uma instância de Ovo. Não retorna nada.
+	* @author equipe
+	* @param o - instância de Ovo.
+	*/
     public static void create(Ovo o){
         
         Connection con = ConnectionFactory.getConnection();
@@ -41,6 +55,12 @@ public class OvoDao {
         
     }
     
+	/**
+	* Método read, responsável por capturar, se houver, todas as ocorrências da instância de Ovo
+	* existentes no Banco de Dados inserindo em um List, para depois retorná-lo.
+	* @author equipe
+	* @return List<Ovo> - um list com todas as produções de Ovos do Banco de Dados.
+	*/
     public static List<Ovo> read(){
         Connection con = ConnectionFactory.getConnection();
         String sql = "SELECT * FROM ovos";
@@ -74,6 +94,15 @@ public class OvoDao {
         return ovos;
     }
     
+    
+	/**
+	* Método read que recebe uma data como paramêtro, e é responsável por capturar, se houver,
+	* todas as ocorrências de produção de Ovos com aquela data passada como paramêtro. 
+	* Se encontrado, uma lista das produções de Ovos será retornada.
+	* @author equipe
+	* @param d - data a ser buscada na tabela ovos.
+	* @return List<Ovo> - Lista de de produções de Ovos encontradas no Banco de Dados que correspondem à busca.
+	*/
     public static List<Ovo> read(Date d){
         Connection con = ConnectionFactory.getConnection();
         String sql = "SELECT * FROM ovos WHERE data_ovo=?";
@@ -108,6 +137,15 @@ public class OvoDao {
         return ovos;
     }
     
+    
+	/**
+	* Método read que recebe um Lote de Aves como paramêtro, e é responsável por capturar, se houver,
+	* todas as ocorrências de produções de Ovos no Banco de Dados que diz respeito àquele Lote de animais.
+	* Se encontrado, uma lista com as produções de Ovos será retornada.
+	* @author equipe
+	* @param l - Lote de Aves a ter suas produções de Ovos buscadas.
+	* @return List<Racao> - Lista de produções de ovos encontradas no Banco de Dados que correspondem à busca.
+	*/
     public static List<Ovo> read(LoteAves l){
         Connection con = ConnectionFactory.getConnection();
         String sql = "SELECT * FROM ovos WHERE idanimal=? ORDER BY idovos";
@@ -141,6 +179,15 @@ public class OvoDao {
         return ovos;
     }
     
+    
+	/**
+	* Método read que recebe um id como paramêtro, e é responsável por capturar, se houver,
+	* a ocorrência de produção de Ovos existente no Banco de Dados que corresponde ao id passado como paramêtro.
+	* Se encontrado, a produção de Ovos será retornada.
+	* @author equipe
+	* @param id - id da produção de Ovos buscada.
+	* @return Ovo - A produção de Ovos encontrada no Banco de Dados que corresponde ao id passado.
+	*/
     public static Ovo read(int id){
         Connection con = ConnectionFactory.getConnection();
         String sql = "SELECT * FROM ovos WHERE idovos=?";
@@ -173,6 +220,12 @@ public class OvoDao {
         return o;
     }
     
+	/**
+	* Método update que é responsável por atualizar a produção de Ovos recebida como paramêtro,
+	* com as novas informações vindas com ela. A atualização é refletida no Banco de Dados. Não retorna nada.
+	* @author equipe
+	* @param o - produção de Ovos a ser atualizada.
+	*/
     public static void update(Ovo o){
         Connection con = ConnectionFactory.getConnection();
         String sql = "UPDATE ovos "
@@ -197,6 +250,13 @@ public class OvoDao {
         }
     }
     
+    
+	/**
+	* Método delete que é responsável por deletar uma produção de Ovos recebida como paramêtro do Banco de Dados.
+	* Nâo retorna nada.
+	* @author equipe
+	* @param o - Produção de Ovos a ser deletada.
+	*/
     public static void delete(Ovo o){
         
         Connection con = ConnectionFactory.getConnection();
