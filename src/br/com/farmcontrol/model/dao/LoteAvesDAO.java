@@ -12,17 +12,19 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-/**Classes para objetos do LoteAves
+/**Classes para objetos do tipo LoteAves,reponsável pelas manipulações dos lotesAves vindos do Banco de Dados, tais como cadastro, leitura,
+ * atualização, exclusão.
  * @author equipe
- * 
- * 
+ * @version 1.1
+ * @since Release 1.2 da aplicação
  */
+
 public class LoteAvesDAO {
 
-	/** Método create, que tem como principal objetivo a inserção de uma instância de LoteAves no banco de dados.
+	/** Método create, que tem como principal objetivo a inserção de uma instância de LoteAves no Banco de Dados.
 	 *  Não retorna nada.
-	 * @param l - instância de LoteAves.
 	 * @author equipe
+	 * @param l - instância de LoteAves.
 	 */
 	public static void create (LoteAves l) {
 		Connection con = ConnectionFactory.getConnection();
@@ -44,9 +46,9 @@ public class LoteAvesDAO {
 	}
 	
 	/** Método read, que tem como finalidade capturar todas as ocorrências da instância de LoteAves
-	 * existentes no banco de dados, os dados são inseridos em uma list<LoteAves> e essa é retornada.
-	 * @return List<LoteAves> - uma lista com todas os lotes de Aves do banco de dados.
+	 * existentes no Banco de Dados, os dados são inseridos em uma list<LoteAves> e essa é retornada.
 	 * @author equipe
+	 * @return List<LoteAves> - uma lista com todas os lotes de Aves do Banco de Dados.
 	 */
 	public static List<LoteAves> read(){
         
@@ -88,9 +90,9 @@ public class LoteAvesDAO {
 	/** Método read que recebe um id como parâtro, tendo como finalidade capturar, se houver, a ocorrência 
 	 * de uma instância de LoteAves no Banco de Dados, correspondete com o id passado como parâtro. Se encontrado
 	 * o LoteAves será retornado. 
+	 * @author Equipe
 	 * @param id - int
 	 * @return LoteAves - a instância de LoteAves encontrada no banco de dados correspondente ao id passado como parâmetro.
-	 * @author Equipe
 	 */
 	public static LoteAves read(int id){
 	
@@ -132,13 +134,13 @@ public class LoteAvesDAO {
 }
 
 
-	/** Método read que recebe uma String correspodente ao tipo do lote, e tem o objetivo de captura no banco de dados, se
- *  houver, LoteAves que possuem o tipo correspondente ao passado como parâmetro, caso haja a ocorrência, os LoteAves serão 
- *  adicionadas em uma lista de AvesLotes e esta será retornada.
- * @param tipoNome - String
- * @return List<LoteAves> - lista de LoteAves com o tipo correspondente ao passado como parâmetro.
- * @author Equipe
- */
+	/** Método read que recebe uma String correspodente ao tipo do lote, e tem o objetivo de captura no Banco de Dados,
+	 * se houver, LoteAves que possuem o tipo correspondente ao passado como parâmetro, caso haja a ocorrência, os LoteAves
+	 * serão adicionadas em uma lista de AvesLotes e esta será retornada.
+     * @author Equipe
+     * @param tipoNome - String
+     * @return List<LoteAves> - lista de LoteAves com o tipo correspondente ao passado como parâmetro.
+     */
 	public static List<LoteAves> read(String tipoNome){
 	
 	Connection con = ConnectionFactory.getConnection();
@@ -175,11 +177,11 @@ public class LoteAvesDAO {
 }
 
 	/** Método update recebe como parâmetro um LoteAVes. Tem como finalidade capturar o LoteAves no Banco de Dados, se houver
- * um loteAves com o mesmo id da instância de LoteAves passada como parâtro. O método pode atualizar todos os dados da 
- * instâcia com excessão do id do lote. Não retorna nada.
- * @param l - instância de loteAves.
- * @author Equipe
- */
+	 * um loteAves com o mesmo id da instância de LoteAves passada como parâtro. O método pode atualizar todos os dados da 
+	 * instâcia com excessão do id do lote. Não retorna nada.
+	 * @author Equipe
+	 * @param l - instância de loteAves.
+	 */
 	public static void update(LoteAves l){
     
 	Connection con = ConnectionFactory.getConnection();
@@ -205,11 +207,11 @@ public class LoteAvesDAO {
 }
 
 
-	/** Método delete que recebe uma intância de LoteAves, e tem a opção de capturar no banco de dados, se houver, um LoteAVes
+	/** Método delete que recebe uma intância de LoteAves, e tem a opção de capturar no Banco de Dados, se houver, um LoteAVes
 	 * com o id correspondente ao id do LoteAves passado como parâmetro, caso haja a ocorrência esse LoteAves será deletado do 
 	 * Banco de Dados. Não retorna nada.
-	 * @param l - instância de Vacina.
 	 * @author equipe
+	 * @param l - instância de Vacina.
 	 */
 
 	public static void delete(LoteAves l){

@@ -242,7 +242,7 @@ public class VacinaDAO {
 	}
 	
 	/** Método delete que recebe uma intância de Vacina, e tem a opção de capturar no banco de dados, se houver, uma vacina
-	 * com o id correspondente ao id da vacina passada como parâtro, caso haja a ocorrência essa vacina será deletada do 
+	 * com o id correspondente ao id da vacina passada como parâmetro, caso haja a ocorrência essa vacina será deletada do 
 	 * Banco de Dados. Não retorna nada.
 	 * @param v - instância de Vacina.
 	 * @author equipe
