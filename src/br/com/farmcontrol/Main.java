@@ -17,6 +17,7 @@ public class Main extends Application {
   
 			scene.getStylesheets().add(getClass().getClassLoader().getResource("br/com/farmcontrol/view/resources/styles/style.css").toExternalForm());
 			primaryStage.setScene(scene);
+			primaryStage.setTitle("Farm Control");
 			primaryStage.show();
 			
 

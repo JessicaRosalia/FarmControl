@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="wrapper" prefHeight="494.0" prefWidth="648.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.farmcontrol.controller.LayoutController">
+<AnchorPane fx:id="wrapper_pi" prefHeight="494.0" prefWidth="648.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.farmcontrol.controller.LayoutController">
    <children>
       <Pane prefHeight="494.0" prefWidth="648.0" style="-fx-background-color: #F5F8FB;">
          <children>
@@ -25,7 +25,7 @@
                   <Pane layoutX="21.0" layoutY="43.0" prefHeight="15.0" prefWidth="2.0" style="-fx-background-color: #F89B2D;" />
                </children>
             </Pane>
-            <Pane fx:id="producoes1" layoutX="371.0" layoutY="313.0" prefHeight="69.0" prefWidth="237.0" style="-fx-background-color: #fff; -fx-border-radius: 15px;">
+            <Pane fx:id="animais" layoutX="371.0" layoutY="313.0" prefHeight="69.0" prefWidth="237.0" style="-fx-background-color: #fff; -fx-border-radius: 15px;">
                <children>
                   <TextField alignment="CENTER" disable="true" layoutX="65.0" layoutY="8.0" prefHeight="32.0" prefWidth="51.0" />
                   <Label contentDisplay="CENTER" layoutX="66.0" layoutY="37.0" prefHeight="32.0" prefWidth="158.0" style="-fx-background-color: #fff; -fx-view-order: 100;" text="Animais cadastrados" textFill="#8b8b8b">
@@ -38,7 +38,7 @@
                   <Pane layoutX="21.0" layoutY="43.0" prefHeight="15.0" prefWidth="2.0" style="-fx-background-color: #2D2DF8;" />
                </children>
             </Pane>
-            <Pane fx:id="producoes11" layoutX="371.0" layoutY="393.0" prefHeight="69.0" prefWidth="237.0" style="-fx-background-color: #fff; -fx-border-radius: 15px;">
+            <Pane fx:id="racoes" layoutX="371.0" layoutY="393.0" prefHeight="69.0" prefWidth="237.0" style="-fx-background-color: #fff; -fx-border-radius: 15px;">
                <children>
                   <TextField alignment="CENTER" disable="true" layoutX="65.0" layoutY="8.0" prefHeight="32.0" prefWidth="51.0" />
                   <Label contentDisplay="CENTER" layoutX="66.0" layoutY="37.0" prefHeight="32.0" prefWidth="158.0" style="-fx-background-color: #fff; -fx-view-order: 100;" text="Ração cadastrada" textFill="#8b8b8b">

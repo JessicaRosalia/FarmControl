@@ -267,7 +267,13 @@ public class VacinaDAO {
 	    }
 	}
 	
-	
+	/**
+    * Método reportQuery, não tem lista de parâmetros, e é responsável por capturar, se houver,
+    * todas as ocorrências de instâncias de Vacinas associadas a Animal no Banco de Dados que possuem todas as informações
+    * desejadas do usuário para gerar um relatório de Vacina. 
+    * @author equipe
+    * @return List<Vacina> - Lista de Vacinas encontradas no Banco de Dados que correspondem à busca.
+    */
 	public static List<Vacina> reportQuery() {
 		Connection con = ConnectionFactory.getConnection();
 	    String sql = "SELECT animal.idanimal, animal.raca , animal.data_nasc_aqui, vacina.descricao, vacina.data_vacina, vacina.custo FROM animal INNER JOIN vacina on animal.idanimal = vacina.idanimal ORDER BY vacina.data_vacina";

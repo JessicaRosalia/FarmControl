@@ -10,9 +10,14 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
 public class LayoutController {
+	
 
     @FXML
-    private AnchorPane wrapper;
+    private TextField lbqtdAnimais;
+
+
+    @FXML
+    private AnchorPane wrapper_pi;
 
     @FXML
     private AnchorPane menu;
@@ -80,8 +85,10 @@ public class LayoutController {
     @FXML
     private Pane racoes;
     
-    @FXML
-    private TextField lbqtdAnimais = new TextField();
+  //  @FXML
+  //  private TextField lbqtdAnimais = new TextField();
+    
+ 
     
     
 
@@ -98,7 +105,7 @@ public class LayoutController {
     }
 
     @FXML
-    void exibirPaginaInicial(ActionEvent event) {
+    void exibirPaginaInicial() {
     	AnchorPane home=null;
 		try {
 			home = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/pagina-inicial.fxml"));
@@ -110,7 +117,7 @@ public class LayoutController {
     }
 
     @FXML
-    void exibirPaginaLeite(ActionEvent event) {
+    void exibirPaginaLeite() {
     	AnchorPane crudLeite=null;
 		try {
 			crudLeite = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/leite/CRUDLeite.fxml"));
@@ -122,7 +129,7 @@ public class LayoutController {
     }
 
     @FXML
-    void exibirPaginaOvos(ActionEvent event) {
+    void exibirPaginaOvos() {
     	AnchorPane crudOvo=null;
 		try {
 			crudOvo = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/ovo/CRUDOvo.fxml"));
@@ -134,7 +141,7 @@ public class LayoutController {
     }
 
     @FXML
-    void exibirPaginaRacao(ActionEvent event) {
+    void exibirPaginaRacao() {
     	AnchorPane crudRacao=null;
 		try {
 			crudRacao = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/racao/CRUDRacao.fxml"));
@@ -146,7 +153,7 @@ public class LayoutController {
     }
 
     @FXML
-    void exibirPaginaRelatorios(ActionEvent event) {
+    void exibirPaginaRelatorios() {
     	AnchorPane crudRel=null;
 		try {
 			crudRel = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/relatorios/MenuRelatorios.fxml"));
@@ -158,7 +165,7 @@ public class LayoutController {
     }
 
     @FXML
-    void exibirPaginaReproducao(ActionEvent event) {
+    void exibirPaginaReproducao() {
     	AnchorPane crudReprod=null;
 		try {
 			crudReprod = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/reproducao/CRUDReproducao.fxml"));
@@ -170,7 +177,7 @@ public class LayoutController {
     }
 
     @FXML
-    void exibirPaginaVacina(ActionEvent event) {
+    void exibirPaginaVacina() {
     	AnchorPane crudVacina=null;
 		try {
 			crudVacina = FXMLLoader.load(getClass().getResource("/br/com/farmcontrol/view/resources/FXML/vacina/CrudVacina.fxml"));
