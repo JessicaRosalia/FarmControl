@@ -9,7 +9,7 @@ import java.util.Date;
 
 /**
  *
- * @author viniciuslopes
+ * @author equipe
  */
 public class Abate {
     

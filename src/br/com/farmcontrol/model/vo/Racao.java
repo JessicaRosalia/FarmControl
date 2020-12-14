@@ -2,13 +2,43 @@ package br.com.farmcontrol.model.vo;
 
 import java.util.Date;
 
+/** Classe para objetos do tipo Racao, onde serão contidos atributos e métodos para permitir 
+ * a manipulação de instâncias do tipo desta classe.
+ * @author equipe
+ * @version 1.1
+ * @since Realease 1.2 da aplicação
+ */
+
 public class Racao {
-    
-    private int id_racao;
+	
+	/**
+     * Utilizada para definir o id da ração
+     */
+	private int id_racao;
+	
+	/**
+	 * Utilizada para definir a quantidade de ração
+	 */
     private int qtd_racao;
+    
+    /**
+     * Utilizada para definir a descrição da ração
+     */
     private String descricao;
+    
+    /**
+     * Utilizada para definir o custo da ração
+     */
     private float custo;
+    
+    /**
+     * Utilizada para definir a data da ração
+     */
     private Date data;
+    
+    /**
+     * Utilizada para definir a qual animal a ração pertence
+     */
     private Animal animal;
     
     public int getId_racao() {

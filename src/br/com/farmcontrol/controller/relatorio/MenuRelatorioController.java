@@ -24,12 +24,14 @@ import com.itextpdf.text.pdf.PdfWriter;
 import br.com.farmcontrol.model.dao.AnimalDAO;
 import br.com.farmcontrol.model.dao.LeiteDAO;
 import br.com.farmcontrol.model.dao.LoteAvesDAO;
+import br.com.farmcontrol.model.dao.MamiferoDAO;
 import br.com.farmcontrol.model.dao.OvoDao;
 import br.com.farmcontrol.model.dao.ReproducaoDAO;
 import br.com.farmcontrol.model.dao.VacinaDAO;
 import br.com.farmcontrol.model.vo.Animal;
 import br.com.farmcontrol.model.vo.Leite;
 import br.com.farmcontrol.model.vo.LoteAves;
+import br.com.farmcontrol.model.vo.Mamifero;
 import br.com.farmcontrol.model.vo.Ovo;
 import br.com.farmcontrol.model.vo.Reproducao;
 import br.com.farmcontrol.model.vo.Vacina;
@@ -60,7 +62,7 @@ public class MenuRelatorioController {
     @FXML
     void gerarRelatorioMamiferos() {
 	    Document doc = new Document();
-	    List<Animal> listA = AnimalDAO.read();
+	    List<Mamifero> listM = MamiferoDAO.reportQuery();
 	    String arquivoPdf = "C:/Users/Public/Mamiferos.pdf";
 	    	
 	    try {
@@ -94,40 +96,59 @@ public class MenuRelatorioController {
 			
 			
 			
-			PdfPTable table = new PdfPTable( new float[] {0.2f, 0.4f, 0.4f});
+			PdfPTable table = new PdfPTable( new float[] {0.1f, 0.3f, 0.3f, 0.1f,0.2f });
 			
 			PdfPCell cel1 = new PdfPCell(new Paragraph("ID Animal",new Font(FontFamily.HELVETICA,10, Font.BOLD, null)));
 			cel1.setBackgroundColor(BaseColor.LIGHT_GRAY);
-			cel1.setHorizontalAlignment(3);
+			cel1.setHorizontalAlignment(1);
 			
 			
 			PdfPCell cel2 = new PdfPCell(new Paragraph("Raça",new Font(FontFamily.HELVETICA,10, Font.BOLD, null)));
 			cel2.setBackgroundColor(BaseColor.LIGHT_GRAY);
 			cel2.setHorizontalAlignment(3);
 			
-			PdfPCell cel3 = new PdfPCell(new Paragraph("Data Nascimento/Compra",new Font(FontFamily.HELVETICA,10, Font.BOLD, null)));
+			PdfPCell cel3 = new PdfPCell(new Paragraph("Tipo",new Font(FontFamily.HELVETICA,10, Font.BOLD, null)));
 			cel3.setBackgroundColor(BaseColor.LIGHT_GRAY);
 			cel3.setHorizontalAlignment(3);
+			
+			PdfPCell cel4 = new PdfPCell(new Paragraph("Sexo",new Font(FontFamily.HELVETICA,10, Font.BOLD, null)));
+			cel4.setBackgroundColor(BaseColor.LIGHT_GRAY);
+			cel4.setHorizontalAlignment(3);
+			
+			
+			PdfPCell cel5 = new PdfPCell(new Paragraph("Data Nasc./Compra",new Font(FontFamily.HELVETICA,10, Font.BOLD, null)));
+			cel5.setBackgroundColor(BaseColor.LIGHT_GRAY);
+			cel5.setHorizontalAlignment(1);
 			
 		
 			table.addCell(cel1);
 			table.addCell(cel2);
 			table.addCell(cel3);
+			table.addCell(cel4);
+			table.addCell(cel5);
 			
-			for(Animal animal : listA) {
+			for(Mamifero animal : listM) {
 				cel1 = new PdfPCell(new Paragraph(animal.getId_animal()+""));
 				cel1.setHorizontalAlignment(3);
 				
 				
-				cel2 = new PdfPCell(new Paragraph(animal.getRaca()));
+				cel2 = new PdfPCell(new Paragraph(animal.getRaca()+""));
 				cel2.setHorizontalAlignment(3);
 				
-				cel3 = new PdfPCell(new Paragraph(animal.getData_nasc_aquisicao()+""));
+				cel3 = new PdfPCell(new Paragraph(animal.getTipo_mamifero()+""));
 				cel3.setHorizontalAlignment(3);
+				
+				cel4 = new PdfPCell(new Paragraph(animal.getSexo_mamifero()+""));
+				cel4.setHorizontalAlignment(3);
+				
+				cel5 = new PdfPCell(new Paragraph(animal.getData_nasc_aquisicao()+""));
+				cel5.setHorizontalAlignment(3);
 				
 				table.addCell(cel1);
 				table.addCell(cel2);
 				table.addCell(cel3);
+				table.addCell(cel4);
+				table.addCell(cel5);
 			}
 			
 			doc.add(table);

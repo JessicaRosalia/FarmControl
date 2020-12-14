@@ -7,17 +7,40 @@ package br.com.farmcontrol.model.vo;
 
 import java.util.Date;
 
-/**
- *
- * @author viniciuslopes
+/** Classe para objetos do tipo Ovo, onde serão contidos atributos e métodos para permitir
+ * a manipulação de instâncias do tipo desta classe.
+ * @author equipe
+ * @version 1.1
+ * @since Realease 1.2 da aplicação
  */
+
 public class Ovo {
-    
+	
+	/**
+	 * Utilizado para definir o id do ovo
+	 */
     private int id_ovo;
+    
+    /** Utilizado para definir o valor de cada unidade de ovo
+     * 
+     */
     private float valor_unidade;
+    
+    /**
+     * Utilizado para definir a quantidade de ovo
+     */
     private int qtd_ovos;
+    
+    /** 
+     * Utilizado para definir a data de produção do ovo
+     */
     private Date data_producao;
+    
+    /**
+     * Utilizada para definir o lote 
+     */
     private LoteAves lote;
+
 
     public int getId_ovo() {
         return id_ovo;

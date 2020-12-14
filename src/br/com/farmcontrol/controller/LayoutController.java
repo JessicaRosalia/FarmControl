@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 
 public class LayoutController {
 
@@ -70,10 +71,18 @@ public class LayoutController {
     @FXML
     public AnchorPane crud;
     
-    
+    @FXML
+    private Pane producoes;
+
+    @FXML
+    private Pane animais;
+
+    @FXML
+    private Pane racoes;
     
     @FXML
     private TextField lbqtdAnimais = new TextField();
+    
     
 
     @FXML

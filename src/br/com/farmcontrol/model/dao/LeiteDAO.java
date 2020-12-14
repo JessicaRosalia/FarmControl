@@ -13,10 +13,8 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 import br.com.farmcontrol.connection.ConnectionFactory;
-import br.com.farmcontrol.model.vo.Animal;
 import br.com.farmcontrol.model.vo.Leite;
 import br.com.farmcontrol.model.vo.Mamifero;
-import br.com.farmcontrol.model.vo.Vacina;
 
 /**
 * Classe responsável pela manipulação dos dados a respeito da produção de Leite vindos do Banco de Dados, como cadastro, leitura, atualização e exclusão.
@@ -271,6 +269,14 @@ public class LeiteDAO {
         
     }
 
+	
+	/**
+	* Método reportQuery, não tem lista de parâmetros, e é responsável por capturar, se houver,
+	* todas as ocorrências de instâncias de Leite associadas a um Mamifero no Banco de Dados que possuem todas as informações
+	* desejadas do usuário para gerar um relatório de leite. 
+	* @author equipe-
+	* @return List<Leite> - Lista de produções de Leites encontradas no Banco de Dados que correspondem à busca.
+	*/
 	public static List<Leite> reportQuery() {
 		Connection con = ConnectionFactory.getConnection();
 	    String sql = "SELECT mamifero_abate.idanimal, mamifero_abate.tipomamifero, leite.quantidade,leite.data_leite, leite.valor_litro FROM mamifero_abate INNER JOIN leite on mamifero_abate.idanimal = leite.idanimal ORDER BY leite.quantidade";

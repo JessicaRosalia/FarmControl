@@ -14,9 +14,7 @@ import javax.swing.JOptionPane;
 
 import br.com.farmcontrol.connection.ConnectionFactory;
 import br.com.farmcontrol.model.vo.Animal;
-import br.com.farmcontrol.model.vo.LoteAves;
 import br.com.farmcontrol.model.vo.Mamifero;
-import br.com.farmcontrol.model.vo.Ovo;
 import br.com.farmcontrol.model.vo.Reproducao;
 
 
@@ -325,6 +323,14 @@ public class ReproducaoDAO {
         
     }
 
+	
+	/**
+    * Método reportQuery, não tem lista de parâmetros, e é responsável por capturar, se houver,
+    * todas as ocorrências de instâncias de Reproducao associadas a Animal no Banco de Dados que possuem todas as informações
+    * desejadas do usuário para gerar um relatório de Reproducao. 
+    * @author equipe
+    * @return List<Reproducao> - Lista de Reproducao encontrados no Banco de Dados que correspondem à busca.
+    */
 	public static List<Reproducao> reportQuery() {
 		Connection con = ConnectionFactory.getConnection();
 	    String sql = "SELECT animal.idanimal, animal.raca, reproducao.idreprod, reproducao.quantidade, reproducao.descricao, reproducao.data_reprod FROM animal INNER JOIN reproducao on animal.idanimal = reproducao.idanimal ORDER BY reproducao.data_reprod";

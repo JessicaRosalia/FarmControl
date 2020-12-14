@@ -7,13 +7,38 @@ package br.com.farmcontrol.model.vo;
 
 import java.util.Date;
 
+/** Classe para objetos do tipo Reproducao, onde serão contidos atributos e métodos 
+ * para permitir a manipulação de instâncias do tipo desta classe.
+ * @author equipe
+ * @version 1.1
+ * @since Realease 1.2 da aplicação
+ */
 public class Reproducao {
-    
+	/** 
+	 * Utilizado para definir o id da reprodução
+	 */
     private int id_repoducao;
+    
+    /**
+     * Utilizada para definir a quantidade de reprodução
+     */
     private int qntd_reproducao;
+    
+    /**
+     * Utilizada para definir a descrição da reprodução
+     */
     private String descricao_reprod;
+    
+    /**
+     * Utilizada para definir a qual animal a reprodução pertence
+     */
     private Animal animal;
+    
+    /**
+     * Utilizada para definir a data de reprodução
+     */
     private Date data_reproducao;
+
 
     public int getId_repoducao() {
         return id_repoducao;

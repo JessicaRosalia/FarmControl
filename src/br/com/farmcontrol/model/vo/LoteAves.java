@@ -5,15 +5,24 @@
  */
 package br.com.farmcontrol.model.vo;
 
-
-/**
- *
- * @author viniciuslopes
+/** Classe para objetos do tipo LoteAves, onde serão contidos atributos e métodos, 
+ * sendo alguns destes heranças de Animal. Permite a manipulação de instâncias do tipo desta classe.
+ * @author equipe
+ * @version 1.1
+ * @since Realease 1.2 da aplicação
  */
 public class LoteAves extends Animal {
-    
+	
+	/**
+     * Utilizado para definir o tipo da ave
+     */
     private String tipo_ave;
+    
+    /** Utilizado para definir a quantidade de ave em um lote
+     * 
+     */
     private int quantidade;
+    
 
     public String getTipo_ave() {
         return tipo_ave;

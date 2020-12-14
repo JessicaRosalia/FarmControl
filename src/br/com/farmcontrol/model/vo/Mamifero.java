@@ -5,19 +5,40 @@
  */
 package br.com.farmcontrol.model.vo;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 
-/**
- *
- * @author viniciuslopes
+/** Classe para objetos do tipo Mamifero, onde serão contidos atributos e métodos,
+ *  sendo alguns destes heranças de Animal. Permite a manipulação de instâncias do tipo desta classe.
+ * @author equipe
+ * @version 1.1
+ * @since Realease 1.2 da aplicação
  */
+
 public class Mamifero extends Animal {
-    
-    private String sexo_mamifero;
+	
+	/**
+     * É utilizado para definir o sexo do mamifero
+     */
+	private String sexo_mamifero;
+	
+	/**
+	 * Utilizado para definit o valor da arroba
+	 */
     private float valor_arroba;
+    
+    /**
+     * Utilizado para definir o peso do mamifero
+     */
     private float peso;
+    
+    /**
+     * Utilizado para definir o tipo do mamifero
+     */
     private String tipo_mamifero;
+    
+    /**
+     * Utilizado para definir a data do abate do Mamifero
+     */
     private Date data_abate;
 
     public String getSexo_mamifero() {

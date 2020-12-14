@@ -12,34 +12,35 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E5E5E5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.farmcontrol.controller.animal.CadastroAvesController">
+<AnchorPane id="AnchorPane" prefHeight="550.0" prefWidth="782.0" style="-fx-background-color: #E5E5E5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.farmcontrol.controller.animal.CadastroAvesController">
    <children>
-      <Pane layoutX="8.0" layoutY="7.0" prefHeight="387.0" prefWidth="584.0" style="-fx-background-color: #F1F5FE;">
+      <Pane layoutX="1.0" prefHeight="550.0" prefWidth="782.0" style="-fx-background-color: #F1F5FE;">
          <children>
-            <Label layoutX="70.0" layoutY="14.0" text="Cadastrar Lote de Aves" textFill="#7f7ffb">
+            <Label layoutX="226.0" layoutY="85.0" text="Cadastrar Lote de Aves" textFill="#7f7ffb">
                <font>
-                  <Font name="Arial Rounded MT Bold" size="23.0" />
+                  <Font name="System Bold" size="21.0" />
                </font>
             </Label>
-            <Label layoutX="171.0" layoutY="98.0" text="Raça:" />
-            <Label layoutX="48.0" layoutY="148.0" text="Data Nascimento/Aquisicao:" />
-            <Label layoutX="43.0" layoutY="199.0" text="Quantidade de Aves do Lote:" />
-            <Label layoutX="126.0" layoutY="249.0" prefHeight="25.0" prefWidth="80.0" text="Tipo de Lote:">
+            <Label layoutX="327.0" layoutY="166.0" text="Raça:" />
+            <TextField fx:id="raca" layoutX="376.0" layoutY="163.0" />
+            <Label layoutX="204.0" layoutY="219.0" text="Data Nascimento/Aquisição:" />
+            <TextField fx:id="dataNasc" layoutX="376.0" layoutY="215.0" />
+            <Label layoutX="199.0" layoutY="270.0" text="Quantidade de Aves do Lote:" />
+            <TextField fx:id="quantidade" layoutX="377.0" layoutY="265.0" />
+            <Label layoutX="282.0" layoutY="316.0" prefHeight="25.0" prefWidth="80.0" text="Tipo de Lote:">
                <padding>
                   <Insets left="3.0" />
                </padding></Label>
-            <TextField fx:id="raca" layoutX="220.0" layoutY="92.0" />
-            <TextField fx:id="dataNasc" layoutX="220.0" layoutY="144.0" />
-            <ComboBox fx:id="cbTipo" layoutX="220.0" layoutY="242.0" prefWidth="150.0">
+            <ComboBox fx:id="cbTipo" layoutX="376.0" layoutY="313.0" prefWidth="150.0">
                <padding>
                   <Insets top="2.0" />
                </padding></ComboBox>
-            <ImageView fitHeight="27.0" fitWidth="30.0" layoutX="33.0" layoutY="17.0">
+            <ImageView fitHeight="27.0" fitWidth="30.0" layoutX="189.0" layoutY="88.0">
                <image>
                   <Image url="@../../../../../../../../bin/br/com/farmcontrol/view/resources/images/cadastrar-animal.png" />
                </image>
             </ImageView>
-            <Button fx:id="sairAves" layoutX="326.0" layoutY="321.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="95.0" style="-fx-background-color: #B2C0C2;" text="Sair" textFill="WHITE">
+            <Button fx:id="sairAves" layoutX="430.0" layoutY="392.0" mnemonicParsing="false" onAction="#sair" prefHeight="10.0" prefWidth="95.0" style="-fx-background-color: #B2C0C2;" text="Sair" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -47,7 +48,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="cadastrarAves" layoutX="128.0" layoutY="321.0" mnemonicParsing="false" onAction="#cadastrarMamifero" prefHeight="32.0" prefWidth="115.0" style="-fx-background-color: #7F7FFB;" text="Cadastrar" textFill="WHITE">
+            <Button fx:id="cadastrarAves" layoutX="232.0" layoutY="392.0" mnemonicParsing="false" onAction="#cadastrarMamifero" prefHeight="32.0" prefWidth="115.0" style="-fx-background-color: #7F7FFB;" text="Cadastrar" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -55,7 +56,6 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <TextField fx:id="quantidade" layoutX="232.0" layoutY="194.0" />
          </children>
       </Pane>
    </children>

@@ -50,7 +50,7 @@
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="30.0">
                <image>
-                  <Image url="@../../images/cadastrar-animal.png" />
+                  <Image url="@../../images/icone-animal.png" />
                </image>
             </ImageView>
          </graphic>
@@ -65,7 +65,7 @@
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="30.0">
                <image>
-                  <Image url="@../../images/cadastrar-animal.png" />
+                  <Image url="@../../images/icone-animal.png" />
                </image>
             </ImageView>
          </graphic>
