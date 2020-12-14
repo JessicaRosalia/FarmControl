@@ -5,35 +5,21 @@
  */
 package br.com.farmcontrol.controller.animal;
 
-import br.com.farmcontrol.model.dao.AnimalDAO;
 import br.com.farmcontrol.model.dao.MamiferoDAO;
-import br.com.farmcontrol.model.vo.Animal;
 import br.com.farmcontrol.model.vo.Mamifero;
-import br.com.farmcontrol.model.vo.LoteAves;
-import java.io.IOException;
-import java.lang.reflect.Field;
 import java.net.URL;
 import java.sql.Date;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
-import javafx.stage.Stage;
 
 
 public class AtualizarMamiferoController implements Initializable {
@@ -102,7 +88,6 @@ public class AtualizarMamiferoController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO 
         carregarAnimais();
     }
     
@@ -120,8 +105,8 @@ public class AtualizarMamiferoController implements Initializable {
         dataAbate.setText(String.valueOf(m.getData_abate()));    
     }
     
-   public void atualizarAnimal() throws NullPointerException{
-        //testeLoad.getChildren().clear();
+    public void atualizarAnimal() throws NullPointerException{
+
         
         Mamifero m = new Mamifero();
         
@@ -185,8 +170,6 @@ public class AtualizarMamiferoController implements Initializable {
     } 
     
     public void carregarAnimais(){
-        
-       // animais =  AnimalDAO.read();
         
         animais = MamiferoDAO.read();
         

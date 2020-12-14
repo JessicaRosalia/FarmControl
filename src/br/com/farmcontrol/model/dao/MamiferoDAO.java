@@ -287,7 +287,13 @@ public class MamiferoDAO {
         return id;
     }
     
-    
+    /**
+    * Método reportQuery, não tem lista de parâmetros, e é responsável por capturar, se houver,
+    * todas as ocorrências de instâncias de Mamiferos no Banco de Dados que possuem todas as informações
+    * desejadas do usuário para gerar um relatório. 
+    * @author equipe
+    * @return List<Mamifero> - Lista de Mamiferos encontrados no Banco de Dados que correspondem à busca.
+    */
     public static List<Mamifero> reportQuery() {
     	Connection con = ConnectionFactory.getConnection();
         String sql = "SELECT animal.idanimal, animal.raca, mamifero_abate.tipomamifero, mamifero_abate.sexo, animal.data_nasc_aqui FROM animal INNER JOIN mamifero_abate on animal.idanimal = mamifero_abate.idanimal ORDER BY mamifero_abate.tipomamifero";

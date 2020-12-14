@@ -6,12 +6,9 @@
 package br.com.farmcontrol.controller.animal;
 
 import br.com.farmcontrol.model.dao.LoteAvesDAO;
-import br.com.farmcontrol.model.dao.MamiferoDAO;
 import br.com.farmcontrol.model.vo.LoteAves;
-import br.com.farmcontrol.model.vo.Mamifero;
 import java.net.URL;
 import java.sql.Date;
-import java.util.Observable;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

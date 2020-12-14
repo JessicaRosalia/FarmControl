@@ -43,6 +43,7 @@ public class MenuAnimalController {
         crudAnimal.getChildren().add(crudMamifero);
     }
     
+    @FXML
     public void GerenciarMamifero(){
         AnchorPane crudMamifero=null;
 		try {
@@ -54,6 +55,7 @@ public class MenuAnimalController {
         crudAnimal.getChildren().add(crudMamifero);
     }
     
+    @FXML
     public void GerenciarLote(){
         AnchorPane crudLotesAves=null;
         try {
