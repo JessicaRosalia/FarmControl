@@ -84,7 +84,6 @@ public class Ovo {
 
     @Override
     public String toString() {
-        //return "Ovo{" + "id_ovo=" + id_ovo + ", valor_unidade=" + valor_unidade + ", qtd_ovos=" + qtd_ovos + ", data_producao=" + data_producao + ", lote=" + lote.getId_animal() + '}';
         return "ID: "+this.id_ovo+" - "+this.data_producao;
     }
     

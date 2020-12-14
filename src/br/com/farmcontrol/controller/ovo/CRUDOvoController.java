@@ -5,8 +5,7 @@
  */
 package br.com.farmcontrol.controller.ovo;
 
-import br.com.farmcontrol.controller.reproducao.*;
-import br.com.farmcontrol.model.dao.AnimalDAO;
+
 import br.com.farmcontrol.model.dao.LoteAvesDAO;
 import br.com.farmcontrol.model.dao.OvoDao;
 import br.com.farmcontrol.model.vo.Animal;
@@ -22,20 +21,13 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.DialogPane;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.control.TextInputDialog;
 import javafx.scene.control.TitledPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javax.swing.JOptionPane;
 
-/**
- * FXML Controller class
- *
- * @author viniciuslopes
- */
 public class CRUDOvoController implements Initializable {
     
     @FXML
@@ -127,7 +119,6 @@ public class CRUDOvoController implements Initializable {
     }
     
     public void novaReprod(){
-        //JOptionPane
         Animal m = listAnimais.getSelectionModel().getSelectedItem();
         
         desativarComponentes(true);

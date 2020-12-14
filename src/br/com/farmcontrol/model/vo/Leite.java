@@ -83,7 +83,6 @@ public class Leite {
     
     @Override
     public String toString() {
-        //return "Leite{" + "ID do Leite=" + this.id_leite + ", Valor do litro=" + this.valor_litro + ", Quantidade=" + this.qtd_leite + ", Data=" + this.data_producao +", ID Animal=" + this.animal.getId_animal()+'}';
         return "ID: "+this.id_leite+" - "+this.data_producao;
     }
       

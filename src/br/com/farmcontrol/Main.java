@@ -19,15 +19,6 @@ public class Main extends Application {
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Farm Control");
 			primaryStage.show();
-			
-
-		//	primaryStage.setMinHeight(500.0);
-		//	primaryStage.setMaxHeight(540.0);
-			
-		//	primaryStage.setMinWidth(820.0);
-		//	primaryStage.setMaxWidth(880.0);
-			
-			
                         
                       
 		} catch(Exception e) {
