@@ -1,6 +1,7 @@
 package br.com.farmcontrol.model.dao;
 
 import br.com.farmcontrol.connection.ConnectionFactory;
+import br.com.farmcontrol.model.vo.Animal;
 import br.com.farmcontrol.model.vo.LoteAves;
 import br.com.farmcontrol.model.vo.Ovo;
 import java.sql.Connection;
@@ -274,5 +275,39 @@ public class OvoDao {
             ConnectionFactory.closeConnection(con, stmt);
         }
         
+    }
+    
+    public static List<Ovo> reportQuery() {
+    	Connection con = ConnectionFactory.getConnection();
+        String sql = "SELECT lote_aves.idanimal, lote_aves.tipo, ovos.quantidade, ovos.valor_unidade, ovos.data_ovo FROM lote_aves INNER JOIN ovos on lote_aves.idanimal = ovos.idanimal ORDER BY tipo";
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        List<Ovo> ovos = new ArrayList<>();
+
+        try {
+            stmt = con.prepareStatement(sql);
+            rs = stmt.executeQuery();
+
+            while(rs.next()){
+                Ovo o = new Ovo();
+                LoteAves lote = new LoteAves();
+                o.setLote(lote);
+                lote.setId_animal(rs.getInt("idanimal"));
+                lote.setTipo_ave(rs.getString("tipo"));
+                o.setQtd_ovos(rs.getInt("quantidade"));
+                o.setData_producao(rs.getDate("data_ovo"));
+                o.setValor_unidade(rs.getFloat("valor_unidade"));
+               
+                ovos.add(o);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(OvoDao.class.getName()).log(Level.SEVERE, null, ex);
+        } finally{
+            ConnectionFactory.closeConnection(con, stmt, rs);
+        }
+
+        return ovos;
     }
 }

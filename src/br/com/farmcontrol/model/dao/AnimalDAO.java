@@ -44,7 +44,6 @@ public class AnimalDAO {
             stmt.setDate(3, (Date) a.getData_venda());
             stmt.setFloat(4, a.getValor_venda());
             stmt.executeUpdate();
-            //JOptionPane.showConfirmDialog(null, "Salvo com sucesso!");
             
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, " Erro ao salvar: "+ex);
@@ -182,4 +181,7 @@ public class AnimalDAO {
         }
 
     }
+
+
+    
 }

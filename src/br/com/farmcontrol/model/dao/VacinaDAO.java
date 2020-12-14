@@ -4,6 +4,7 @@ import br.com.farmcontrol.connection.ConnectionFactory;
 import br.com.farmcontrol.model.vo.Animal;
 import br.com.farmcontrol.model.vo.Mamifero;
 import br.com.farmcontrol.model.vo.Racao;
+import br.com.farmcontrol.model.vo.Reproducao;
 import br.com.farmcontrol.model.vo.Vacina;
 import java.sql.Connection;
 import java.sql.Date;
@@ -212,6 +213,42 @@ public class VacinaDAO {
 	    } finally{
 	        ConnectionFactory.closeConnection(con, stmt);
 	    }
-	}       
+	}
+	
+	
+	public static List<Vacina> reportQuery() {
+		Connection con = ConnectionFactory.getConnection();
+	    String sql = "SELECT animal.idanimal, animal.raca , animal.data_nasc_aqui, vacina.descricao, vacina.data_vacina, vacina.custo FROM animal INNER JOIN vacina on animal.idanimal = vacina.idanimal ORDER BY vacina.data_vacina";
+	    PreparedStatement stmt = null;
+	    ResultSet rs = null;
+	
+	    List<Vacina> vacinas = new ArrayList<>();
+	
+	    try {
+	        stmt = con.prepareStatement(sql);
+	        rs = stmt.executeQuery();
+	
+	        while(rs.next()){
+	            Vacina vac = new Vacina();
+	            Animal a = new Mamifero();
+	            vac.setAnimal(a);
+	            a.setId_animal(rs.getInt("idanimal"));
+	            a.setRaca(rs.getString("raca"));
+	            a.setData_nasc_aquisicao(rs.getDate("data_nasc_aqui"));
+	            vac.setDescricao(rs.getString("descricao"));
+	            vac.setCusto(rs.getFloat("custo"));
+	            vac.setData_vacina(rs.getDate("data_vacina"));
+	                    
+	            vacinas.add(vac);
+	        }
+	
+	    } catch (SQLException ex) {
+	        Logger.getLogger(VacinaDAO.class.getName()).log(Level.SEVERE, null, ex);
+	    } finally{
+	        ConnectionFactory.closeConnection(con, stmt, rs);
+	    }
+	
+	    return vacinas; 
+	}  
 }
         

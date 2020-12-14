@@ -1,6 +1,7 @@
 package br.com.farmcontrol.model.dao;
 
 import br.com.farmcontrol.connection.ConnectionFactory;
+import br.com.farmcontrol.model.vo.Animal;
 import br.com.farmcontrol.model.vo.LoteAves;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -186,6 +187,38 @@ public static void delete(LoteAves l){
     } finally{
         ConnectionFactory.closeConnection(con, stmt);
     }
+}
+
+public static List<LoteAves> reportQuery() {
+	Connection con = ConnectionFactory.getConnection();
+    String sql = "SELECT animal.idanimal, animal.data_nasc_aqui, lote_aves.tipo, lote_aves.quantidade FROM animal INNER JOIN lote_aves on animal.idanimal = lote_aves.idanimal ORDER BY idanimal;";
+    PreparedStatement stmt = null;
+    ResultSet rs = null;
+
+    List<LoteAves> animais = new ArrayList<>();
+
+    try {
+        stmt = con.prepareStatement(sql);
+        rs = stmt.executeQuery();
+
+        while(rs.next()){
+            LoteAves a = new LoteAves();
+            a.setId_animal(rs.getInt("idanimal"));
+            a.setData_nasc_aquisicao(rs.getDate("data_nasc_aqui"));
+            a.setTipo_ave(rs.getString("tipo"));
+            a.setQuantidade(rs.getInt("quantidade"));
+            
+           
+            animais.add(a);
+        }
+
+    } catch (SQLException ex) {
+        Logger.getLogger(AnimalDAO.class.getName()).log(Level.SEVERE, null, ex);
+    } finally{
+        ConnectionFactory.closeConnection(con, stmt, rs);
+    }
+
+    return animais;
 }
 
 
