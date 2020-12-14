@@ -82,10 +82,9 @@ public class Reproducao {
 
 	@Override
 	public String toString() {
-		//return "Reproducao{" + "ID da reproducao=" + this.id_repoducao + ", Descricao=" + this.descricao_reprod + ", Quantidade=" + this.qntd_reproducao + ", Data da reproducao="+this.data_reproducao+", ID Animal=" + this.animal.getId_animal()+'}';
-                return "ID: "+this.id_repoducao+
-                        " - Data: "+this.data_reproducao;
-        }
+        return "ID: "+this.id_repoducao+
+                " - Data: "+this.data_reproducao;
+    }
     
     
     

@@ -83,18 +83,6 @@ public class Mamifero extends Animal {
 
     @Override
     public String toString() {
-        /*return "Mamifero{" 
-                + "id_animal=" + getId_animal()
-                + ", raca=" + getRaca()
-                + ", data_nasc_aquisicao=" + getData_nasc_aquisicao()
-                + ", data_venda=" + getData_venda()
-                + ", valor_venda=" + getValor_venda()
-                + "sexo_mamifero="+ sexo_mamifero 
-                + ", valor_arroba="+ valor_arroba 
-                + ", peso=" + peso 
-                + ", tipo_mamifero=" + tipo_mamifero 
-                + ", data_abate=" + data_abate + '}';*/
-        //return "Mamifero ID: "+getId_animal()+" - "+getRaca();
         return super.toString();
     }
     

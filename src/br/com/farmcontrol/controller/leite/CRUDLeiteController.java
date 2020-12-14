@@ -5,15 +5,10 @@
  */
 package br.com.farmcontrol.controller.leite;
 
-import br.com.farmcontrol.controller.reproducao.*;
-import br.com.farmcontrol.model.dao.AnimalDAO;
 import br.com.farmcontrol.model.dao.LeiteDAO;
 import br.com.farmcontrol.model.dao.MamiferoDAO;
-import br.com.farmcontrol.model.dao.ReproducaoDAO;
-import br.com.farmcontrol.model.vo.Animal;
 import br.com.farmcontrol.model.vo.Leite;
 import br.com.farmcontrol.model.vo.Mamifero;
-import br.com.farmcontrol.model.vo.Reproducao;
 import java.net.URL;
 import java.sql.Date;
 import java.util.ArrayList;
@@ -24,10 +19,8 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.DialogPane;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.control.TextInputDialog;
 import javafx.scene.control.TitledPane;
 import javafx.scene.layout.Pane;
 import javax.swing.JOptionPane;
