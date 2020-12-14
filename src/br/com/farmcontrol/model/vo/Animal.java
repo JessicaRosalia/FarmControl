@@ -7,17 +7,39 @@ package br.com.farmcontrol.model.vo;
 
 import java.util.Date;
 
-/**
- *
- * @author viniciuslopes
+/** Classe para objetos do tipo Animal, onde serão contidos atributos e métodos para permitir
+ * a manipulação de instâncias de Sub-Classes que herdam seus atribituos e métodos.
+ * @author equipe
+ * @version 1.1
+ * @since Realease 1.2 da aplicação
  */
 abstract public class Animal {
-    
-    private int id_animal;
+	
+	 /**
+     * Utilizado para definir o id do animal
+     */
+	private int id_animal;
+	
+	/**
+	 * Utilizado para definir a raça do animal
+	 */
     private String raca;
+    
+    /** 
+     * Utilizado para definir a data de nascimento ou aquisição de um determinado animal
+     */
     private Date data_nasc_aquisicao;
+    
+    /**
+     * Utilizado para definir a data de venda
+     */
     private Date data_venda;
+    
+    /**
+     * Utilizado para definir o valor de venda
+     */
     private float valor_venda;
+
 
     public int getId_animal() {
         return id_animal;

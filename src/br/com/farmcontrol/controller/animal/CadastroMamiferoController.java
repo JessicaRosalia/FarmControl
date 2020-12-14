@@ -22,11 +22,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javax.swing.JOptionPane;
 
-/**
- * FXML Controller class
- *
- * @author viniciuslopes
- */
+
 public class CadastroMamiferoController implements Initializable {
     
     @FXML

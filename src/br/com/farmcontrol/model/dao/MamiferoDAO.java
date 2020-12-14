@@ -287,4 +287,36 @@ public class MamiferoDAO {
         return id;
     }
     
+    
+    public static List<Mamifero> reportQuery() {
+    	Connection con = ConnectionFactory.getConnection();
+        String sql = "SELECT animal.idanimal, animal.raca, mamifero_abate.tipomamifero, mamifero_abate.sexo, animal.data_nasc_aqui FROM animal INNER JOIN mamifero_abate on animal.idanimal = mamifero_abate.idanimal ORDER BY mamifero_abate.tipomamifero";
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        List<Mamifero> mamiferos = new ArrayList<>();
+
+        try {
+            stmt = con.prepareStatement(sql);
+            rs = stmt.executeQuery();
+
+            while(rs.next()){
+                Mamifero m = new Mamifero();
+                m.setId_animal(rs.getInt("idanimal"));
+                m.setRaca(rs.getString("raca"));
+                m.setTipo_mamifero(rs.getString("tipomamifero"));
+                m.setSexo_mamifero(rs.getString("sexo"));
+                m.setData_nasc_aquisicao(rs.getDate("data_nasc_aqui"));
+               
+                mamiferos.add(m);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(MamiferoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally{
+            ConnectionFactory.closeConnection(con, stmt, rs);
+        }
+
+        return mamiferos;
+    }
 }

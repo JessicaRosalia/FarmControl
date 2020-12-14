@@ -277,6 +277,14 @@ public class OvoDao {
         
     }
     
+    
+	/**
+	 * Método reportQuery, não tem lista de parâmetros, e é responsável por capturar, se houver,
+	 * todas as ocorrências de instâncias de Ovos associadas LoteAves no Banco de Dados que possuem todas as informações
+	 * desejadas do usuário para gerar um relatório de Ovos. 
+	 * @author equipe
+	 * @return List<Ovo> - Lista de Ovos encontrados no Banco de Dados que correspondem à busca.
+	 */
     public static List<Ovo> reportQuery() {
     	Connection con = ConnectionFactory.getConnection();
         String sql = "SELECT lote_aves.idanimal, lote_aves.tipo, ovos.quantidade, ovos.valor_unidade, ovos.data_ovo FROM lote_aves INNER JOIN ovos on lote_aves.idanimal = ovos.idanimal ORDER BY tipo";

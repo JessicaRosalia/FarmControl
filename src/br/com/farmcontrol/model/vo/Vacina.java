@@ -7,17 +7,40 @@ package br.com.farmcontrol.model.vo;
 
 import java.util.Date;
 
-/**
- *
- * @author viniciuslopes
+/** Classe para objetos do tipo Vacina, onde serão contidos atributos e métodos para permitir 
+ * a manipulação de instâncias do tipo desta classe.
+ * @author equipe
+ * @version 1.1
+ * @since Realease 1.2 da aplicação
  */
 public class Vacina {
-    
+	
+	/**
+     * É utilizado para definir o id da vacina
+     */
     private int id_vacina;
+    
+    /**
+     * É utilizado para definir a data de vacina do animal
+     */
     private Date data_vacina;
+    
+    /**
+     * Utilizado para descrição da vacina
+     */
     private String descricao;
+    
+    /**
+     * Utilizado para definir o custo da vacina
+     */
     private float custo;
+    
+    /**
+     * Utilizado para definir para qual animal a vacina será aplicada
+     */
     private Animal animal;
+
+    
 
     public int getId_vacina() {
         return id_vacina;

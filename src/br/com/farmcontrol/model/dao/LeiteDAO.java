@@ -269,6 +269,14 @@ public class LeiteDAO {
         
     }
 
+	
+	/**
+	* Método reportQuery, não tem lista de parâmetros, e é responsável por capturar, se houver,
+	* todas as ocorrências de instâncias de Leite associadas a um Mamifero no Banco de Dados que possuem todas as informações
+	* desejadas do usuário para gerar um relatório de leite. 
+	* @author equipe-
+	* @return List<Leite> - Lista de produções de Leites encontradas no Banco de Dados que correspondem à busca.
+	*/
 	public static List<Leite> reportQuery() {
 		Connection con = ConnectionFactory.getConnection();
 	    String sql = "SELECT mamifero_abate.idanimal, mamifero_abate.tipomamifero, leite.quantidade,leite.data_leite, leite.valor_litro FROM mamifero_abate INNER JOIN leite on mamifero_abate.idanimal = leite.idanimal ORDER BY leite.quantidade";

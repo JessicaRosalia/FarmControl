@@ -21,11 +21,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javax.swing.JOptionPane;
 
-/**
- * FXML Controller class
- *
- * @author viniciuslopes
- */
 public class CadastroAvesController implements Initializable {
     
     @FXML
@@ -90,5 +85,11 @@ public class CadastroAvesController implements Initializable {
         int dia = Integer.parseInt(s.substring(8,10));   
         return new Date(ano-1900, mes-1, dia);
     } 
+    
+
+    @FXML
+    void sair() {
+
+    }
     
 }

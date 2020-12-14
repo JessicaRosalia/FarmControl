@@ -35,11 +35,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author viniciuslopes
- */
+
 public class AtualizarMamiferoController implements Initializable {
 
     /**

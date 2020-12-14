@@ -7,14 +7,39 @@ package br.com.farmcontrol.model.vo;
 
 import java.util.Date;
 
-
+/** Classe para objetos do tipo Leite, onde serão contidos atributos e métodos para permitir 
+ * a manipulação de instâncias do tipo desta classe.
+ * @author equipe
+ * @version 1.1
+ * @since Realease 1.2 da aplicação
+ */
 public class Leite {
- 
+	
+	/**
+	 * Utilizada para definir o id do leite
+	 */
     private int id_leite;
+    
+    /**
+     * Utilizada para definri o valor do litro de leite
+     */
     private float valor_litro;
+    
+    /**
+     * Utilizada para definir a quantidade de leite
+     */
     private int qtd_leite;
+    
+    /**
+     * Utilizada para definir a data de produção
+     */
     private Date data_producao;
+    
+    /**
+     * Utilizada para definir a qual animal o leite pertence
+     */
     private Mamifero animal;
+
 
     public int getId_leite() {
         return id_leite;

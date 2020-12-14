@@ -232,6 +232,13 @@ public class LoteAvesDAO {
 	    }
 	}
 	
+	/**
+	* Método reportQuery, não tem lista de parâmetros, e é responsável por capturar, se houver,
+	* todas as ocorrências de instâncias de LoteAves associadas a um Animal no Banco de Dados que possuem todas as informações
+	* desejadas do usuário para gerar um relatório de LoteAves. 
+	* @author equipe
+	* @return List<LoteAves> - Lista de Lote Aves encontradas no Banco de Dados que correspondem à busca.
+	*/
 	public static List<LoteAves> reportQuery() {
 		Connection con = ConnectionFactory.getConnection();
 	    String sql = "SELECT animal.idanimal, animal.data_nasc_aqui, lote_aves.tipo, lote_aves.quantidade FROM animal INNER JOIN lote_aves on animal.idanimal = lote_aves.idanimal ORDER BY idanimal;";
