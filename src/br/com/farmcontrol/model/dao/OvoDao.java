@@ -1,7 +1,6 @@
 package br.com.farmcontrol.model.dao;
 
 import br.com.farmcontrol.connection.ConnectionFactory;
-import br.com.farmcontrol.model.vo.Animal;
 import br.com.farmcontrol.model.vo.LoteAves;
 import br.com.farmcontrol.model.vo.Ovo;
 import java.sql.Connection;
@@ -55,6 +54,7 @@ public class OvoDao {
         }
         
     }
+    
     
 	/**
 	* Método read, responsável por capturar, se houver, todas as ocorrências da instância de Ovo

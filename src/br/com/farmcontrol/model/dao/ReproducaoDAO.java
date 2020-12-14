@@ -14,9 +14,7 @@ import javax.swing.JOptionPane;
 
 import br.com.farmcontrol.connection.ConnectionFactory;
 import br.com.farmcontrol.model.vo.Animal;
-import br.com.farmcontrol.model.vo.LoteAves;
 import br.com.farmcontrol.model.vo.Mamifero;
-import br.com.farmcontrol.model.vo.Ovo;
 import br.com.farmcontrol.model.vo.Reproducao;
 
 

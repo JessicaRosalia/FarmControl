@@ -1,7 +1,6 @@
 package br.com.farmcontrol.model.dao;
 
 import br.com.farmcontrol.connection.ConnectionFactory;
-import br.com.farmcontrol.model.vo.Animal;
 import br.com.farmcontrol.model.vo.Mamifero;
 import java.sql.Connection;
 import java.sql.Date;
@@ -14,8 +13,21 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
+
+/** Classe responsável pela manipulação dos dados a respeito de Mamiferos vindos do Banco de Dados,
+ * como cadastro, leitura, atualização e exclusão.
+ * @author equipe
+ * @version 1.1 
+ * @since Realease 1.2 da aplicação
+ */
 public class MamiferoDAO {
 
+	
+	/** Método create, que tem como principal objetivo a inserção de uma instância de Mamifero no banco de dados.
+	 *  Não retorna nada.
+	 * @author equipe
+	 * @param a - instância de Mamifero.
+	 */
     public static void create(Mamifero a){
         
         Connection con = ConnectionFactory.getConnection();
@@ -45,6 +57,12 @@ public class MamiferoDAO {
         
     }
     
+    
+    /** Método read, que tem como finalidade capturar todas as ocorrências da instância de Mamifero
+	 * existentes no Banco de Dados, os dados são inseridos em uma list<Mamifero> e essa é retornada.
+	 * @author equipe
+	 * @return List<Mamifero> - uma lista com todos os Mamiferos do Banco de Dados.
+	 */
     public static List<Mamifero> read(){
         
         Connection con = ConnectionFactory.getConnection();
@@ -84,6 +102,14 @@ public class MamiferoDAO {
         
     }
     
+    
+    /** Método read que recebe uma String correspodente ao tipo de Mamifero, e tem o objetivo de captura
+     *  no Banco de Dados, se houver, Mamifero(s) que possue(m) o tipo correspondente ao passado como parâmetro,
+     *  caso haja a ocorrência, o(s) Mamifero(s) serão adicionadas em uma lista de Mamifero e esta será retornada.
+     * @author Equipe
+     * @param tipoNome - tipo do mamífero a ser buscado.
+     * @return List<Mamifero> - lista de Mamifero com o tipo correspondente ao passado como parâmetro.
+     */
     public static List<Mamifero> read(String tipo){
         Connection con = ConnectionFactory.getConnection();
         String sql = "SELECT * FROM mamifero_abate as m,animal as a "
@@ -122,6 +148,14 @@ public class MamiferoDAO {
         return animais;
     }
     
+    
+    /** Método read que recebe um id como parâtro, tendo como finalidade capturar, se houver, a ocorrência 
+     * de uma instância de Mamifero no Banco de Dados, correspondete com o id passado como parâtro. Se encontrado
+     * o Mamifero será retornado. 
+     * @author Equipe
+     * @param id - id do mamífero a ser buscado.
+     * @return Mamifero - a instância de Mamifero encontrada no Banco de Dados correspondente ao id passado como parâmetro.
+     */
     public static Mamifero read(int id){
         
         Connection con = ConnectionFactory.getConnection();
@@ -159,6 +193,13 @@ public class MamiferoDAO {
         return a;
     }
     
+    
+    /** Método update recebe como parâmetro um Mamifero. Tem como finalidade capturar o Mamifero no Banco de Dados, se houver
+	 * um Mamifero com o mesmo id da instância de LoteAves passada como parâtro. O método pode atualizar todos os dados da 
+	 * instâcia com excessão do id do Mamifero. Não retorna nada.
+	 * @author Equipe
+	 * @param a - instância de Mamiferos.
+	 */
     public static void update(Mamifero a){
         Connection con = ConnectionFactory.getConnection();
         String sql = "UPDATE mamifero_abate "
@@ -187,6 +228,13 @@ public class MamiferoDAO {
         }
     }
     
+    
+	/** Método delete que recebe uma intância de Mamifero, e tem a opção de capturar no Banco de Dados, se houver, 
+	 * Mamifero com o id correspondente ao id do Mamifero passado como parâmetro, caso haja a ocorrência esse Mamifero
+	 * será deletado do Banco de Dados. Não retorna nada.
+	 * @author equipe
+	 * @param a - instância de Mamifero.
+	 */
     public static void delete(Mamifero a){
         
         Connection con = ConnectionFactory.getConnection();
@@ -207,6 +255,12 @@ public class MamiferoDAO {
         
     }
     
+    
+    /** Método estático que tem a finalidade de capturar no Banco de Dados o último Animal
+     * cadastrado no mesmo, podendo este ser uma especialização de Animal.
+     * @author equipe
+     * @return id - int, id do último animal cadastrado.
+     */
     public static int ultimoID(){
         
         Connection con = ConnectionFactory.getConnection();

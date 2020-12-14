@@ -3,8 +3,6 @@ package br.com.farmcontrol.model.dao;
 import br.com.farmcontrol.connection.ConnectionFactory;
 import br.com.farmcontrol.model.vo.Animal;
 import br.com.farmcontrol.model.vo.Mamifero;
-import br.com.farmcontrol.model.vo.Racao;
-import br.com.farmcontrol.model.vo.Reproducao;
 import br.com.farmcontrol.model.vo.Vacina;
 import java.sql.Connection;
 import java.sql.Date;
@@ -17,8 +15,18 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
+/**Classe para objetos do tipo Vacina, reponsável pelas manipulações das Vacinas vindas do Banco de Dados, tais como cadastro, leitura,
+ * atualização, exclusão.
+ * @author equipe
+ * @version 1.1
+ * @since Release 1.2 da aplicação
+ */
 public class VacinaDAO {
 	
+	/** Método create, que tem como principal objetivo a inserção de uma instância de vacina no Banco de Dados. Não retorna nada.
+	 * @author equipe
+	 * @param v - instância de Vacina.
+	 */
 	public static void create(Vacina v) {
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
@@ -39,6 +47,12 @@ public class VacinaDAO {
 		
 	} 
 	
+	
+	/** Método read, que tem como finalidade capturar todas as ocorrências da instância de Vacina
+	 * existentes no Banco de Dados, os dados são inseridos em uma list<Vacina> e essa é retornada.
+	 * @author equipe
+	 * @return List<Vacina> - uma lista com todas as vacinas do Banco de Dados.
+	 */
 	public static List<Vacina> read(){
 		
 		Connection con = ConnectionFactory.getConnection();
@@ -72,40 +86,56 @@ public class VacinaDAO {
 		return vacinas;
 	} 
 	
-        public static List<Vacina> read(Animal m){
-            Connection con = ConnectionFactory.getConnection();
-            String sql = "SELECT * FROM vacina WHERE idanimal=? ORDER BY idvacina";
-            PreparedStatement stmt = null;
-            ResultSet rs = null;
-            
-            List<Vacina> vacinas = new ArrayList<>();
-            
-            try {
-                stmt = con.prepareStatement(sql);
-                stmt.setInt(1, m.getId_animal());
-                rs = stmt.executeQuery();
-            
-            while(rs.next()){
-                Vacina r = new Vacina();
-                r.setAnimal(m);
-                r.setData_vacina(rs.getDate("data_vacina"));
-                r.setId_vacina(rs.getInt("idvacina"));
-                r.setDescricao(rs.getString("descricao"));
-                r.setCusto(rs.getFloat("custo"));
+	
+	/** Método read que recebe uma instância do tipo Animal,e a partir desta o id do animal é obtido.
+	 *  Tem por finalidade obter instâncias de Vacina no banco de dados que tem relação com o id do animal passado 
+	 *  como parâmetro, caso haja essa ocorrência o dado é colocado em uma instância de Vacina e retornado. 
+	 * @author Equipe
+	 * @param m - instância de Animal.
+	 * @return List<Vacina> - lista com todas as vacinas do Banco de Dados que pertencem ao id do animal passado como parâmetro
+	 */
+    public static List<Vacina> read(Animal m){
+        Connection con = ConnectionFactory.getConnection();
+        String sql = "SELECT * FROM vacina WHERE idanimal=? ORDER BY idvacina";
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        
+        List<Vacina> vacinas = new ArrayList<>();
+        
+        try {
+            stmt = con.prepareStatement(sql);
+            stmt.setInt(1, m.getId_animal());
+            rs = stmt.executeQuery();
+        
+        while(rs.next()){
+            Vacina r = new Vacina();
+            r.setAnimal(m);
+            r.setData_vacina(rs.getDate("data_vacina"));
+            r.setId_vacina(rs.getInt("idvacina"));
+            r.setDescricao(rs.getString("descricao"));
+            r.setCusto(rs.getFloat("custo"));
 
-                vacinas.add(r);
-            }
-            
-            } catch (SQLException ex) {
-                Logger.getLogger(VacinaDAO.class.getName()).log(Level.SEVERE, null, ex);
-            } finally{
-                ConnectionFactory.closeConnection(con, stmt, rs);
-            }
-            
-            
-            return vacinas;
+            vacinas.add(r);
         }
         
+        } catch (SQLException ex) {
+            Logger.getLogger(VacinaDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally{
+            ConnectionFactory.closeConnection(con, stmt, rs);
+        }
+        
+        
+        return vacinas;
+    }
+    
+    
+    /** Método read que recebe um id como parâtro, tendo como finalidade capturar, se houver, a ocorrência 
+     * de uma instância de Vacina no Banco de Dados, correspondete com o id passado como parâtro. Se encontrado
+     * Vacina será retornada. 
+     * @author Equipe
+     * @param id - int
+     * @return Vacina - a instância de Vacina encontrada no banco de dados correspondente ao id passado como parâmetro.
+     */
 	public static Vacina read(int id){
 		
 		Connection con = ConnectionFactory.getConnection();
@@ -141,7 +171,15 @@ public class VacinaDAO {
 	    
 	    return v;
 	} 
-        
+    
+	
+	/** Método read que recebe uma data como parâmetro, e tem o objetivo de captura no Banco de Dados, se houver, vacinas 
+	 * que possuem a data especificada, caso haja a ocorrência, as vacinas serão adicionadas em uma lista de Vacina e esta será 
+	 * retornada.
+	 * @author Equipe
+	 * @param d - Date
+	 * @return List<Vacina> - lista de vacinas com data correspondente a passada como parâmetro.
+	 */
 	public static List<Vacina> read(Date d){
 		
 		Connection con = ConnectionFactory.getConnection();
@@ -174,7 +212,14 @@ public class VacinaDAO {
 	    
 	    return vacinas;
 	} 
-		
+	
+	
+	/** Método update recebe como parâmetro uma vacina. Tem como finalidade capturar a vacina no Banco de Dados, se houver
+	 * uma vacina com o mesmo id da instância de vacina passada como parâtro. O método pode atualizar todos os dados da 
+	 * instâcia com excessão do id da vacina. Não retorna nada.
+	 * @author Equipe
+	 * @param v - instância de Vacina.
+	 */
 	public static void update(Vacina v){
 	    
 		Connection con = ConnectionFactory.getConnection();
@@ -198,6 +243,13 @@ public class VacinaDAO {
 
 	}
 	
+	
+	/** Método delete que recebe uma intância de Vacina, e tem a opção de capturar no Banco de Dados, se houver, uma vacina
+	 * com o id correspondente ao id da vacina passada como parâmetro, caso haja a ocorrência essa vacina será deletada do 
+	 * Banco de Dados. Não retorna nada.
+	 * @author equipe
+	 * @param v - instância de Vacina.
+	 */
 	public static void delete(Vacina v){
 	    
 	    Connection con = ConnectionFactory.getConnection();

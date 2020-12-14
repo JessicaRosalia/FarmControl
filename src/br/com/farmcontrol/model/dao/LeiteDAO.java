@@ -13,10 +13,8 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 import br.com.farmcontrol.connection.ConnectionFactory;
-import br.com.farmcontrol.model.vo.Animal;
 import br.com.farmcontrol.model.vo.Leite;
 import br.com.farmcontrol.model.vo.Mamifero;
-import br.com.farmcontrol.model.vo.Vacina;
 
 /**
 * Classe responsável pela manipulação dos dados a respeito da produção de Leite vindos do Banco de Dados, como cadastro, leitura, atualização e exclusão.
