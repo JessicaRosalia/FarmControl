@@ -13,8 +13,10 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 import br.com.farmcontrol.connection.ConnectionFactory;
+import br.com.farmcontrol.model.vo.Animal;
 import br.com.farmcontrol.model.vo.Leite;
 import br.com.farmcontrol.model.vo.Mamifero;
+import br.com.farmcontrol.model.vo.Vacina;
 
 /**
 * Classe responsável pela manipulação dos dados a respeito da produção de Leite vindos do Banco de Dados, como cadastro, leitura, atualização e exclusão.
@@ -268,4 +270,40 @@ public class LeiteDAO {
         }
         
     }
+
+	public static List<Leite> reportQuery() {
+		Connection con = ConnectionFactory.getConnection();
+	    String sql = "SELECT mamifero_abate.idanimal, mamifero_abate.tipomamifero, leite.quantidade,leite.data_leite, leite.valor_litro FROM mamifero_abate INNER JOIN leite on mamifero_abate.idanimal = leite.idanimal ORDER BY leite.quantidade";
+	    PreparedStatement stmt = null;
+	    ResultSet rs = null;
+	
+	    List<Leite> leites = new ArrayList<>();
+	
+	    try {
+	        stmt = con.prepareStatement(sql);
+	        rs = stmt.executeQuery();
+	
+	        while(rs.next()){
+	            Leite lei = new Leite();
+	            Mamifero a = new Mamifero();
+	            lei.setAnimal(a);
+	            a.setId_animal(rs.getInt("idanimal"));
+	            a.setTipo_mamifero(rs.getString("tipomamifero"));
+	            
+	            lei.setQtd_leite(rs.getInt("quantidade"));
+	            lei.setData_producao(rs.getDate("data_leite"));
+	            lei.setValor_litro(rs.getFloat("valor_litro"));
+	       
+	                    
+	            leites.add(lei);
+	        }
+	
+	    } catch (SQLException ex) {
+	        Logger.getLogger(LeiteDAO.class.getName()).log(Level.SEVERE, null, ex);
+	    } finally{
+	        ConnectionFactory.closeConnection(con, stmt, rs);
+	    }
+	
+	    return leites; 
+	}  
 }

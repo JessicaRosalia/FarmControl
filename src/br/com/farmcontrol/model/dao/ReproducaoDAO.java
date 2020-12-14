@@ -14,7 +14,9 @@ import javax.swing.JOptionPane;
 
 import br.com.farmcontrol.connection.ConnectionFactory;
 import br.com.farmcontrol.model.vo.Animal;
+import br.com.farmcontrol.model.vo.LoteAves;
 import br.com.farmcontrol.model.vo.Mamifero;
+import br.com.farmcontrol.model.vo.Ovo;
 import br.com.farmcontrol.model.vo.Reproducao;
 
 
@@ -322,4 +324,38 @@ public class ReproducaoDAO {
         }
         
     }
+
+	public static List<Reproducao> reportQuery() {
+		Connection con = ConnectionFactory.getConnection();
+	    String sql = "SELECT animal.idanimal, animal.raca, reproducao.idreprod, reproducao.quantidade, reproducao.descricao, reproducao.data_reprod FROM animal INNER JOIN reproducao on animal.idanimal = reproducao.idanimal ORDER BY reproducao.data_reprod";
+	    PreparedStatement stmt = null;
+	    ResultSet rs = null;
+	
+	    List<Reproducao> reproducoes = new ArrayList<>();
+	
+	    try {
+	        stmt = con.prepareStatement(sql);
+	        rs = stmt.executeQuery();
+	
+	        while(rs.next()){
+	            Reproducao re = new Reproducao();
+	            Animal a = new Mamifero();
+	            re.setAnimal(a);
+	            a.setId_animal(rs.getInt("idanimal"));
+	            a.setRaca(rs.getString("raca"));
+	            re.setId_repoducao(rs.getInt("idreprod"));
+	            re.setQntd_reproducao(rs.getInt("quantidade"));
+	            re.setDescricao_reprod(rs.getString("descricao"));
+	            re.setData_reproducao(rs.getDate("data_reprod"));         
+	            reproducoes.add(re);
+	        }
+	
+	    } catch (SQLException ex) {
+	        Logger.getLogger(ReproducaoDAO.class.getName()).log(Level.SEVERE, null, ex);
+	    } finally{
+	        ConnectionFactory.closeConnection(con, stmt, rs);
+	    }
+	
+	    return reproducoes; 
+	} 
 }
