@@ -76,9 +76,9 @@ public class MenuRelatorioController {
 				PdfWriter.getInstance(doc, new FileOutputStream(arquivoPdf));
 				doc.open();
 
-				Image imgHeader=null;
+				/*Image imgHeader=null;
 				try {
-					imgHeader = Image.getInstance("./br/com/farmcontrol/view/resources/FXML.images/logo.png");
+					imgHeader = Image.getInstance("./br/com/farmcontrol/view/resources/FXML/images/logo.png");
 				} catch (MalformedURLException e1) {
 					
 					e1.printStackTrace();
@@ -90,7 +90,7 @@ public class MenuRelatorioController {
 				imgHeader.setAlignment(Element.ALIGN_CENTER);
 				doc.add(imgHeader); 
 				
-				
+				*/
 			
 				
 				Paragraph p = new Paragraph("Relatório Mamíferos \t\t\t\t\t\t\t\t\t" + new SimpleDateFormat("dd/MM/yyyy").format(new Date())+"\n", new Font(FontFamily.HELVETICA, 18, Font.BOLD,null));
@@ -200,7 +200,7 @@ public class MenuRelatorioController {
 				
 				doc.setPageCount(10);
 				
-				Image imgHeader=null;
+				/* Image imgHeader=null;
 				try {
 					imgHeader = Image.getInstance("C:\\Users\\jessi\\Documents\\projeto-poo\\src\\br\\com\\farmcontrol\\view\\resources\\images\\logo.png");
 				} catch (MalformedURLException e1) {
@@ -213,7 +213,7 @@ public class MenuRelatorioController {
 				
 				imgHeader.setAlignment(Element.ALIGN_CENTER);
 				doc.add(imgHeader);
-				
+				*/
 			
 				
 				Paragraph p = new Paragraph("Relatório Lotes de Aves \t\t\t\t\t\t\t\t\t" + new SimpleDateFormat("dd/MM/yyyy").format(new Date())+"\n", new Font(FontFamily.HELVETICA, 18, Font.BOLD,null));
@@ -309,7 +309,7 @@ public class MenuRelatorioController {
 				doc.open();
 				
 				
-				Image imgHeader=null;
+				/*Image imgHeader=null;
 				try {
 					imgHeader = Image.getInstance("C:\\Users\\jessi\\Documents\\projeto-poo\\src\\br\\com\\farmcontrol\\view\\resources\\images\\logo.png");
 				} catch (MalformedURLException e1) {
@@ -321,7 +321,7 @@ public class MenuRelatorioController {
 				}
 				
 				imgHeader.setAlignment(Element.ALIGN_CENTER);
-				doc.add(imgHeader);
+				doc.add(imgHeader); */
 			
 				
 				Paragraph p = new Paragraph("Relatório de Produção de Ovos \t\t\t\t\t\t\t\t\t" + new SimpleDateFormat("dd/MM/yyyy").format(new Date())+"\n", new Font(FontFamily.HELVETICA, 18, Font.BOLD,null));
@@ -432,7 +432,7 @@ public class MenuRelatorioController {
 				doc.open();
 				
 				
-				Image imgHeader=null;
+				/*Image imgHeader=null;
 				try {
 					imgHeader = Image.getInstance("C:\\Users\\jessi\\Documents\\projeto-poo\\src\\br\\com\\farmcontrol\\view\\resources\\images\\logo.png");
 				} catch (MalformedURLException e1) {
@@ -444,7 +444,7 @@ public class MenuRelatorioController {
 				}
 				
 				imgHeader.setAlignment(Element.ALIGN_CENTER);
-				doc.add(imgHeader);
+				doc.add(imgHeader); */
 				
 			
 				
@@ -561,7 +561,7 @@ public class MenuRelatorioController {
 				doc.open();
 				
 				
-				Image imgHeader=null;
+				/*Image imgHeader=null;
 				try {
 					imgHeader = Image.getInstance("C:\\Users\\jessi\\Documents\\projeto-poo\\src\\br\\com\\farmcontrol\\view\\resources\\images\\logo.png");
 				} catch (MalformedURLException e1) {
@@ -573,7 +573,7 @@ public class MenuRelatorioController {
 				}
 				
 				imgHeader.setAlignment(Element.ALIGN_CENTER);
-				doc.add(imgHeader);
+				doc.add(imgHeader); */
 				
 			
 				
@@ -693,7 +693,7 @@ public class MenuRelatorioController {
 				doc.open();
 				
 				
-				Image imgHeader=null;
+				/*Image imgHeader=null;
 				try {
 					imgHeader = Image.getInstance("C:\\Users\\jessi\\Documents\\projeto-poo\\src\\br\\com\\farmcontrol\\view\\resources\\images\\logo.png");
 				} catch (MalformedURLException e1) {
@@ -705,7 +705,7 @@ public class MenuRelatorioController {
 				}
 				
 				imgHeader.setAlignment(Element.ALIGN_CENTER);
-				doc.add(imgHeader);
+				doc.add(imgHeader); */
 				
 			
 				
