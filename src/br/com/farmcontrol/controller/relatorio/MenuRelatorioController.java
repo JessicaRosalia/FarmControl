@@ -75,12 +75,10 @@ public class MenuRelatorioController {
 		    try {
 				PdfWriter.getInstance(doc, new FileOutputStream(arquivoPdf));
 				doc.open();
-				
-				doc.setPageCount(10);
-				
+
 				Image imgHeader=null;
 				try {
-					imgHeader = Image.getInstance("C:\\Users\\jessi\\Documents\\projeto-poo\\src\\br\\com\\farmcontrol\\view\\resources\\images\\logo.png");
+					imgHeader = Image.getInstance("./br/com/farmcontrol/view/resources/FXML.images/logo.png");
 				} catch (MalformedURLException e1) {
 					
 					e1.printStackTrace();
@@ -90,7 +88,8 @@ public class MenuRelatorioController {
 				}
 				
 				imgHeader.setAlignment(Element.ALIGN_CENTER);
-				doc.add(imgHeader);
+				doc.add(imgHeader); 
+				
 				
 			
 				
