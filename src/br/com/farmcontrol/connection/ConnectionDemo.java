@@ -5,12 +5,7 @@
  */
 package br.com.farmcontrol.connection;
 
-import java.sql.Connection;
 
-/**
- *
- * @author viniciuslopes
- */
 public class ConnectionDemo {
     
     public static void main(String[] args){

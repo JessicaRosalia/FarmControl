@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -13,10 +12,8 @@ import java.util.List;
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.Element;
 import com.itextpdf.text.Font;
 import com.itextpdf.text.Font.FontFamily;
-import com.itextpdf.text.Image;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
@@ -76,9 +73,9 @@ public class MenuRelatorioController {
 				PdfWriter.getInstance(doc, new FileOutputStream(arquivoPdf));
 				doc.open();
 
-				Image imgHeader=null;
+				/*Image imgHeader=null;
 				try {
-					imgHeader = Image.getInstance("./br/com/farmcontrol/view/resources/FXML.images/logo.png");
+					imgHeader = Image.getInstance("./br/com/farmcontrol/view/resources/FXML/images/logo.png");
 				} catch (MalformedURLException e1) {
 					
 					e1.printStackTrace();
@@ -90,7 +87,7 @@ public class MenuRelatorioController {
 				imgHeader.setAlignment(Element.ALIGN_CENTER);
 				doc.add(imgHeader); 
 				
-				
+				*/
 			
 				
 				Paragraph p = new Paragraph("Relatório Mamíferos \t\t\t\t\t\t\t\t\t" + new SimpleDateFormat("dd/MM/yyyy").format(new Date())+"\n", new Font(FontFamily.HELVETICA, 18, Font.BOLD,null));
@@ -200,7 +197,7 @@ public class MenuRelatorioController {
 				
 				doc.setPageCount(10);
 				
-				Image imgHeader=null;
+				/* Image imgHeader=null;
 				try {
 					imgHeader = Image.getInstance("C:\\Users\\jessi\\Documents\\projeto-poo\\src\\br\\com\\farmcontrol\\view\\resources\\images\\logo.png");
 				} catch (MalformedURLException e1) {
@@ -213,7 +210,7 @@ public class MenuRelatorioController {
 				
 				imgHeader.setAlignment(Element.ALIGN_CENTER);
 				doc.add(imgHeader);
-				
+				*/
 			
 				
 				Paragraph p = new Paragraph("Relatório Lotes de Aves \t\t\t\t\t\t\t\t\t" + new SimpleDateFormat("dd/MM/yyyy").format(new Date())+"\n", new Font(FontFamily.HELVETICA, 18, Font.BOLD,null));
@@ -309,7 +306,7 @@ public class MenuRelatorioController {
 				doc.open();
 				
 				
-				Image imgHeader=null;
+				/*Image imgHeader=null;
 				try {
 					imgHeader = Image.getInstance("C:\\Users\\jessi\\Documents\\projeto-poo\\src\\br\\com\\farmcontrol\\view\\resources\\images\\logo.png");
 				} catch (MalformedURLException e1) {
@@ -321,7 +318,7 @@ public class MenuRelatorioController {
 				}
 				
 				imgHeader.setAlignment(Element.ALIGN_CENTER);
-				doc.add(imgHeader);
+				doc.add(imgHeader); */
 			
 				
 				Paragraph p = new Paragraph("Relatório de Produção de Ovos \t\t\t\t\t\t\t\t\t" + new SimpleDateFormat("dd/MM/yyyy").format(new Date())+"\n", new Font(FontFamily.HELVETICA, 18, Font.BOLD,null));
@@ -432,7 +429,7 @@ public class MenuRelatorioController {
 				doc.open();
 				
 				
-				Image imgHeader=null;
+				/*Image imgHeader=null;
 				try {
 					imgHeader = Image.getInstance("C:\\Users\\jessi\\Documents\\projeto-poo\\src\\br\\com\\farmcontrol\\view\\resources\\images\\logo.png");
 				} catch (MalformedURLException e1) {
@@ -444,7 +441,7 @@ public class MenuRelatorioController {
 				}
 				
 				imgHeader.setAlignment(Element.ALIGN_CENTER);
-				doc.add(imgHeader);
+				doc.add(imgHeader); */
 				
 			
 				
@@ -561,7 +558,7 @@ public class MenuRelatorioController {
 				doc.open();
 				
 				
-				Image imgHeader=null;
+				/*Image imgHeader=null;
 				try {
 					imgHeader = Image.getInstance("C:\\Users\\jessi\\Documents\\projeto-poo\\src\\br\\com\\farmcontrol\\view\\resources\\images\\logo.png");
 				} catch (MalformedURLException e1) {
@@ -573,7 +570,7 @@ public class MenuRelatorioController {
 				}
 				
 				imgHeader.setAlignment(Element.ALIGN_CENTER);
-				doc.add(imgHeader);
+				doc.add(imgHeader); */
 				
 			
 				
@@ -693,7 +690,7 @@ public class MenuRelatorioController {
 				doc.open();
 				
 				
-				Image imgHeader=null;
+				/*Image imgHeader=null;
 				try {
 					imgHeader = Image.getInstance("C:\\Users\\jessi\\Documents\\projeto-poo\\src\\br\\com\\farmcontrol\\view\\resources\\images\\logo.png");
 				} catch (MalformedURLException e1) {
@@ -705,7 +702,7 @@ public class MenuRelatorioController {
 				}
 				
 				imgHeader.setAlignment(Element.ALIGN_CENTER);
-				doc.add(imgHeader);
+				doc.add(imgHeader); */
 				
 			
 				
